@@ -8,10 +8,10 @@ export const metadata: Metadata = {
     title: 'College GPA Calculator (Accurate & Free) – Calculate Your GPA Online',
     description: 'Use our free College GPA Calculator to calculate your GPA instantly. Enter your courses, grades, and credit hours to get an accurate GPA for college.',
     type: 'website',
-    url: 'https://toptopgpacalculator.com/gpa-calculators/college-gpa-calculator',
+    url: 'https://topgpacalculator.com/gpa-calculators/college-gpa-calculator',
     images: [
       {
-        url: 'https://toptopgpacalculator.com/og-image.png',
+        url: 'https://topgpacalculator.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'College GPA Calculator',
@@ -22,11 +22,11 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'College GPA Calculator (Accurate & Free) – Calculate Your GPA Online',
     description: 'Use our free College GPA Calculator to calculate your GPA instantly. Enter your courses, grades, and credit hours to get an accurate GPA for college.',
-    images: ['https://toptopgpacalculator.com/og-image.png'],
+    images: ['https://topgpacalculator.com/og-image.png'],
   },
   robots: 'index, follow',
   alternates: {
-    canonical: 'https://toptopgpacalculator.com/gpa-calculators/college-gpa-calculator',
+    canonical: 'https://topgpacalculator.com/gpa-calculators/college-gpa-calculator',
   },
 };
 
@@ -39,6 +39,7 @@ export default function CollegeGPACalculatorLayout({
     <main>{children}</main>
   );
 }
+
 
 
 

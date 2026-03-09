@@ -56,7 +56,7 @@ export function OrganizationSchema() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'GPA Calculator',
-    url: 'https://toptopgpacalculator.com',
+    url: 'https://topgpacalculator.com',
     description: 'Free GPA calculator for students',
     sameAs: [
       'https://www.facebook.com/gpacalculator',
@@ -91,6 +91,7 @@ export function BreadcrumbSchema({ items }: { items: Array<{ name: string; url: 
     />
   );
 }
+
 
 
 

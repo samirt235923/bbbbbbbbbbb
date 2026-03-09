@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Blog - GPA Tips, Strategies & Articles | GPA Calculator',
   description: 'Read expert articles and tips on GPA management, college admissions, scholarships, and improving academic performance.',
   alternates: {
-    canonical: 'https://toptopgpacalculator.com/blog',
+    canonical: 'https://topgpacalculator.com/blog',
   },
 };
 
@@ -21,7 +21,7 @@ export default function BlogPage() {
             '@type': 'Blog',
             name: 'GPA Calculator Blog',
             description: 'Expert articles on GPA and academics',
-            url: 'https://toptopgpacalculator.com/blog',
+            url: 'https://topgpacalculator.com/blog',
           }),
         }}
       />
@@ -83,6 +83,7 @@ export default function BlogPage() {
     </>
   );
 }
+
 
 
 

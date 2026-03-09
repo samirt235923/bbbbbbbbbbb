@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: 'Engineering GPA Calculator – Calculate Your Engineering GPA Easily',
     description: 'Use our Engineering GPA Calculator to calculate your cumulative engineering GPA instantly. Enter engineering courses, credits, and grades to calculate GPA accurately.',
     type: 'website',
-    url: 'https://toptopgpacalculator.com/gpa-calculators/engineering-gpa-calculator',
+    url: 'https://topgpacalculator.com/gpa-calculators/engineering-gpa-calculator',
   },
   twitter: {
     card: 'summary_large_image',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: 'Use our Engineering GPA Calculator to calculate your cumulative engineering GPA instantly. Enter engineering courses, credits, and grades to calculate GPA accurately.',
   },
   alternates: {
-    canonical: 'https://toptopgpacalculator.com/gpa-calculators/engineering-gpa-calculator',
+    canonical: 'https://topgpacalculator.com/gpa-calculators/engineering-gpa-calculator',
   },
 };
 
@@ -27,6 +27,7 @@ export default function Layout({
 }) {
   return children;
 }
+
 
 
 
