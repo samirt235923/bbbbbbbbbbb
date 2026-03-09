@@ -181,7 +181,7 @@ const MedicalSchoolGPACalculator: React.FC = () => {
 
       {/* Course Input Grid */}
       <div className="grid gap-4 mb-8">
-        {courses.map((course, index) => (
+        {courses.map((course) => (
           <div key={course.id} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
             <div className="grid md:grid-cols-5 gap-4 items-end">
               <div>

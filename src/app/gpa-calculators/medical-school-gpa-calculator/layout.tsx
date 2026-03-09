@@ -19,3 +19,11 @@ export const metadata: Metadata = {
     canonical: 'https://yourwebsite.com/gpa-calculators/medical-school-gpa-calculator',
   },
 };
+
+export default function Layout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return children;
+}
