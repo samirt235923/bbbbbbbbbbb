@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'About Us - GPA Calculator',
   description: 'Learn about GPA Calculator and our mission to help students succeed academically.',
   alternates: {
-    canonical: 'https://topgpacalculator.com/about',
+    canonical: 'https://toptopgpacalculator.com/about',
   },
 };
 
@@ -93,6 +93,7 @@ export default function AboutPage() {
     </div>
   );
 }
+
 
 
 

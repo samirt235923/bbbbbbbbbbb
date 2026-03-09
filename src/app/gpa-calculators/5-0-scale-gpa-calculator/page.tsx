@@ -10,10 +10,10 @@ export const metadata: Metadata = {
     title: '5.0 Scale GPA Calculator (Weighted GPA) – Free & Accurate Tool',
     description: 'Use our free 5.0 Scale GPA Calculator to calculate your weighted GPA instantly. Enter your courses, grades, and credit hours to get your GPA on a 5.0 scale.',
     type: 'website',
-    url: 'https://topgpacalculator.com/gpa-calculators/5-0-scale-gpa-calculator',
+    url: 'https://toptopgpacalculator.com/gpa-calculators/5-0-scale-gpa-calculator',
     images: [
       {
-        url: 'https://topgpacalculator.com/og-image.png',
+        url: 'https://toptopgpacalculator.com/og-image.png',
         width: 1200,
         height: 630,
         alt: '5.0 Scale GPA Calculator Preview',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description: 'Use our free 5.0 Scale GPA Calculator to calculate your weighted GPA instantly. Enter your courses, grades, and credit hours to get your GPA on a 5.0 scale.',
   },
   alternates: {
-    canonical: 'https://topgpacalculator.com/gpa-calculators/5-0-scale-gpa-calculator',
+    canonical: 'https://toptopgpacalculator.com/gpa-calculators/5-0-scale-gpa-calculator',
   },
   other: {
     'article:author': 'GPA Calculator',
@@ -418,6 +418,7 @@ export default function FivePointZeroScaleGPACalculatorPage() {
     </div>
   );
 }
+
 
 
 

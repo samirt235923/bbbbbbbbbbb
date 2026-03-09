@@ -17,19 +17,19 @@ export default function MedicalSchoolGPACalculatorPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://topgpacalculator.com"
+        "item": "https://toptopgpacalculator.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "GPA Calculators",
-        "item": "https://topgpacalculator.com/gpa-calculators"
+        "item": "https://toptopgpacalculator.com/gpa-calculators"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Medical School GPA Calculator",
-        "item": "https://topgpacalculator.com/gpa-calculators/medical-school-gpa-calculator"
+        "item": "https://toptopgpacalculator.com/gpa-calculators/medical-school-gpa-calculator"
       }
     ]
   };
@@ -609,6 +609,7 @@ export default function MedicalSchoolGPACalculatorPage() {
     </>
   );
 }
+
 
 
 

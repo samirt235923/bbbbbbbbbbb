@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {};
   }
 
-  const url = `https://gpacalculator.com/gpa-calculators/${calculator.id}`;
+  const url = `https://topgpacalculator.com/gpa-calculators/${calculator.id}`;
 
   return {
     title: calculator.title,
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'website',
       images: [
         {
-          url: 'https://gpacalculator.com/og-image.png',
+          url: 'https://topgpacalculator.com/og-image.png',
           width: 1200,
           height: 630,
         },

@@ -139,8 +139,8 @@ export default function ContactPage() {
                 <li>
                   <strong>Email:</strong>
                   <br />
-                  <a href="mailto:info@topgpacalculator.com" className="text-blue-600 hover:underline">
-                    info@topgpacalculator.com
+                  <a href="mailto:info@toptopgpacalculator.com" className="text-blue-600 hover:underline">
+                    info@toptopgpacalculator.com
                   </a>
                 </li>
                 <li>
@@ -174,6 +174,7 @@ export default function ContactPage() {
     </div>
   );
 }
+
 
 
 

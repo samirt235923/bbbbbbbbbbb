@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Privacy Policy - GPA Calculator',
   description: 'Privacy policy for GPA Calculator. Learn how we protect your information.',
   alternates: {
-    canonical: 'https://topgpacalculator.com/privacy-policy',
+    canonical: 'https://toptopgpacalculator.com/privacy-policy',
   },
 };
 
@@ -97,7 +97,7 @@ export default function PrivacyPolicyPage() {
             If you have any questions or concerns about our privacy policy, please contact us at:
           </p>
           <p className="text-gray-700">
-            <strong>Email:</strong> privacy@topgpacalculator.com
+            <strong>Email:</strong> privacy@toptopgpacalculator.com
           </p>
         </div>
       </section>
@@ -113,6 +113,7 @@ export default function PrivacyPolicyPage() {
     </div>
   );
 }
+
 
 
 

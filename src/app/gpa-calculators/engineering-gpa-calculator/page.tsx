@@ -13,9 +13,9 @@ export default function EngineeringGPACalculatorPage() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://topgpacalculator.com" },
-      { "@type": "ListItem", "position": 2, "name": "GPA Calculators", "item": "https://topgpacalculator.com/gpa-calculators" },
-      { "@type": "ListItem", "position": 3, "name": "Engineering GPA Calculator", "item": "https://topgpacalculator.com/gpa-calculators/engineering-gpa-calculator" }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toptopgpacalculator.com" },
+      { "@type": "ListItem", "position": 2, "name": "GPA Calculators", "item": "https://toptopgpacalculator.com/gpa-calculators" },
+      { "@type": "ListItem", "position": 3, "name": "Engineering GPA Calculator", "item": "https://toptopgpacalculator.com/gpa-calculators/engineering-gpa-calculator" }
     ]
   };
 
@@ -235,6 +235,7 @@ export default function EngineeringGPACalculatorPage() {
     </>
   );
 }
+
 
 
 

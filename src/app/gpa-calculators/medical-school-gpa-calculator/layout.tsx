@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: 'Medical School GPA Calculator – Calculate Your Pre-Med GPA',
     description: 'Use our Medical School GPA Calculator to calculate your overall GPA and science GPA for medical school applications. Enter courses, grades, and credits to get your GPA instantly.',
     type: 'website',
-    url: 'https://topgpacalculator.com/gpa-calculators/medical-school-gpa-calculator',
+    url: 'https://toptopgpacalculator.com/gpa-calculators/medical-school-gpa-calculator',
   },
   twitter: {
     card: 'summary_large_image',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: 'Use our Medical School GPA Calculator to calculate your overall GPA and science GPA for medical school applications. Enter courses, grades, and credits to get your GPA instantly.',
   },
   alternates: {
-    canonical: 'https://topgpacalculator.com/gpa-calculators/medical-school-gpa-calculator',
+    canonical: 'https://toptopgpacalculator.com/gpa-calculators/medical-school-gpa-calculator',
   },
 };
 
@@ -27,6 +27,7 @@ export default function Layout({
 }) {
   return children;
 }
+
 
 
 

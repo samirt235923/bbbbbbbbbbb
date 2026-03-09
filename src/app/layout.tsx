@@ -15,11 +15,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'GPA Calculator - Free & Accurate GPA Calculator for Students',
     description: 'Calculate your GPA instantly with our free GPA calculator.',
-    url: 'https://topgpacalculator.com',
+    url: 'https://toptopgpacalculator.com',
     siteName: 'GPA Calculator',
     images: [
       {
-        url: 'https://topgpacalculator.com/og-image.png',
+        url: 'https://toptopgpacalculator.com/og-image.png',
         width: 1200,
         height: 630,
       },
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://topgpacalculator.com',
+    canonical: 'https://toptopgpacalculator.com',
   },
 };
 
@@ -58,7 +58,7 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#0066cc" />
-        <link rel="canonical" href="https://topgpacalculator.com" />
+        <link rel="canonical" href="https://toptopgpacalculator.com" />
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className="bg-white">
@@ -71,6 +71,7 @@ export default function RootLayout({
     </html>
   );
 }
+
 
 
 

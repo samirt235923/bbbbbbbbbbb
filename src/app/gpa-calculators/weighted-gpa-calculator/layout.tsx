@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Weighted GPA Calculator – Free & Accurate GPA Tool',
     description: 'Use our Weighted GPA Calculator to calculate your GPA with Honors and AP classes. Enter courses, grades, and credit hours to get your weighted GPA instantly.',
-    url: 'https://topgpacalculator.com/weighted-gpa-calculator',
+    url: 'https://toptopgpacalculator.com/weighted-gpa-calculator',
     siteName: 'GPA Calculator',
     type: 'website',
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: 'Use our Weighted GPA Calculator to calculate your GPA with Honors and AP classes. Enter courses, grades, and credit hours to get your weighted GPA instantly.',
   },
   alternates: {
-    canonical: 'https://topgpacalculator.com/weighted-gpa-calculator',
+    canonical: 'https://toptopgpacalculator.com/weighted-gpa-calculator',
   },
 };
 
@@ -28,6 +28,7 @@ export default function Layout({
 }) {
   return children;
 }
+
 
 
 

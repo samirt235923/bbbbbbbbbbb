@@ -104,19 +104,19 @@ export default function CollegeGPACalculator() {
                 '@type': 'ListItem',
                 position: 1,
                 name: 'Home',
-                item: 'https://gpacalculator.com',
+                item: 'https://toptopgpacalculator.com',
               },
               {
                 '@type': 'ListItem',
                 position: 2,
                 name: 'GPA Calculators',
-                item: 'https://gpacalculator.com/gpa-calculators',
+                item: 'https://toptopgpacalculator.com/gpa-calculators',
               },
               {
                 '@type': 'ListItem',
                 position: 3,
                 name: 'College GPA Calculator',
-                item: 'https://gpacalculator.com/gpa-calculators/college-gpa-calculator',
+                item: 'https://toptopgpacalculator.com/gpa-calculators/college-gpa-calculator',
               },
             ],
           }),
@@ -185,25 +185,25 @@ export default function CollegeGPACalculator() {
             '@type': 'Article',
             headline: 'College GPA Calculator (Accurate & Free) – Calculate Your GPA Online',
             description: 'Use our free College GPA Calculator to calculate your GPA instantly. Enter your courses, grades, and credit hours to get an accurate GPA for college.',
-            image: 'https://gpacalculator.com/og-image.png',
+            image: 'https://toptopgpacalculator.com/og-image.png',
             datePublished: '2024-01-01',
             dateModified: '2024-12-01',
             author: {
               '@type': 'Organization',
               name: 'GPA Calculator',
-              url: 'https://gpacalculator.com',
+              url: 'https://toptopgpacalculator.com',
             },
             publisher: {
               '@type': 'Organization',
               name: 'GPA Calculator',
               logo: {
                 '@type': 'ImageObject',
-                url: 'https://gpacalculator.com/logo.png',
+                url: 'https://topgpacalculator.com/logo.png',
               },
             },
             mainEntityOfPage: {
               '@type': 'WebPage',
-              '@id': 'https://gpacalculator.com/gpa-calculators/college-gpa-calculator',
+              '@id': 'https://topgpacalculator.com/gpa-calculators/college-gpa-calculator',
             },
           }),
         }}
@@ -724,5 +724,6 @@ export default function CollegeGPACalculator() {
     </>
   );
 }
+
 
 
