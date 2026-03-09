@@ -8,10 +8,10 @@ export const metadata: Metadata = {
     title: 'Cumulative GPA Calculator (Accurate & Free)',
     description: 'Calculate your cumulative GPA across all semesters and years.',
     type: 'website',
-    url: 'https://gpacalculator.com/gpa-calculators/cumulative-gpa-calculator',
+    url: 'https://topgpacalculator.com/gpa-calculators/cumulative-gpa-calculator',
     images: [
       {
-        url: 'https://gpacalculator.com/og-image.png',
+        url: 'https://topgpacalculator.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Cumulative GPA Calculator',
@@ -22,11 +22,11 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Cumulative GPA Calculator (Accurate & Free)',
     description: 'Calculate your cumulative GPA across all semesters and years.',
-    images: ['https://gpacalculator.com/og-image.png'],
+    images: ['https://topgpacalculator.com/og-image.png'],
   },
   robots: 'index, follow',
   alternates: {
-    canonical: 'https://gpacalculator.com/gpa-calculators/cumulative-gpa-calculator',
+    canonical: 'https://topgpacalculator.com/gpa-calculators/cumulative-gpa-calculator',
   },
 };
 
@@ -37,3 +37,6 @@ export default function CumulativeGPACalculatorLayout({
 }) {
   return <main>{children}</main>;
 }
+
+
+

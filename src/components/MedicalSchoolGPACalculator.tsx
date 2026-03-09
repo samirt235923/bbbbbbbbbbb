@@ -345,3 +345,6 @@ const MedicalSchoolGPACalculator: React.FC = () => {
 };
 
 export default MedicalSchoolGPACalculator;
+
+
+

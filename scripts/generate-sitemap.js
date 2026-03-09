@@ -5,7 +5,7 @@ const path = require('path');
 const calculators = require('./src/data/calculators').calculatorData;
 const blogPosts = require('./src/data/blog').blogPosts;
 
-const DOMAIN = 'https://gpacalculator.com';
+const DOMAIN = 'https://topgpacalculator.com';
 
 function generateSitemap() {
   const staticPages = [

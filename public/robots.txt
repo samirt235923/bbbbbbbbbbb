@@ -8,6 +8,8 @@ Disallow: /*.json$
 User-agent: Googlebot
 Allow: /
 
+Sitemap: https://topgpacalculator.com/sitemap.xml
+
 # Bing specific
 User-agent: Bingbot
 Allow: /

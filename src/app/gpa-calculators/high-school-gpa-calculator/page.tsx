@@ -514,7 +514,7 @@ export default function HighSchoolGPACalculatorPage() {
               "@type": "WebApplication",
               "name": "High School GPA Calculator",
               "description": "Free high school GPA calculator to calculate your GPA instantly with accurate formulas.",
-              "url": "https://yourwebsite.com/gpa-calculators/high-school-gpa-calculator",
+              "url": "https://topgpacalculator.com/gpa-calculators/high-school-gpa-calculator",
               "applicationCategory": "EducationalApplication",
               "operatingSystem": "Web Browser",
               "offers": {
@@ -591,3 +591,6 @@ export default function HighSchoolGPACalculatorPage() {
     </div>
   );
 }
+
+
+

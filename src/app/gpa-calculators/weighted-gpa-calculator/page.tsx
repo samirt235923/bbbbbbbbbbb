@@ -17,19 +17,19 @@ export default function WeightedGPACalculatorPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://yourwebsite.com"
+        "item": "https://topgpacalculator.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "GPA Calculators",
-        "item": "https://yourwebsite.com/gpa-calculators"
+        "item": "https://topgpacalculator.com/gpa-calculators"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Weighted GPA Calculator",
-        "item": "https://yourwebsite.com/weighted-gpa-calculator"
+        "item": "https://topgpacalculator.com/weighted-gpa-calculator"
       }
     ]
   };
@@ -555,3 +555,6 @@ export default function WeightedGPACalculatorPage() {
     </>
   );
 }
+
+
+

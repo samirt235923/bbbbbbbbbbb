@@ -124,7 +124,7 @@ pm2 save
 ```nginx
 server {
     listen 80;
-    server_name gpacalculator.com www.gpacalculator.com;
+    server_name topgpacalculator.com www.topgpacalculator.com;
 
     location / {
         proxy_pass http://localhost:3000;
@@ -333,7 +333,7 @@ npm run build
 sudo apt-get install certbot python3-certbot-nginx
 
 # Generate certificate
-sudo certbot certonly --nginx -d gpacalculator.com
+sudo certbot certonly --nginx -d topgpacalculator.com
 
 # Auto-renewal
 sudo certbot renew --dry-run
@@ -350,7 +350,7 @@ Recommended registrars:
 ### Point Domain to Vercel
 ```
 Update DNS records:
-- CNAME: www.gpacalculator.com → cname.vercel-dns.com
+- CNAME: www.topgpacalculator.com → cname.vercel-dns.com
 - Or use custom NS records
 ```
 

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: '4.0 GPA Calculator – Calculate GPA on a 4.0 Scale',
     description: 'Use our 4.0 GPA Calculator to calculate your GPA using the standard 4.0 grading scale. Enter courses, credits, and grades to instantly calculate your GPA.',
     type: 'website',
-    url: 'https://yourwebsite.com/gpa-calculators/4-0-scale-gpa-calculator',
+    url: 'https://topgpacalculator.com/gpa-calculators/4-0-scale-gpa-calculator',
   },
   twitter: {
     card: 'summary_large_image',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: 'Use our 4.0 GPA Calculator to calculate your GPA using the standard 4.0 grading scale. Enter courses, credits, and grades to instantly calculate your GPA.',
   },
   alternates: {
-    canonical: 'https://yourwebsite.com/gpa-calculators/4-0-scale-gpa-calculator',
+    canonical: 'https://topgpacalculator.com/gpa-calculators/4-0-scale-gpa-calculator',
   },
 };
 
@@ -27,3 +27,6 @@ export default function Layout({
 }) {
   return children;
 }
+
+
+

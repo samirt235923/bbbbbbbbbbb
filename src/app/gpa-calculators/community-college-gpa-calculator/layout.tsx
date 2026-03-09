@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: 'Community College GPA Calculator – Calculate Your GPA Easily',
     description: 'Use our Community College GPA Calculator to calculate your GPA quickly. Enter your courses, grades, and credit hours to instantly calculate your community college GPA.',
     type: 'website',
-    url: 'https://yourwebsite.com/gpa-calculators/community-college-gpa-calculator',
+    url: 'https://topgpacalculator.com/gpa-calculators/community-college-gpa-calculator',
   },
   twitter: {
     card: 'summary_large_image',
@@ -16,10 +16,13 @@ export const metadata: Metadata = {
     description: 'Use our Community College GPA Calculator to calculate your GPA quickly. Enter your courses, grades, and credit hours to instantly calculate your community college GPA.',
   },
   alternates: {
-    canonical: 'https://yourwebsite.com/gpa-calculators/community-college-gpa-calculator',
+    canonical: 'https://topgpacalculator.com/gpa-calculators/community-college-gpa-calculator',
   },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return children;
 }
+
+
+
