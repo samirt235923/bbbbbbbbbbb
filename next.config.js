@@ -20,6 +20,7 @@ const nextConfig = {
       { source: '/gpa-average-calculator', destination: '/gpa-calculators/gpa-average-calculator', permanent: true },
       { source: '/online-gpa-calculator', destination: '/gpa-calculators/online-gpa-calculator', permanent: true },
       { source: '/college-gpa-calculator', destination: '/gpa-calculators/college-gpa-calculator', permanent: true },
+      { source: '/cumulative-gpa-calculator', destination: '/gpa-calculators/cumulative-gpa-calculator', permanent: true },
       { source: '/gpa-calculators/middle-school-gpa-calculator', destination: '/gpa-calculators/academic-gpa-calculator', permanent: true },
       { source: '/gpa-calculators/unweighted-gpa-calculator', destination: '/gpa-calculators/4-0-scale-gpa-calculator', permanent: true },
       { source: '/gpa-calculators/gpa-to-percentage-calculator', destination: '/gpa-calculators/gpa-to-percentage-converter', permanent: true },
