@@ -1,21 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /api
-Disallow: /*.json$
-
-# Google specific
-User-agent: Googlebot
-Allow: /
+Disallow: /admin/
+Disallow: /api/
 
 Sitemap: https://topgpacalculator.com/sitemap.xml
-
-# Bing specific
-User-agent: Bingbot
-Allow: /
-
-# Rate limiting
-User-agent: *
-Crawl-delay: 1
-
-Sitemap: https://gpacalculator.com/sitemap.xml
