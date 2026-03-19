@@ -20,8 +20,8 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group" onClick={closeMenu}>
-            <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-200">
-              <span className="font-bold text-white text-lg">GPA</span>
+            <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-200 overflow-hidden">
+              <img src="/logo.svg" alt="GPA Calculator Logo" className="w-10 h-10" />
             </div>
             <div className="hidden sm:block">
               <p className="text-xs text-secondary-600 -mt-1">Free & Accurate</p>
