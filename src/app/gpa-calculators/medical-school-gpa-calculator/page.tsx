@@ -4,8 +4,9 @@ import Script from 'next/script';
 import MedicalSchoolGPACalculator from '@/components/MedicalSchoolGPACalculator';
 
 export const metadata: Metadata = {
-  title: 'Medical School GPA Calculator – Calculate Your Pre-Med GPA',
-  description: 'Use our Medical School GPA Calculator to calculate your overall GPA and science GPA for medical school applications. Enter courses, grades, and credits to get your GPA instantly.',
+  title: 'GPA for Medical School Calculator – Estimate Your Med School GPA',
+  description:
+    'Use our GPA for Medical School Calculator to calculate your GPA for medical school applications. Enter your course grades and credits to estimate your GPA instantly.',
 };
 
 export default function MedicalSchoolGPACalculatorPage() {
@@ -48,10 +49,10 @@ export default function MedicalSchoolGPACalculatorPage() {
       },
       {
         "@type": "Question",
-        "name": "How do you calculate pre med GPA?",
+        "name": "How is GPA calculated for med school applications?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Pre-med GPA is calculated by multiplying each course's grade points by credit hours, summing all grade points, then dividing by total credit hours. Use the standard 4.0 scale where A=4.0, A-=3.7, B+=3.3, etc. AMCAS (American Medical College Application Service) recalculates GPA using their own standards."
+          "text": "Med school GPA is calculated by multiplying each course's grade points by credit hours, summing all grade points, and dividing by total credit hours. Use the standard 4.0 scale where A=4.0, A-=3.7, B+=3.3, etc. AMCAS recalculates GPA using their own standards."
         }
       },
       {
@@ -151,27 +152,26 @@ export default function MedicalSchoolGPACalculatorPage() {
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
             <h2 className="text-xl font-bold text-gray-900 mb-4">Table of Contents</h2>
             <ul className="space-y-2 text-sm">
-              <li><a href="#medical-school-gpa-calculator" className="text-blue-600 hover:text-blue-800">Medical School GPA Calculator</a></li>
-              <li><a href="#what-is-medical-school-gpa" className="text-blue-600 hover:text-blue-800">What is a Medical School GPA</a></li>
-              <li><a href="#how-to-calculate-pre-med-gpa" className="text-blue-600 hover:text-blue-800">How to Calculate Pre-Med GPA</a></li>
-              <li><a href="#science-gpa-vs-overall-gpa" className="text-blue-600 hover:text-blue-800">Science GPA vs Overall GPA</a></li>
-              <li><a href="#medical-school-gpa-requirements" className="text-blue-600 hover:text-blue-800">Medical School GPA Requirements</a></li>
-              <li><a href="#example-medical-school-gpa" className="text-blue-600 hover:text-blue-800">Example of Medical School GPA Calculation</a></li>
-              <li><a href="#tips-improve-pre-med-gpa" className="text-blue-600 hover:text-blue-800">Tips to Improve Your Pre-Med GPA</a></li>
+              <li><a href="#gpa-for-medical-school-calculator" className="text-blue-600 hover:text-blue-800">GPA for Medical School Calculator</a></li>
+              <li><a href="#what-gpa-do-you-need-for-medical-school" className="text-blue-600 hover:text-blue-800">What GPA Do You Need for Medical School</a></li>
+              <li><a href="#what-is-science-gpa" className="text-blue-600 hover:text-blue-800">What Is Science GPA (sGPA)</a></li>
+              <li><a href="#how-to-calculate-gpa-for-medical-school" className="text-blue-600 hover:text-blue-800">How to Calculate GPA for Medical School</a></li>
+              <li><a href="#average-gpa-for-medical-school-applicants" className="text-blue-600 hover:text-blue-800">Average GPA for Medical School Applicants</a></li>
+              <li><a href="#tips-to-improve-your-medical-school-gpa" className="text-blue-600 hover:text-blue-800">Tips to Improve Your Medical School GPA</a></li>
               <li><a href="#faq" className="text-blue-600 hover:text-blue-800">Frequently Asked Questions</a></li>
               <li><a href="#related-calculators" className="text-blue-600 hover:text-blue-800">Related GPA Calculators</a></li>
             </ul>
           </div>
 
           {/* Main Heading */}
-          <h1 id="medical-school-gpa-calculator" className="text-4xl font-bold text-gray-900 mb-6">
-            Medical School GPA Calculator
+          <h1 id="gpa-for-medical-school-calculator" className="text-4xl font-bold text-gray-900 mb-6">
+            GPA for Medical School Calculator
           </h1>
 
           <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-            Use our free <strong>medical school GPA calculator</strong> to calculate your overall GPA and science GPA for medical school applications.
+            Use our free <strong>GPA for Medical School Calculator</strong> to calculate your overall GPA and science GPA for medical school applications.
+            This medical school admission GPA calculator is designed for pre-med students who want to estimate their AMCAS GPA and understand how grades impact admissions.
             Our calculator uses the standard 4.0 grading scale and automatically separates science courses (Biology, Chemistry, Physics, Math) to calculate your BCPM GPA.
-            This is essential for pre-med students preparing for AMCAS applications and medical school admissions.
           </p>
 
           {/* Calculator Component */}
@@ -183,8 +183,8 @@ export default function MedicalSchoolGPACalculatorPage() {
           <div className="space-y-12">
             {/* What is a Medical School GPA */}
             <section>
-              <h2 id="what-is-medical-school-gpa" className="text-3xl font-bold text-gray-900 mb-6">
-                What is a Medical School GPA
+              <h2 id="what-gpa-do-you-need-for-medical-school" className="text-3xl font-bold text-gray-900 mb-6">
+                What GPA Do You Need for Medical School
               </h2>
               <p className="text-gray-700 mb-4 leading-relaxed">
                 A medical school GPA is your Grade Point Average as calculated specifically for medical school admissions.
@@ -211,12 +211,12 @@ export default function MedicalSchoolGPACalculatorPage() {
 
             {/* How to Calculate Pre-Med GPA */}
             <section>
-              <h2 id="how-to-calculate-pre-med-gpa" className="text-3xl font-bold text-gray-900 mb-6">
-                How to Calculate Pre-Med GPA
+              <h2 id="how-to-calculate-gpa-for-medical-school" className="text-3xl font-bold text-gray-900 mb-6">
+                How to Calculate GPA for Medical School
               </h2>
               <p className="text-gray-700 mb-4 leading-relaxed">
                 Calculating your pre-med GPA involves converting letter grades to numerical values and applying the GPA formula.
-                The process is straightforward but requires careful attention to which courses are included and how grades are converted.
+                Use this pre-med GPA calculator to test different grade scenarios and see how each course affects your overall and science GPA.
               </p>
               <ol className="list-decimal list-inside space-y-3 text-gray-700 mb-6">
                 <li><strong>Convert grades to points:</strong> Use the standard 4.0 scale (A=4.0, A-=3.7, B+=3.3, etc.)</li>
@@ -231,6 +231,10 @@ export default function MedicalSchoolGPACalculatorPage() {
                 Understanding these rules helps you calculate a more accurate pre-med GPA estimate.
               </p>
               <p className="text-gray-700 mb-4 leading-relaxed">
+                If you repeated a course, AMCAS typically counts the most recent grade in the GPA calculation, so be sure to track retakes separately.
+                Also, some schools recalculate GPA using their own rules, so the calculator is a helpful estimate but always verify with the schools you plan to apply to.
+              </p>
+              <p className="text-gray-700 mb-4 leading-relaxed">
                 For the most accurate calculation, use only courses from your undergraduate degree and apply the standard grading scale.
                 Our medical school GPA calculator automatically handles these calculations for you.
               </p>
@@ -238,8 +242,8 @@ export default function MedicalSchoolGPACalculatorPage() {
 
             {/* Science GPA vs Overall GPA */}
             <section>
-              <h2 id="science-gpa-vs-overall-gpa" className="text-3xl font-bold text-gray-900 mb-6">
-                Science GPA vs Overall GPA
+              <h2 id="what-is-science-gpa" className="text-3xl font-bold text-gray-900 mb-6">
+                What Is Science GPA (sGPA)
               </h2>
               <p className="text-gray-700 mb-4 leading-relaxed">
                 Medical schools evaluate both your overall GPA and your science GPA (BCPM GPA) separately.
@@ -279,8 +283,8 @@ export default function MedicalSchoolGPACalculatorPage() {
 
             {/* Medical School GPA Requirements */}
             <section>
-              <h2 id="medical-school-gpa-requirements" className="text-3xl font-bold text-gray-900 mb-6">
-                Medical School GPA Requirements
+              <h2 id="average-gpa-for-medical-school-applicants" className="text-3xl font-bold text-gray-900 mb-6">
+                Average GPA for Medical School Applicants
               </h2>
               <p className="text-gray-700 mb-4 leading-relaxed">
                 GPA requirements for medical school vary significantly by school prestige and selectivity.
@@ -353,71 +357,48 @@ export default function MedicalSchoolGPACalculatorPage() {
                 Let's walk through a complete medical school GPA calculation with typical pre-med courses.
               </p>
               <div className="bg-white border border-gray-200 rounded-lg p-6 mb-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Sample Pre-Med Courses</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Example Calculation</h3>
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  Use the table below to see how grade points are calculated for each course and how they contribute to your GPA.
+                </p>
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse border border-gray-300">
                     <thead>
                       <tr className="bg-gray-50">
                         <th className="border border-gray-300 px-4 py-2 text-left">Course</th>
                         <th className="border border-gray-300 px-4 py-2 text-center">Grade</th>
-                        <th className="border border-gray-300 px-4 py-2 text-center">Grade Points</th>
                         <th className="border border-gray-300 px-4 py-2 text-center">Credits</th>
-                        <th className="border border-gray-300 px-4 py-2 text-center">Quality Points</th>
+                        <th className="border border-gray-300 px-4 py-2 text-center">Grade Points</th>
                         <th className="border border-gray-300 px-4 py-2 text-center">Category</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td className="border border-gray-300 px-4 py-2">Biology 101</td>
+                        <td className="border border-gray-300 px-4 py-2">Biology</td>
                         <td className="border border-gray-300 px-4 py-2 text-center">A</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">4.00</td>
                         <td className="border border-gray-300 px-4 py-2 text-center">4</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">16.00</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">Biology</td>
+                        <td className="border border-gray-300 px-4 py-2 text-center">16.0</td>
+                        <td className="border border-gray-300 px-4 py-2 text-center">Science</td>
                       </tr>
-                      <tr>
-                        <td className="border border-gray-300 px-4 py-2">General Chemistry</td>
+                      <tr className="bg-gray-50">
+                        <td className="border border-gray-300 px-4 py-2">Chemistry</td>
                         <td className="border border-gray-300 px-4 py-2 text-center">B+</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">3.33</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">4</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">13.32</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">Chemistry</td>
-                      </tr>
-                      <tr>
-                        <td className="border border-gray-300 px-4 py-2">Organic Chemistry</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">A-</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">3.67</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">4</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">14.68</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">Chemistry</td>
-                      </tr>
-                      <tr>
-                        <td className="border border-gray-300 px-4 py-2">Physics I</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">B</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">3.00</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">4</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">12.00</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">Physics</td>
-                      </tr>
-                      <tr>
-                        <td className="border border-gray-300 px-4 py-2">Calculus I</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">A</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">4.00</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">4</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">16.00</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">Math</td>
-                      </tr>
-                      <tr>
-                        <td className="border border-gray-300 px-4 py-2">English Literature</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">B</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">3.00</td>
                         <td className="border border-gray-300 px-4 py-2 text-center">3</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">9.00</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">Other</td>
+                        <td className="border border-gray-300 px-4 py-2 text-center">9.9</td>
+                        <td className="border border-gray-300 px-4 py-2 text-center">Science</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 px-4 py-2">Psychology</td>
+                        <td className="border border-gray-300 px-4 py-2 text-center">A-</td>
+                        <td className="border border-gray-300 px-4 py-2 text-center">3</td>
+                        <td className="border border-gray-300 px-4 py-2 text-center">11.1</td>
+                        <td className="border border-gray-300 px-4 py-2 text-center">Non-Science</td>
                       </tr>
                       <tr className="bg-blue-50">
-                        <td className="border border-gray-300 px-4 py-2 font-bold" colSpan={5}>TOTALS</td>
-                        <td className="border border-gray-300 px-4 py-2 text-center font-bold">81.00</td>
+                        <td className="border border-gray-300 px-4 py-2 font-bold" colSpan={2}>Totals</td>
+                        <td className="border border-gray-300 px-4 py-2 text-center font-bold">10</td>
+                        <td className="border border-gray-300 px-4 py-2 text-center font-bold">37.0</td>
+                        <td className="border border-gray-300 px-4 py-2 text-center font-bold"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -426,25 +407,25 @@ export default function MedicalSchoolGPACalculatorPage() {
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                   <h4 className="text-lg font-bold text-blue-900 mb-2">Overall GPA</h4>
-                  <div className="text-2xl font-bold text-blue-600">3.57</div>
-                  <div className="text-sm text-blue-700">81.00 ÷ 23 credits</div>
+                  <div className="text-2xl font-bold text-blue-600">3.70</div>
+                  <div className="text-sm text-blue-700">37 ÷ 10 credits</div>
                 </div>
                 <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                   <h4 className="text-lg font-bold text-green-900 mb-2">Science GPA</h4>
-                  <div className="text-2xl font-bold text-green-600">3.62</div>
-                  <div className="text-sm text-green-700">72.00 ÷ 20 credits</div>
+                  <div className="text-2xl font-bold text-green-600">3.70</div>
+                  <div className="text-sm text-green-700">25.9 ÷ 7 credits</div>
                 </div>
               </div>
               <p className="text-gray-700 mb-4 leading-relaxed">
-                This example shows a competitive pre-med GPA profile. The 3.57 overall GPA and 3.62 science GPA would be competitive
-                for many medical schools, especially when combined with a strong MCAT score and extracurricular activities.
+                In this example, the science GPA only includes Biology and Chemistry, which gives a science GPA of 3.70.
+                Your overall GPA includes all courses in the semester.
               </p>
             </section>
 
             {/* Tips to Improve GPA */}
             <section>
-              <h2 id="tips-improve-pre-med-gpa" className="text-3xl font-bold text-gray-900 mb-6">
-                Tips to Improve Your Pre-Med GPA
+              <h2 id="tips-to-improve-your-medical-school-gpa" className="text-3xl font-bold text-gray-900 mb-6">
+                Tips to Improve Your Medical School GPA
               </h2>
               <p className="text-gray-700 mb-4 leading-relaxed">
                 If your current GPA is below your target medical schools' medians, there are strategic ways to strengthen your application.
@@ -525,10 +506,10 @@ export default function MedicalSchoolGPACalculatorPage() {
                   </p>
                 </div>
                 <div className="bg-white border border-gray-200 rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">How do you calculate pre med GPA?</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">How is GPA calculated for med school applications?</h3>
                   <p className="text-gray-700">
-                    Pre-med GPA is calculated by multiplying each course's grade points by credit hours, summing all grade points, then dividing by total credit hours.
-                    Use the standard 4.0 scale where A=4.0, A-=3.7, B+=3.3, etc. AMCAS (American Medical College Application Service) recalculates GPA using their own standards.
+                    Med school GPA is calculated by multiplying each course's grade points by credit hours, summing all grade points, then dividing by total credit hours.
+                    Use the standard 4.0 scale where A=4.0, A-=3.7, B+=3.3, etc. AMCAS recalculates GPA using their own standards.
                   </p>
                 </div>
                 <div className="bg-white border border-gray-200 rounded-lg p-6">
@@ -568,25 +549,21 @@ export default function MedicalSchoolGPACalculatorPage() {
                   <h3 className="font-bold text-gray-900 mb-2">College GPA Calculator</h3>
                   <p className="text-gray-600 text-sm">Calculate your college GPA with our easy-to-use tool.</p>
                 </Link>
-                <Link href="/gpa-calculators/nursing-gpa-calculator" className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-                  <h3 className="font-bold text-gray-900 mb-2">Nursing GPA Calculator</h3>
-                  <p className="text-gray-600 text-sm">Calculate GPA for nursing school applications.</p>
+                <Link href="/gpa-calculators/term-gpa-calculator" className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                  <h3 className="font-bold text-gray-900 mb-2">Term GPA Calculator</h3>
+                  <p className="text-gray-600 text-sm">Track GPA for a single semester or term.</p>
+                </Link>
+                <Link href="/gpa-calculators/gpa-projection-calculator" className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                  <h3 className="font-bold text-gray-900 mb-2">GPA Projection Calculator</h3>
+                  <p className="text-gray-600 text-sm">See how future grades can impact your GPA.</p>
+                </Link>
+                <Link href="/gpa-calculators/gpa-improvement-calculator" className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                  <h3 className="font-bold text-gray-900 mb-2">GPA Improvement Calculator</h3>
+                  <p className="text-gray-600 text-sm">Plan the grades needed to hit your GPA goals.</p>
                 </Link>
                 <Link href="/gpa-calculators/weighted-gpa-calculator" className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
                   <h3 className="font-bold text-gray-900 mb-2">Weighted GPA Calculator</h3>
                   <p className="text-gray-600 text-sm">Calculate GPA with Honors and AP course weighting.</p>
-                </Link>
-                <Link href="/gpa-calculators/cumulative-gpa-calculator" className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-                  <h3 className="font-bold text-gray-900 mb-2">Cumulative GPA Calculator</h3>
-                  <p className="text-gray-600 text-sm">Calculate your overall GPA across multiple semesters.</p>
-                </Link>
-                <Link href="/gpa-calculators/semester-gpa-calculator" className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-                  <h3 className="font-bold text-gray-900 mb-2">Semester GPA Calculator</h3>
-                  <p className="text-gray-600 text-sm">Focus on individual semester performance.</p>
-                </Link>
-                <Link href="/gpa-calculators/high-school-gpa-calculator" className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-                  <h3 className="font-bold text-gray-900 mb-2">High School GPA Calculator</h3>
-                  <p className="text-gray-600 text-sm">Perfect for high school students tracking their academic progress.</p>
                 </Link>
               </div>
             </section>
@@ -599,8 +576,8 @@ export default function MedicalSchoolGPACalculatorPage() {
               </p>
               <ul className="space-y-2 text-blue-600">
                 <li><a href="https://students-residents.aamc.org" target="_blank" rel="noopener noreferrer" className="hover:underline">AAMC Students & Residents</a></li>
-                <li><a href="https://www.aamc.org" target="_blank" rel="noopener noreferrer" className="hover:underline">Association of American Medical Colleges (AAMC)</a></li>
-                <li><a href="https://www.collegeboard.org" target="_blank" rel="noopener noreferrer" className="hover:underline">College Board - Medical School Information</a></li>
+                <li><a href="https://www.khanacademy.org" target="_blank" rel="noopener noreferrer" className="hover:underline">Khan Academy</a></li>
+                <li><a href="https://nces.ed.gov" target="_blank" rel="noopener noreferrer" className="hover:underline">National Center for Education Statistics (NCES)</a></li>
               </ul>
             </section>
           </div>

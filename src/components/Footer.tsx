@@ -124,6 +124,12 @@ export default function Footer() {
                   Terms of Service
                 </Link>
               </li>
+              <li>
+                <Link href="/disclaimer" className="text-secondary-300 hover:text-white transition-colors duration-200 flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3 group-hover:bg-primary-400 transition-colors"></span>
+                  Disclaimer
+                </Link>
+              </li>
             </ul>
           </div>
 

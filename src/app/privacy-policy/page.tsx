@@ -41,7 +41,18 @@ export default function PrivacyPolicyPage() {
             <li>Browse our website</li>
           </ul>
 
-          <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-4">3. How We Use Your Information</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-4">3. Data Collection</h2>
+          <p className="text-gray-700 mb-6">
+            We collect data to operate and improve the website. This may include:
+          </p>
+          <ul className="list-disc list-inside space-y-2 text-gray-700 mb-6">
+            <li>Usage data (pages visited, time on site, interaction events)</li>
+            <li>Device and browser information (IP address, user agent, screen size)</li>
+            <li>Cookies and similar tracking technologies</li>
+            <li>Data you provide directly (form submissions, support requests)</li>
+          </ul>
+
+          <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-4">4. How We Use Your Information</h2>
           <p className="text-gray-700 mb-6">
             We use the information we collect for various purposes:
           </p>
@@ -53,7 +64,7 @@ export default function PrivacyPolicyPage() {
             <li>To improve website functionality</li>
           </ul>
 
-          <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-4">4. Data Security</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-4">5. Data Security</h2>
           <p className="text-gray-700 mb-6">
             We implement appropriate technical and organizational measures to protect your personal information
             against unauthorized access, alteration, disclosure, or destruction.
@@ -66,11 +77,12 @@ export default function PrivacyPolicyPage() {
             information.
           </p>
 
-          <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-4">6. Google Analytics</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-4">6. Google Analytics and Google AdSense</h2>
           <p className="text-gray-700 mb-6">
-            We use Google Analytics to analyze website traffic. Google Analytics uses cookies to track page
-            views and user interactions. For more information, please visit the Google Analytics privacy
-            policy.
+            We use Google Analytics to analyze website traffic and improve user experiences. Google Analytics
+            uses cookies to track page views and user interactions. We also display advertisements through Google
+            AdSense, which may collect information about your visits to this and other sites to provide targeted ads.
+            For more information, please review the Google Analytics and Google AdSense privacy policies.
           </p>
 
           <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-4">7. Cookies</h2>

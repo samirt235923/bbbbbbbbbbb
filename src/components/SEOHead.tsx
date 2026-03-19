@@ -16,6 +16,13 @@ export default function SEOHead({
   ogType = 'website',
   twitterHandle = '@gpaCalculator',
 }: SEOProps) {
+  const siteRoot = 'https://topgpacalculator.com';
+  const canonicalUrl = canonical
+    ? canonical.startsWith('http://') || canonical.startsWith('https://')
+      ? canonical
+      : `${siteRoot}${canonical.startsWith('/') ? canonical : '/' + canonical}`
+    : undefined;
+
   return (
     <>
       <meta charSet="UTF-8" />
@@ -26,7 +33,7 @@ export default function SEOHead({
       <meta name="language" content="English" />
       
       {/* Canonical Tag */}
-      {canonical && <link rel="canonical" href={canonical} />}
+      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
       
       {/* Open Graph Tags */}
       <meta property="og:title" content={title} />

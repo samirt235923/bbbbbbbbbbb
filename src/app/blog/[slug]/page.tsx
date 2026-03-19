@@ -113,29 +113,11 @@ export default async function BlogPostPage({ params }: Props) {
                   {post.excerpt}
                 </p>
 
-                <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-4">Introduction</h2>
-                <p className="text-gray-700 mb-6">
-                  Understanding how to manage your GPA is crucial for your academic success. Whether you're
-                  just starting your academic journey or looking to improve your current standing, this guide
-                  will provide you with comprehensive strategies and insights.
-                </p>
-
-                <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-4">Key Points Covered</h2>
-                <ul className="list-disc list-inside space-y-2 text-gray-700 mb-6">
-                  <li>Understanding the importance of GPA</li>
-                  <li>Practical strategies for improvement</li>
-                  <li>Time management techniques</li>
-                  <li>Resource utilization tips</li>
-                  <li>Common mistakes to avoid</li>
-                </ul>
-
-                <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-4">Detailed Analysis</h2>
-                <p className="text-gray-700 mb-6">
-                  Your Grade Point Average (GPA) is more than just a number—it's a reflection of your dedication
-                  to your studies and your commitment to academic excellence. Many students underestimate the
-                  importance of maintaining a strong GPA until they start applying to colleges, graduate programs,
-                  or searching for employment.
-                </p>
+                {post.content.split('\n\n').map((paragraph, index) => (
+                  <p key={index} className="text-gray-700 mb-6">
+                    {paragraph}
+                  </p>
+                ))}
 
                 <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-4">Actionable Recommendations</h2>
                 <ol className="list-decimal list-inside space-y-3 text-gray-700 mb-6">

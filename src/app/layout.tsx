@@ -22,6 +22,7 @@ export const metadata: Metadata = {
         url: 'https://topgpacalculator.com/og-image.png',
         width: 1200,
         height: 630,
+        alt: 'Top GPA Calculator social card',
       },
     ],
   },
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
     title: 'GPA Calculator - Free & Accurate GPA Calculator for Students',
     description: 'Calculate your GPA instantly with our free GPA calculator.',
     creator: '@gpacalculator',
+    images: ['https://topgpacalculator.com/og-image.png'],
   },
   robots: {
     index: true,
@@ -58,8 +60,13 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#0066cc" />
-        <link rel="canonical" href="https://topgpacalculator.com" />
+        <meta property="og:image" content="https://topgpacalculator.com/og-image.png" />
+        <meta property="og:image:alt" content="Top GPA Calculator social card" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:image" content="https://topgpacalculator.com/og-image.png" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       </head>
       <body className="bg-white">
         <Header />

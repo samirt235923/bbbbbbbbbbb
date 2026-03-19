@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Law School GPA Calculator – Calculate Your LSAC GPA',
     description: 'Use our Law School GPA Calculator to estimate your GPA for law school applications. Enter your courses, grades, and credits to calculate your LSAC-style GPA.',
-    url: 'https://topgpacalculator.com/law-school-gpa-calculator',
+    url: 'https://topgpacalculator.com/gpa-calculators/law-school-gpa-calculator',
     siteName: 'GPA Calculator',
     type: 'website',
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: 'Use our Law School GPA Calculator to estimate your GPA for law school applications. Enter your courses, grades, and credits to calculate your LSAC-style GPA.',
   },
   alternates: {
-    canonical: 'https://topgpacalculator.com/law-school-gpa-calculator',
+    canonical: 'https://topgpacalculator.com/gpa-calculators/law-school-gpa-calculator',
   },
 };
 

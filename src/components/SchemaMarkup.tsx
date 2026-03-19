@@ -92,6 +92,48 @@ export function BreadcrumbSchema({ items }: { items: Array<{ name: string; url: 
   );
 }
 
+export function ArticleSchema({
+  headline,
+  description,
+  author,
+  datePublished,
+  dateModified
+}: {
+  headline: string;
+  description: string;
+  author: string;
+  datePublished: string;
+  dateModified: string;
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: headline,
+    description: description,
+    author: {
+      '@type': 'Person',
+      name: author,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'GPA Calculator',
+    },
+    datePublished: datePublished,
+    dateModified: dateModified,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': typeof window !== 'undefined' ? window.location.href : '',
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 
 
 

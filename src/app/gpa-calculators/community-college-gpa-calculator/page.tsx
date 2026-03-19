@@ -61,23 +61,41 @@ export default function CommunityCollegeGpaPage() {
         </nav>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Table of Contents</h2>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#calculator" className="text-blue-600 hover:text-blue-800">Calculator</a></li>
-              <li><a href="#what-is-gpa" className="text-blue-600 hover:text-blue-800">What is a Community College GPA</a></li>
-              <li><a href="#how-to-calc" className="text-blue-600 hover:text-blue-800">How to Calculate Community College GPA</a></li>
-              <li><a href="#formula" className="text-blue-600 hover:text-blue-800">GPA Formula Explained</a></li>
-              <li><a href="#example" className="text-blue-600 hover:text-blue-800">Example Calculation</a></li>
-              <li><a href="#good-gpa" className="text-blue-600 hover:text-blue-800">What is a Good GPA</a></li>
-              <li><a href="#transfer" className="text-blue-600 hover:text-blue-800">GPA &amp; University Transfer</a></li>
-              <li><a href="#faq" className="text-blue-600 hover:text-blue-800">FAQ</a></li>
-              <li><a href="#related" className="text-blue-600 hover:text-blue-800">Related Calculators</a></li>
-            </ul>
-          </div>
-
           <h1 id="calculator" className="text-4xl font-bold text-gray-900 mb-6">Community College GPA Calculator</h1>
           <p className="text-lg text-gray-700 mb-8 leading-relaxed">Use our <strong>community college GPA calculator</strong> to compute your GPA instantly. Simply add your course names, credit hours, and grades.</p>
+
+          <section>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">How to Use the Calculator</h2>
+            <p className="text-gray-700 mb-4 leading-relaxed">Enter your course information below. Select your grade from the dropdown, enter credit hours, and click "Calculate GPA" to see your results.</p>
+            <h3 className="text-2xl font-semibold text-gray-800 mb-4">Grade Conversion Table</h3>
+            <div className="bg-white border border-gray-200 rounded-lg p-6 mb-6">
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse border border-gray-300">
+                  <thead>
+                    <tr className="bg-gray-50">
+                      <th className="border px-4 py-2 text-left">Letter Grade</th>
+                      <th className="border px-4 py-2 text-center">GPA Value</th>
+                      <th className="border px-4 py-2 text-left">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td className="border px-4 py-2">A</td><td className="border px-4 py-2 text-center">4.0</td><td className="border px-4 py-2">Excellent</td></tr>
+                    <tr><td className="border px-4 py-2">A-</td><td className="border px-4 py-2 text-center">3.7</td><td className="border px-4 py-2">Excellent</td></tr>
+                    <tr><td className="border px-4 py-2">B+</td><td className="border px-4 py-2 text-center">3.3</td><td className="border px-4 py-2">Good</td></tr>
+                    <tr><td className="border px-4 py-2">B</td><td className="border px-4 py-2 text-center">3.0</td><td className="border px-4 py-2">Good</td></tr>
+                    <tr><td className="border px-4 py-2">B-</td><td className="border px-4 py-2 text-center">2.7</td><td className="border px-4 py-2">Good</td></tr>
+                    <tr><td className="border px-4 py-2">C+</td><td className="border px-4 py-2 text-center">2.3</td><td className="border px-4 py-2">Satisfactory</td></tr>
+                    <tr><td className="border px-4 py-2">C</td><td className="border px-4 py-2 text-center">2.0</td><td className="border px-4 py-2">Satisfactory</td></tr>
+                    <tr><td className="border px-4 py-2">C-</td><td className="border px-4 py-2 text-center">1.7</td><td className="border px-4 py-2">Satisfactory</td></tr>
+                    <tr><td className="border px-4 py-2">D+</td><td className="border px-4 py-2 text-center">1.3</td><td className="border px-4 py-2">Poor</td></tr>
+                    <tr><td className="border px-4 py-2">D</td><td className="border px-4 py-2 text-center">1.0</td><td className="border px-4 py-2">Poor</td></tr>
+                    <tr><td className="border px-4 py-2">F</td><td className="border px-4 py-2 text-center">0.0</td><td className="border px-4 py-2">Fail</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
           <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-12">
             <CommunityCollegeGPACalculator />
           </div>

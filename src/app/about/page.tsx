@@ -25,11 +25,23 @@ export default function AboutPage() {
       {/* Content */}
       <section className="py-12 bg-white">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Mission</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">Who We Are</h2>
           <p className="text-gray-700 mb-6 leading-relaxed">
-            GPA Calculator is dedicated to helping students understand and improve their academic performance.
-            We believe that every student deserves easy access to accurate GPA calculation tools and educational
-            resources to guide their academic journey.
+            We are a small, student-first team focused on building simple and reliable GPA tools for learners worldwide.
+            Our goal is to make academic planning easier and more transparent for students at all stages.
+          </p>
+
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">Mission</h2>
+          <p className="text-gray-700 mb-6 leading-relaxed">
+            Our mission is to provide accurate, practical, and free GPA calculators plus guidance, so every student can
+            track progress with confidence and make informed academic decisions.
+          </p>
+
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">Experience</h2>
+          <p className="text-gray-700 mb-6 leading-relaxed">
+            Although we started in 2024, we bring active experience helping students improve GPA management through
+            consistent tool updates, user feedback, and real-world education best practices.
+            We are transparent about our beginner-stage journey and committed to growing expertise every day.
           </p>
 
           <h2 className="text-3xl font-bold text-gray-800 mb-6 mt-12">What We Offer</h2>
@@ -59,6 +71,13 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
+
+          <h2 className="text-3xl font-bold text-gray-800 mb-6 mt-12">Why Trust Us</h2>
+          <p className="text-gray-700 mb-4 leading-relaxed">
+            We provide transparent methodology, open calculator formulas, and a privacy-first user experience.
+            Our tools are built using standard grading systems recognized across US schools and colleges.
+            We do not require sign-in, and there are no hidden costs, so students can trust us to be reliable and fair.
+          </p>
 
           <h2 className="text-3xl font-bold text-gray-800 mb-6 mt-12">Why Choose Us?</h2>
           <ul className="list-disc list-inside space-y-3 text-gray-700 mb-8">

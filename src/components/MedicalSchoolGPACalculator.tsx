@@ -2,12 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 
+type CourseCategory = 'Science' | 'Non-Science';
+
 interface Course {
   id: number;
   name: string;
   credits: number;
   grade: string;
-  category: string;
+  category: CourseCategory;
 }
 
 interface GPAResult {
@@ -22,7 +24,7 @@ interface GPAResult {
     grade: string;
     credits: number;
     gradePoints: number;
-    category: string;
+    category: CourseCategory;
   }>;
 }
 
@@ -39,15 +41,15 @@ const gradePoints: { [key: string]: number } = {
   'F': 0.0,
 };
 
-const scienceCategories = ['Biology', 'Chemistry', 'Physics', 'Math'];
+const scienceCategories: CourseCategory[] = ['Science'];
 
 const exampleCourses: Course[] = [
-  { id: 1, name: 'General Biology', credits: 4, grade: 'A', category: 'Biology' },
-  { id: 2, name: 'General Chemistry', credits: 4, grade: 'B+', category: 'Chemistry' },
-  { id: 3, name: 'Organic Chemistry', credits: 4, grade: 'A-', category: 'Chemistry' },
-  { id: 4, name: 'Physics I', credits: 4, grade: 'B', category: 'Physics' },
-  { id: 5, name: 'Calculus I', credits: 4, grade: 'A', category: 'Math' },
-  { id: 6, name: 'English Literature', credits: 3, grade: 'B', category: 'Other' },
+  { id: 1, name: 'Biology 101', credits: 4, grade: 'A', category: 'Science' },
+  { id: 2, name: 'General Chemistry', credits: 4, grade: 'B+', category: 'Science' },
+  { id: 3, name: 'Organic Chemistry', credits: 4, grade: 'A-', category: 'Science' },
+  { id: 4, name: 'Physics I', credits: 4, grade: 'B', category: 'Science' },
+  { id: 5, name: 'Calculus I', credits: 4, grade: 'A', category: 'Science' },
+  { id: 6, name: 'English Literature', credits: 3, grade: 'B', category: 'Non-Science' },
 ];
 
 const MedicalSchoolGPACalculator: React.FC = () => {
@@ -110,7 +112,7 @@ const MedicalSchoolGPACalculator: React.FC = () => {
       name: '',
       credits: 3,
       grade: 'A',
-      category: 'Biology',
+      category: 'Science',
     };
     setCourses([...courses, newCourse]);
     setNextId(nextId + 1);
@@ -236,14 +238,11 @@ const MedicalSchoolGPACalculator: React.FC = () => {
                 </label>
                 <select
                   value={course.category}
-                  onChange={(e) => updateCourse(course.id, 'category', e.target.value)}
+                  onChange={(e) => updateCourse(course.id, 'category', e.target.value as CourseCategory)}
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
-                  <option value="Biology">Biology</option>
-                  <option value="Chemistry">Chemistry</option>
-                  <option value="Physics">Physics</option>
-                  <option value="Math">Math</option>
-                  <option value="Other">Other</option>
+                  <option value="Science">Science (Biology/Chemistry/Physics/Math)</option>
+                  <option value="Non-Science">Non-Science</option>
                 </select>
               </div>
               <div className="flex items-center">
