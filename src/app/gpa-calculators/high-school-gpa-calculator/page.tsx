@@ -5,10 +5,14 @@ export const metadata: Metadata = {
   title: 'High School GPA Calculator (Free & Accurate) – Calculate Your GPA',
   description: 'Use our free High School GPA Calculator to calculate your GPA instantly. Enter your classes, grades, and credits to get your accurate high school GPA.',
   keywords: 'high school gpa calculator, calculate high school gpa, how to calculate high school gpa, weighted gpa calculator high school, unweighted gpa calculator',
+  alternates: {
+    canonical: 'https://topgpacalculator.com/gpa-calculators/high-school-gpa-calculator',
+  },
   openGraph: {
     title: 'High School GPA Calculator (Free & Accurate) – Calculate Your GPA',
     description: 'Use our free High School GPA Calculator to calculate your GPA instantly. Enter your classes, grades, and credits to get your accurate high school GPA.',
     type: 'website',
+    url: 'https://topgpacalculator.com/gpa-calculators/high-school-gpa-calculator',
   },
   twitter: {
     card: 'summary_large_image',
