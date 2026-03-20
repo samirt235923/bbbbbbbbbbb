@@ -1,12 +1,39 @@
 import Link from 'next/link';
 import GPACalculator from '@/components/GPACalculator';
+import FAQ from '@/components/FAQ';
+import { FAQSchema, OrganizationSchema, WebPageSchema } from '@/components/SchemaMarkup';
 import { calculatorData } from '@/data/calculators';
 
 export default function Home() {
   const featuredCalculators = calculatorData.slice(0, 6);
+  const pageUrl = 'https://topgpacalculator.com';
+  const pageTitle = 'GPA Calculator - Free & Accurate GPA Calculator for Students';
+  const pageDescription =
+    'Calculate your GPA instantly with our free GPA calculator. Perfect for college and high school students. Accurate, fast, and easy to use.';
+  const faqData = [
+    {
+      question: 'Is this GPA calculator free to use?',
+      answer: 'Yes. Our GPA calculator is completely free and does not require any sign-up.',
+    },
+    {
+      question: 'How is GPA calculated?',
+      answer: 'We use the standard 4.0 scale formula: total grade points divided by total credit hours.',
+    },
+    {
+      question: 'Can I use this for high school and college GPAs?',
+      answer: 'Absolutely. The calculator works for both high school and college coursework.',
+    },
+    {
+      question: 'Does the calculator work on mobile devices?',
+      answer: 'Yes. The calculator is fully mobile-friendly and works on phones and tablets.',
+    },
+  ];
 
   return (
     <>
+      <OrganizationSchema />
+      <WebPageSchema title={pageTitle} description={pageDescription} url={pageUrl} />
+      <FAQSchema faqs={faqData} />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 via-transparent to-secondary-500/5"></div>
@@ -411,6 +438,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <div id="faq" className="bg-white">
+        <FAQ items={faqData} />
+      </div>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary-600 to-primary-700">

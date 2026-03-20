@@ -72,6 +72,34 @@ export function OrganizationSchema() {
   );
 }
 
+export function WebPageSchema({ title, description, url }: SchemaMarkupProps) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: title,
+    description: description,
+    url: url,
+    inLanguage: 'en-US',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'GPA Calculator',
+      url: 'https://topgpacalculator.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'GPA Calculator',
+      url: 'https://topgpacalculator.com',
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 export function BreadcrumbSchema({ items }: { items: Array<{ name: string; url: string }> }) {
   const schema = {
     '@context': 'https://schema.org',
