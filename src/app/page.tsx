@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import GPACalculator from '@/components/GPACalculator';
 import FAQ from '@/components/FAQ';
-import { FAQSchema, OrganizationSchema, WebPageSchema } from '@/components/SchemaMarkup';
+import { HomePageSchema } from '@/components/SchemaMarkup';
 import { calculatorData } from '@/data/calculators';
 
 export default function Home() {
@@ -31,9 +31,11 @@ export default function Home() {
 
   return (
     <>
-      <OrganizationSchema />
-      <WebPageSchema title={pageTitle} description={pageDescription} url={pageUrl} />
-      <FAQSchema faqs={faqData} />
+      <HomePageSchema
+        title={pageTitle}
+        description={pageDescription}
+        url={pageUrl}
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 via-transparent to-secondary-500/5"></div>
@@ -435,6 +437,59 @@ export default function Home() {
             >
               Read More Articles
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* GPA Guide */}
+      <section className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl lg:text-4xl font-bold text-secondary-900 mb-4">
+              How GPA Is Calculated
+            </h2>
+            <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
+              Your GPA is a weighted average of your course grades based on credit hours. Our calculator
+              uses the standard 4.0 scale most U.S. schools follow, so you can quickly see where you stand
+              and what it takes to reach your target.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="card p-6">
+              <h3 className="text-xl font-bold text-secondary-900 mb-3">1. Convert Grades</h3>
+              <p className="text-secondary-600 leading-relaxed">
+                Each letter grade converts to a grade point value. For example, an A is typically 4.0,
+                a B is 3.0, and so on. Some schools use plus/minus values like 3.7 or 3.3.
+              </p>
+            </div>
+            <div className="card p-6">
+              <h3 className="text-xl font-bold text-secondary-900 mb-3">2. Multiply by Credits</h3>
+              <p className="text-secondary-600 leading-relaxed">
+                Multiply each course’s grade points by its credit hours to get quality points. This
+                ensures higher‑credit courses have more impact on your final GPA.
+              </p>
+            </div>
+            <div className="card p-6">
+              <h3 className="text-xl font-bold text-secondary-900 mb-3">3. Divide by Total Credits</h3>
+              <p className="text-secondary-600 leading-relaxed">
+                Add all quality points together, then divide by total credit hours. The result is your
+                GPA, which you can track each term or across your entire academic history.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-10 text-secondary-600 leading-relaxed space-y-4">
+            <p>
+              If your school uses a weighted GPA, honors or AP courses may carry extra points. You can
+              account for that by selecting the correct grade value in the calculator. For unweighted
+              GPAs, every course uses the same 4.0 scale regardless of difficulty.
+            </p>
+            <p>
+              Not sure which scale your school uses? Start with the standard 4.0 scale and compare your
+              result with your transcript. If they differ, try the weighted GPA calculator to match your
+              school’s policy.
+            </p>
           </div>
         </div>
       </section>

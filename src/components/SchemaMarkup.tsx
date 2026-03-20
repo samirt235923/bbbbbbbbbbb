@@ -11,10 +11,25 @@ interface SchemaMarkupProps {
   url?: string;
 }
 
-export function FAQSchema({ faqs }: { faqs: FAQItem[] }) {
+const SITE_URL = 'https://topgpacalculator.com';
+const ORG_NAME = 'GPA Calculator';
+const ORG_ID = `${SITE_URL}/#organization`;
+const WEBSITE_ID = `${SITE_URL}/#website`;
+const LOGO_URL = `${SITE_URL}/logo.svg`;
+
+export function FAQSchema({ faqs, url }: { faqs: FAQItem[]; url?: string }) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    ...(url
+      ? {
+          '@id': `${url}#faq`,
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `${url}#webpage`,
+          },
+        }
+      : {}),
     mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
@@ -23,6 +38,65 @@ export function FAQSchema({ faqs }: { faqs: FAQItem[] }) {
         text: faq.answer,
       },
     })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function HomePageSchema({
+  title,
+  description,
+  url,
+}: {
+  title: string;
+  description: string;
+  url: string;
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': ORG_ID,
+        name: ORG_NAME,
+        url: `${SITE_URL}/`,
+        logo: LOGO_URL,
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${url}#webpage`,
+        url: `${url}/`,
+        name: title,
+        description: description,
+        inLanguage: 'en-US',
+        publisher: {
+          '@id': ORG_ID,
+        },
+      },
+      {
+        '@type': 'SoftwareApplication',
+        '@id': `${url}#app`,
+        name: ORG_NAME,
+        applicationCategory: 'EducationalApplication',
+        operatingSystem: 'All',
+        url: `${url}/`,
+        description: 'Free online GPA calculator for students to calculate grade point average.',
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'USD',
+        },
+        potentialAction: {
+          '@type': 'CalculateAction',
+          target: `${url}/`,
+        },
+      },
+    ],
   };
 
   return (
@@ -55,8 +129,10 @@ export function OrganizationSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'GPA Calculator',
-    url: 'https://topgpacalculator.com',
+    '@id': ORG_ID,
+    name: ORG_NAME,
+    url: SITE_URL,
+    logo: LOGO_URL,
     description: 'Free GPA calculator for students',
     sameAs: [
       'https://www.facebook.com/gpacalculator',
@@ -76,19 +152,19 @@ export function WebPageSchema({ title, description, url }: SchemaMarkupProps) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
+    '@id': url ? `${url}#webpage` : undefined,
     name: title,
     description: description,
     url: url,
     inLanguage: 'en-US',
     isPartOf: {
       '@type': 'WebSite',
-      name: 'GPA Calculator',
-      url: 'https://topgpacalculator.com',
+      '@id': WEBSITE_ID,
+      name: ORG_NAME,
+      url: SITE_URL,
     },
     publisher: {
-      '@type': 'Organization',
-      name: 'GPA Calculator',
-      url: 'https://topgpacalculator.com',
+      '@id': ORG_ID,
     },
   };
 
