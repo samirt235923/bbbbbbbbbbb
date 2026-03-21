@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {};
   }
 
-  const url = `https://gpacalculator.com/blog/${post.slug}`;
+  const url = `https://topgpacalculator.com/blog/${post.slug}`;
 
   return {
     title: post.title,
@@ -69,7 +69,7 @@ export default async function BlogPostPage({ params }: Props) {
             '@type': 'BlogPosting',
             headline: post.title,
             description: post.excerpt,
-            image: 'https://gpacalculator.com/og-image.png',
+            image: 'https://topgpacalculator.com/og-image.png',
             datePublished: post.publishedDate,
             author: {
               '@type': 'Person',

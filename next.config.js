@@ -8,6 +8,12 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.topgpacalculator.com' }],
+        destination: 'https://topgpacalculator.com/:path*',
+        permanent: true,
+      },
       { source: '/index.html', destination: '/', permanent: true },
       { source: '/index.htm', destination: '/', permanent: true },
       { source: '/index.php', destination: '/', permanent: true },

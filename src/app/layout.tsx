@@ -12,6 +12,17 @@ export const metadata: Metadata = {
   title: 'GPA Calculator - Free & Accurate GPA Calculator for Students',
   description: 'Calculate your GPA instantly with our free GPA calculator. Perfect for college and high school students. Accurate, fast, and easy to use.',
   keywords: 'GPA calculator, calculate GPA, GPA tool, college GPA, high school GPA',
+  icons: {
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon.ico' },
+    ],
+    apple: { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    shortcut: '/favicon.ico',
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
     title: 'GPA Calculator - Free & Accurate GPA Calculator for Students',
     description: 'Calculate your GPA instantly with our free GPA calculator.',
@@ -65,8 +76,12 @@ export default function RootLayout({
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:image" content="https://topgpacalculator.com/og-image.png" />
-        <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className="bg-white">
         <Header />
