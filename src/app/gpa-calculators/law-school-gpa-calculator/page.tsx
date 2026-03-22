@@ -250,7 +250,7 @@ export default function LawSchoolGPACalculatorPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Official LSAC Grade Scale</h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-3">Letter Grades</h4>
+                    <h3 className="font-bold text-gray-900 mb-3">Letter Grades</h3>
                     <div className="space-y-2">
                       <div className="flex justify-between"><span>A+</span><span className="font-bold">4.33</span></div>
                       <div className="flex justify-between"><span>A</span><span className="font-bold">4.00</span></div>
@@ -261,7 +261,7 @@ export default function LawSchoolGPACalculatorPage() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-3">More Grades</h4>
+                    <h3 className="font-bold text-gray-900 mb-3">More Grades</h3>
                     <div className="space-y-2">
                       <div className="flex justify-between"><span>C+</span><span className="font-bold">2.33</span></div>
                       <div className="flex justify-between"><span>C</span><span className="font-bold">2.00</span></div>

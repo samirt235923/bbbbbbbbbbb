@@ -176,7 +176,7 @@ export default function Page() {
             <h3 className="text-lg font-semibold text-gray-900">Weighted GPA Scale</h3>
             <div className="mt-4 grid gap-4 lg:grid-cols-3">
               <div className="rounded-2xl border border-gray-200 bg-gray-50 p-4">
-                <h4 className="font-semibold text-gray-800">Regular Courses</h4>
+                <h3 className="font-semibold text-gray-800">Regular Courses</h3>
                 <ul className="mt-2 space-y-1 text-sm text-gray-700">
                   <li>A = 4.0</li>
                   <li>B = 3.0</li>
@@ -186,7 +186,7 @@ export default function Page() {
                 </ul>
               </div>
               <div className="rounded-2xl border border-gray-200 bg-gray-50 p-4">
-                <h4 className="font-semibold text-gray-800">Honors Courses</h4>
+                <h3 className="font-semibold text-gray-800">Honors Courses</h3>
                 <ul className="mt-2 space-y-1 text-sm text-gray-700">
                   <li>A = 4.5</li>
                   <li>B = 3.5</li>
@@ -196,7 +196,7 @@ export default function Page() {
                 </ul>
               </div>
               <div className="rounded-2xl border border-gray-200 bg-gray-50 p-4">
-                <h4 className="font-semibold text-gray-800">AP / Advanced Courses</h4>
+                <h3 className="font-semibold text-gray-800">AP / Advanced Courses</h3>
                 <ul className="mt-2 space-y-1 text-sm text-gray-700">
                   <li>A = 5.0</li>
                   <li>B = 4.0</li>

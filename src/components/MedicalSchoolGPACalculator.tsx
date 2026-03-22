@@ -266,14 +266,14 @@ const MedicalSchoolGPACalculator: React.FC = () => {
           {/* GPA Summary */}
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <h4 className="text-lg font-bold text-blue-900 mb-2">Overall GPA</h4>
+              <p className="text-lg font-bold text-blue-900 mb-2">Overall GPA</p>
               <div className="text-3xl font-bold text-blue-600">{results.overallGPA}</div>
               <div className="text-sm text-blue-700 mt-1">
                 {results.totalGradePoints} grade points / {results.totalCredits} credits
               </div>
             </div>
             <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-              <h4 className="text-lg font-bold text-green-900 mb-2">Science GPA</h4>
+              <p className="text-lg font-bold text-green-900 mb-2">Science GPA</p>
               <div className="text-3xl font-bold text-green-600">{results.scienceGPA}</div>
               <div className="text-sm text-green-700 mt-1">
                 {results.scienceGradePoints} grade points / {results.scienceCredits} credits
@@ -290,7 +290,7 @@ const MedicalSchoolGPACalculator: React.FC = () => {
 
           {/* Course Breakdown */}
           <div className="overflow-x-auto">
-            <h4 className="text-lg font-bold text-gray-900 mb-3">Course Breakdown</h4>
+            <p className="text-lg font-bold text-gray-900 mb-3">Course Breakdown</p>
             <table className="w-full border-collapse border border-gray-300">
               <thead>
                 <tr className="bg-gray-50">
@@ -317,7 +317,7 @@ const MedicalSchoolGPACalculator: React.FC = () => {
 
           {/* Formula Display */}
           <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-            <h4 className="font-bold text-gray-900 mb-2">Calculation Formula</h4>
+            <p className="font-bold text-gray-900 mb-2">Calculation Formula</p>
             <div className="text-sm text-gray-700 space-y-1">
               <div><strong>Overall GPA:</strong> {results.totalGradePoints} ÷ {results.totalCredits} = {results.overallGPA}</div>
               {results.scienceCredits > 0 && (

@@ -456,7 +456,7 @@ export default function GPAImprovementCalculator() {
                   <li>• Planned Course: 3 credits</li>
                 </ul>
 
-                <h4 className="font-semibold text-blue-900 mb-2">Calculation:</h4>
+                <h3 className="font-semibold text-blue-900 mb-2">Calculation:</h3>
                 <p className="text-blue-700 mb-2 font-mono">
                   Required GPA = (3.5 × (30 + 3) − 3.2 × 30) ÷ 3
                 </p>

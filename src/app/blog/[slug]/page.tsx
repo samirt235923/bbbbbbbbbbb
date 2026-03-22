@@ -162,7 +162,7 @@ export default async function BlogPostPage({ params }: Props) {
                       href={`/blog/${relPost.slug}`}
                       className="card p-4 hover:shadow-lg transition"
                     >
-                      <h4 className="font-bold text-blue-600 mb-2">{relPost.title}</h4>
+                      <p className="font-bold text-blue-600 mb-2">{relPost.title}</p>
                       <p className="text-sm text-gray-600">{relPost.excerpt}</p>
                     </Link>
                   ))}

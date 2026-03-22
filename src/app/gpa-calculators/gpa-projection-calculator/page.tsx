@@ -492,7 +492,7 @@ export default function GPAProjectionCalculator() {
                   <li>• Planned Course 3: Biology (4 credits), Expected Grade: A- (3.7)</li>
                 </ul>
 
-                <h4 className="font-semibold text-blue-900 mb-2">Step-by-Step Calculation:</h4>
+                <h3 className="font-semibold text-blue-900 mb-2">Step-by-Step Calculation:</h3>
                 <p className="text-blue-700 mb-2">
                   <strong>Step 1:</strong> Calculate points from current GPA<br/>
                   Current Points = 3.2 × 30 = 96 points
@@ -526,7 +526,7 @@ export default function GPAProjectionCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div className="bg-green-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-green-900 mb-2">Best Case Scenario (All A's)</h4>
+                  <h3 className="font-semibold text-green-900 mb-2">Best Case Scenario (All A's)</h3>
                   <p className="text-green-700">
                     Calculus: 4.0 × 3 = 12<br/>
                     English: 4.0 × 3 = 12<br/>
@@ -537,7 +537,7 @@ export default function GPAProjectionCalculator() {
                 </div>
 
                 <div className="bg-orange-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-orange-900 mb-2">Mixed Grades Scenario</h4>
+                  <h3 className="font-semibold text-orange-900 mb-2">Mixed Grades Scenario</h3>
                   <p className="text-orange-700">
                     Calculus: 3.7 × 3 = 11.1<br/>
                     English: 3.0 × 3 = 9<br/>

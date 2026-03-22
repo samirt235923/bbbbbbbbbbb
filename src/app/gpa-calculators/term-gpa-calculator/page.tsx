@@ -479,7 +479,7 @@ export default function TermGPACalculator() {
                   </table>
                 </div>
 
-                <h4 className="font-semibold text-blue-900 mb-2">Calculation Breakdown:</h4>
+                <h3 className="font-semibold text-blue-900 mb-2">Calculation Breakdown:</h3>
                 <div className="bg-white p-4 rounded mb-4">
                   <p className="text-blue-700 mb-2">
                     <strong>Total Grade Points:</strong> 16.0 + 9.9 + 14.8 + 9.0 = 49.7

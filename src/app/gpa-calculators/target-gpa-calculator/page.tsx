@@ -434,7 +434,7 @@ export default function TargetGPACalculator() {
                   <li>• Planned Credits: 6 (two 3-credit courses)</li>
                 </ul>
 
-                <h4 className="font-semibold text-blue-900 mb-2">Calculation:</h4>
+                <h3 className="font-semibold text-blue-900 mb-2">Calculation:</h3>
                 <p className="text-blue-700 mb-2 font-mono">
                   Required GPA = (3.5 × (30 + 6) − 3.2 × 30) ÷ 6
                 </p>

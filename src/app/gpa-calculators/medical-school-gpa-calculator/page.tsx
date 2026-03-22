@@ -406,12 +406,12 @@ export default function MedicalSchoolGPACalculatorPage() {
               </div>
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                  <h4 className="text-lg font-bold text-blue-900 mb-2">Overall GPA</h4>
+                  <h3 className="text-lg font-bold text-blue-900 mb-2">Overall GPA</h3>
                   <div className="text-2xl font-bold text-blue-600">3.70</div>
                   <div className="text-sm text-blue-700">37 ÷ 10 credits</div>
                 </div>
                 <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                  <h4 className="text-lg font-bold text-green-900 mb-2">Science GPA</h4>
+                  <h3 className="text-lg font-bold text-green-900 mb-2">Science GPA</h3>
                   <div className="text-2xl font-bold text-green-600">3.70</div>
                   <div className="text-sm text-green-700">25.9 ÷ 7 credits</div>
                 </div>

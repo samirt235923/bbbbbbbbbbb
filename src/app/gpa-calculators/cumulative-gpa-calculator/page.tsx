@@ -242,7 +242,7 @@ export default function CumulativeGPACalculator() {
                   Add all quality points together, then divide by the total credits. That final number
                   is your cumulative GPA.
                 </p>
-                <h4 className="text-xl font-bold text-gray-800 mb-2">Why Credit Hours Matter</h4>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">Why Credit Hours Matter</h3>
                 <p className="text-gray-700 leading-relaxed">
                   Credit hours show the size of a course. A semester with 18 credits carries more weight
                   than a semester with 12 credits. Without credits, your GPA would be inaccurate.

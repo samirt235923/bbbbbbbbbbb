@@ -58,7 +58,7 @@ export const blogPosts = [
     readTime: 9,
   },
   {
-    id: 'gpa-affects-college-admission',
+    id: 'how-gpa-affects-college-admission',
     slug: 'gpa-affects-college-admission',
     title: 'How GPA Affects College Admission: What You Should Know',
     metaDescription: 'Learn how your GPA impacts your college admission chances and overall academic future.',

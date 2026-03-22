@@ -142,7 +142,7 @@ export default function HighSchoolGPACalculator() {
       {/* Header with Buttons */}
       <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between bg-gradient-to-r from-primary-50 to-primary-100 p-4 rounded-2xl border border-primary-200">
         <div>
-          <h3 className="font-bold text-secondary-900 text-lg mb-1">High School GPA Calculator</h3>
+          <p className="font-bold text-secondary-900 text-lg mb-1">High School GPA Calculator</p>
           <p className="text-sm text-secondary-600">Add your courses and grades to calculate your GPA instantly</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
@@ -164,7 +164,7 @@ export default function HighSchoolGPACalculator() {
       {/* Weighted GPA Toggle */}
       <div className="flex items-center justify-between p-4 bg-secondary-50 rounded-2xl border border-secondary-200 hover:border-primary-300 transition-colors">
         <div>
-          <h3 className="font-semibold text-secondary-900 text-lg">Weighted GPA Mode</h3>
+          <p className="font-semibold text-secondary-900 text-lg">Weighted GPA Mode</p>
           <p className="text-sm text-secondary-600 mt-1">
             Honors/AP courses: +1 grade point (e.g., Honors A = 5.0)
           </p>
@@ -210,7 +210,7 @@ export default function HighSchoolGPACalculator() {
       {/* Subjects Input */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-bold text-secondary-900">Your Courses</h3>
+          <p className="text-lg font-bold text-secondary-900">Your Courses</p>
           <span className="text-sm text-secondary-600 bg-secondary-100 px-3 py-1 rounded-full">{subjects.length} course{subjects.length !== 1 ? 's' : ''}</span>
         </div>
 
@@ -399,7 +399,7 @@ export default function HighSchoolGPACalculator() {
 
           {/* GPA Benchmarks */}
           <div className="bg-white rounded-2xl p-6 border border-secondary-200">
-            <h4 className="font-bold text-secondary-900 mb-4 text-lg">📊 GPA Benchmarks</h4>
+            <p className="font-bold text-secondary-900 mb-4 text-lg">📊 GPA Benchmarks</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               <div className={`p-3 rounded-lg text-center ${gpaResult.gpa >= 3.9 ? 'bg-green-100 border border-green-300' : 'bg-secondary-50 border border-secondary-200'}`}>
                 <div className="text-sm font-bold text-secondary-900">3.9+</div>
@@ -422,7 +422,7 @@ export default function HighSchoolGPACalculator() {
 
           {/* Course Breakdown */}
           <div className="bg-white rounded-2xl p-6 border border-secondary-200 overflow-x-auto">
-            <h4 className="font-bold text-secondary-900 mb-4 text-lg">📈 Grade Breakdown</h4>
+            <p className="font-bold text-secondary-900 mb-4 text-lg">📈 Grade Breakdown</p>
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b-2 border-primary-300">
@@ -462,7 +462,7 @@ export default function HighSchoolGPACalculator() {
 
           {/* Formula Display */}
           <div className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-2xl p-6 border border-primary-200">
-            <h4 className="font-bold text-secondary-900 mb-4 text-lg">🧮 GPA Calculation Formula</h4>
+            <p className="font-bold text-secondary-900 mb-4 text-lg">🧮 GPA Calculation Formula</p>
             <div className="space-y-3 text-secondary-700">
               <div className="font-mono bg-white rounded-lg p-4 text-center text-lg font-bold text-primary-600 border border-secondary-200">
                 GPA = {gpaResult.totalPoints.toFixed(1)} ÷ {gpaResult.totalCredits} = <span className="text-2xl">{gpaResult.gpa.toFixed(3)}</span>
@@ -484,7 +484,7 @@ export default function HighSchoolGPACalculator() {
             </svg>
           </div>
           <div>
-            <h4 className="font-bold text-secondary-900 mb-2">💡 How to Use This Calculator</h4>
+            <p className="font-bold text-secondary-900 mb-2">💡 How to Use This Calculator</p>
             <ul className="text-secondary-700 text-sm space-y-1 list-disc list-inside">
               <li>Enter each course name (optional) and select the grade you earned</li>
               <li>Add credit hours for each course (typically 3-4 credits)</li>

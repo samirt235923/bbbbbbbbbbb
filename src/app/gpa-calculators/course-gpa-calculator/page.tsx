@@ -495,7 +495,7 @@ export default function CourseGPACalculator() {
                   </table>
                 </div>
 
-                <h4 className="font-semibold text-green-900 mb-2">Overall GPA Calculation:</h4>
+                <h3 className="font-semibold text-green-900 mb-2">Overall GPA Calculation:</h3>
                 <div className="bg-white p-4 rounded mb-4">
                   <p className="text-green-700 mb-2">
                     <strong>Total Grade Points:</strong> 12.0 + 13.2 + 14.8 + 9.0 = 49.0

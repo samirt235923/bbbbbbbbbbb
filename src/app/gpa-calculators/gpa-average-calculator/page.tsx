@@ -281,7 +281,7 @@ export default function GPAAverageCalculatorPage() {
                 </pre>
 
                 <div className="mt-6 rounded-lg border border-blue-100 bg-blue-50 p-5">
-                  <h4 className="text-lg font-semibold text-blue-900">Example</h4>
+                  <h3 className="text-lg font-semibold text-blue-900">Example</h3>
                   <p className="mt-2 text-gray-700">
                     GPA values: 3.5, 3.8, 3.2
                   </p>
@@ -304,7 +304,7 @@ export default function GPAAverageCalculatorPage() {
                 </pre>
 
                 <div className="mt-6 rounded-lg border border-blue-100 bg-blue-50 p-5">
-                  <h4 className="text-lg font-semibold text-blue-900">Example</h4>
+                  <h3 className="text-lg font-semibold text-blue-900">Example</h3>
                   <p className="mt-2 text-gray-700">Semester 1: GPA 3.5 × 15 credits = 52.5</p>
                   <p className="mt-1 text-gray-700">Semester 2: GPA 3.8 × 12 credits = 45.6</p>
                   <p className="mt-2 text-gray-700">

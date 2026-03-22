@@ -183,7 +183,7 @@ export default function AcademicGPACalculator() {
       {semesters.map((semester) => (
         <div key={semester.name} className="border rounded-xl border-gray-200 p-4 mb-4">
           <div className="flex justify-between items-center mb-3">
-            <h4 className="font-semibold text-gray-800">{semester.name}</h4>
+            <p className="font-semibold text-gray-800">{semester.name}</p>
             {semesters.length > 1 && (
               <button onClick={() => removeSemester(semester.name)} className="text-red-600 hover:text-red-800">Remove Semester</button>
             )}

@@ -531,9 +531,9 @@ export default function StudentGPACalculator() {
 
           <h3>2. How GPA Is Calculated (Formulas)</h3>
           <p>Use these formulas in our calculator for instant accuracy.</p>
-          <h4>Unweighted GPA</h4>
+          <h3>Unweighted GPA</h3>
           <p><code>Unweighted GPA = (Sum of (Grade Value × Credits)) ÷ (Total Credits)</code></p>
-          <h4>Weighted GPA</h4>
+          <h3>Weighted GPA</h3>
           <p><code>Weighted GPA = (Sum of ((Grade Value + Level Bonus) × Credits)) ÷ (Total Credits)</code></p>
           <p>Level bonus values in this calculator:<br/>Regular 0, Honors +0.5, AP/IB +1.0, Dual Credit +0.5.</p>
 
@@ -545,20 +545,20 @@ export default function StudentGPACalculator() {
           </ul>
 
           <h3>4. Step-by-Step Improvement Plan</h3>
-          <h4>Step A: Audit Your Current Record</h4>
+          <h3>Step A: Audit Your Current Record</h3>
           <p>List each class, grade, level, and credits. Use this calculator to identify the greatest leverage points.</p>
-          <h4>Step B: Prioritize High-Impact Courses</h4>
+          <h3>Step B: Prioritize High-Impact Courses</h3>
           <p>Focus on 3-5 credits and advanced classes, since they move your GPA faster.</p>
-          <h4>Step C: Set Realistic Weekly Study Habits</h4>
+          <h3>Step C: Set Realistic Weekly Study Habits</h3>
           <p>Track progress weekly; allocate more time to courses where actual grade can still improve.</p>
-          <h4>Step D: Calculate Minimum Required Averages for Target GPA</h4>
+          <h3>Step D: Calculate Minimum Required Averages for Target GPA</h3>
           <p>Your target is now part of this calculator: watch <strong>“Additional points needed”</strong> and aim to reduce that gap each semester.</p>
 
           <h3>5. When to Use Weighted vs Unweighted GPA</h3>
           <p>Use unweighted to compare across schools. Use weighted to spotlight course challenge. A strong profile includes both.</p>
 
           <h3>6. Real-World Example with Headings</h3>
-          <h4>Example: Spring Semester (6 classes)</h4>
+          <h3>Example: Spring Semester (6 classes)</h3>
           <ol>
             <li>Algebra II (4 credits, A, Regular) = 16 points</li>
             <li>English (3 credits, B+, Honors) = 12.6 base + 1.5 bonus = 14.1 weighted</li>

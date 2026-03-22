@@ -55,7 +55,7 @@ export default function Footer() {
 
           {/* Popular Calculators */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">Popular Calculators</h4>
+            <p className="text-lg font-semibold mb-6 text-white">Popular Calculators</p>
             <ul className="space-y-3">
               <li>
                 <Link href="/gpa-calculators/college-gpa-calculator" className="text-secondary-300 hover:text-white transition-colors duration-200 flex items-center group">
@@ -92,7 +92,7 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">Resources</h4>
+            <p className="text-lg font-semibold mb-6 text-white">Resources</p>
             <ul className="space-y-3">
               <li>
                 <Link href="/blog" className="text-secondary-300 hover:text-white transition-colors duration-200 flex items-center group">
@@ -135,7 +135,7 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">Stay Updated</h4>
+            <p className="text-lg font-semibold mb-6 text-white">Stay Updated</p>
             <p className="text-secondary-300 mb-4 leading-relaxed">
               Get GPA tips, calculator updates, and study advice delivered to your inbox.
             </p>

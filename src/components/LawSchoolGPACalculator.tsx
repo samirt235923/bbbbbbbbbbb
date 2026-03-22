@@ -132,7 +132,7 @@ export default function LawSchoolGPACalculator() {
       {/* Header with Buttons */}
       <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-2xl border border-blue-200">
         <div>
-          <h3 className="font-bold text-gray-900 text-lg mb-1">Law School GPA Calculator</h3>
+          <p className="font-bold text-gray-900 text-lg mb-1">Law School GPA Calculator</p>
           <p className="text-sm text-gray-600">Calculate your LSAC-style GPA for law school applications</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
@@ -178,7 +178,7 @@ export default function LawSchoolGPACalculator() {
       {/* Courses Input */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-bold text-gray-900">Your Courses</h3>
+          <p className="text-lg font-bold text-gray-900">Your Courses</p>
           <span className="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">{courses.length} course{courses.length !== 1 ? 's' : ''}</span>
         </div>
 
@@ -347,7 +347,7 @@ export default function LawSchoolGPACalculator() {
 
           {/* GPA Benchmarks */}
           <div className="bg-white rounded-2xl p-6 border border-gray-200">
-            <h4 className="font-bold text-gray-900 mb-4 text-lg">📊 Law School GPA Benchmarks</h4>
+            <p className="font-bold text-gray-900 mb-4 text-lg">📊 Law School GPA Benchmarks</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               <div className={`p-3 rounded-lg text-center ${gpaResult.gpa >= 3.8 ? 'bg-purple-100 border border-purple-300' : 'bg-gray-50 border border-gray-200'}`}>
                 <div className="text-sm font-bold text-gray-900">3.8+</div>
@@ -370,7 +370,7 @@ export default function LawSchoolGPACalculator() {
 
           {/* Course Breakdown */}
           <div className="bg-white rounded-2xl p-6 border border-gray-200 overflow-x-auto">
-            <h4 className="font-bold text-gray-900 mb-4 text-lg">📈 Grade Breakdown</h4>
+            <p className="font-bold text-gray-900 mb-4 text-lg">📈 Grade Breakdown</p>
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b-2 border-blue-300">
@@ -408,7 +408,7 @@ export default function LawSchoolGPACalculator() {
 
           {/* Formula Display */}
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 border border-blue-200">
-            <h4 className="font-bold text-gray-900 mb-4 text-lg">🧮 LSAC GPA Calculation Formula</h4>
+            <p className="font-bold text-gray-900 mb-4 text-lg">🧮 LSAC GPA Calculation Formula</p>
             <div className="space-y-3 text-gray-700">
               <div className="font-mono bg-white rounded-lg p-4 text-center text-lg font-bold text-blue-600 border border-gray-200 mb-4">
                 Law School GPA = {gpaResult.totalPoints.toFixed(2)} ÷ {gpaResult.totalCredits} = <span className="text-2xl">{gpaResult.gpa.toFixed(3)}</span>
@@ -430,7 +430,7 @@ export default function LawSchoolGPACalculator() {
             </svg>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900 mb-2">💡 How to Use This Calculator</h4>
+            <p className="font-bold text-gray-900 mb-2">💡 How to Use This Calculator</p>
             <ul className="text-gray-700 text-sm space-y-1 list-disc list-inside">
               <li>Enter each course with its grade and credit hours</li>
               <li>Use the LSAC-style grade scale (A+ = 4.33, A = 4.0, etc.)</li>

@@ -355,7 +355,7 @@ export default function GPACalculator() {
               </svg>
             </div>
             <div>
-              <h4 className="font-semibold text-secondary-900 mb-2">How GPA is Calculated</h4>
+              <p className="font-semibold text-secondary-900 mb-2">How GPA is Calculated</p>
               <p className="text-secondary-600 text-sm leading-relaxed">
                 Your GPA is calculated by multiplying each course's grade points by its credit hours,
                 summing these values, and dividing by the total credit hours. This uses the standard
