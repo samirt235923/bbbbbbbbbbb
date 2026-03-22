@@ -87,7 +87,7 @@ export const blogContent: Record<string, string> = {
     </ul>
 
     <h2>Next Steps and Helpful Links</h2>
-    <p>If your GPA is lower than you want, start with our <a href="/blog/how-to-improve-gpa">GPA improvement guide</a>. If you are planning college, read <a href="/blog/how-gpa-affects-college-admission">how GPA affects college admission</a>.</p>
+    <p>If your GPA is lower than you want, start with our <a href="/blog/how-to-improve-gpa">GPA improvement guide</a>. If you are planning college, read <a href="/blog/gpa-affects-college-admission">how GPA affects college admission</a>.</p>
 
     <h2>GPA Scale Variations You Should Know</h2>
     <p>Not every school uses the exact same scale. Some high schools report GPA on a 100-point scale, and many advanced courses are weighted on a 5.0 scale. That is why you should always confirm the scale listed on your transcript.</p>
@@ -219,7 +219,7 @@ export const blogContent: Record<string, string> = {
     </ul>
 
     <h2>Internal Links for More Help</h2>
-    <p>See how grades influence admissions in <a href="/blog/how-gpa-affects-college-admission">this admissions guide</a>. For step-by-step calculations, use <a href="/blog/how-to-calculate-gpa">our GPA calculation article</a>.</p>
+    <p>See how grades influence admissions in <a href="/blog/gpa-affects-college-admission">this admissions guide</a>. For step-by-step calculations, use <a href="/blog/how-to-calculate-gpa">our GPA calculation article</a>.</p>
 
     <h2>FAQ</h2>
     <h3>How fast can I raise my GPA?</h3>
@@ -364,7 +364,7 @@ export const blogContent: Record<string, string> = {
     </ul>
 
     <h2>Helpful Internal Links</h2>
-    <p>Learn how GPA affects admission decisions in <a href="/blog/how-gpa-affects-college-admission">this guide</a>. For GPA basics, start with <a href="/blog/what-is-gpa">what GPA means</a>.</p>
+    <p>Learn how GPA affects admission decisions in <a href="/blog/gpa-affects-college-admission">this guide</a>. For GPA basics, start with <a href="/blog/what-is-gpa">what GPA means</a>.</p>
 
     <h2>FAQ</h2>
     <h3>Is a 3.0 GPA good enough for scholarships?</h3>
