@@ -62,7 +62,7 @@ export default function FourPointZeroGpaPage() {
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Table of Contents</h2>
+            <p className="text-xl font-bold text-gray-900 mb-4">Table of Contents</p>
             <ul className="space-y-2 text-sm">
               <li><a href="#calculator" className="text-blue-600 hover:text-blue-800">Calculator</a></li>
               <li><a href="#what-is-4-0-scale" className="text-blue-600 hover:text-blue-800">What is a 4.0 GPA Scale</a></li>
@@ -183,7 +183,7 @@ export default function FourPointZeroGpaPage() {
             </section>
 
             <section className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Additional Resources</h3>
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Additional Resources</h2>
               <p className="text-gray-700 mb-4">Learn more from these trusted sites:</p>
               <ul className="space-y-2 text-blue-600">
                 <li><a href="https://www.collegeboard.org" target="_blank" rel="noopener noreferrer" className="hover:underline">College Board</a></li>

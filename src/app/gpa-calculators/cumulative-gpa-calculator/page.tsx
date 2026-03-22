@@ -213,21 +213,158 @@ export default function CumulativeGPACalculator() {
             {/* Information Sections */}
             <article className="space-y-8 mb-12">
               <section>
-                <h2 className="text-3xl font-bold text-gray-800 mb-4">What is Cumulative GPA?</h2>
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">What Is a Cumulative GPA?</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  Your cumulative GPA is your overall grade point average across all semesters and years of study. It's calculated by combining your GPA from each semester weighted by the number of credits in that semester.
+                  A <strong>cumulative GPA</strong> is your overall grade point average across every
+                  term you have completed. Instead of looking at one semester, it blends all semesters
+                  and all credit hours into a single number. This makes it the most common GPA that
+                  colleges, scholarship committees, and academic programs use when they review your
+                  record.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  The key idea is that credits matter. A 4-credit course affects your cumulative GPA
+                  more than a 1-credit course because it represents more of your total academic work.
+                  That is why a cumulative GPA calculator always asks for both <strong>GPA</strong> and
+                  <strong> credit hours</strong> for each term.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-3xl font-bold text-gray-800 mb-4">How to Calculate Cumulative GPA</h2>
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">How the Cumulative GPA Calculator Works</h2>
+                <p className="text-gray-700 leading-relaxed">
+                  This calculator uses a weighted average. Each term is weighted by the number of
+                  credits, so larger semesters have more influence. The math is simple, but doing it
+                  by hand can be time‑consuming. The calculator saves time and avoids mistakes.
+                </p>
+                <h3 className="text-2xl font-bold text-gray-800 mb-3">The Formula (Simple Version)</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  For each semester: <strong>Semester GPA × Credit Hours = Quality Points</strong>.
+                  Add all quality points together, then divide by the total credits. That final number
+                  is your cumulative GPA.
+                </p>
+                <h4 className="text-xl font-bold text-gray-800 mb-2">Why Credit Hours Matter</h4>
+                <p className="text-gray-700 leading-relaxed">
+                  Credit hours show the size of a course. A semester with 18 credits carries more weight
+                  than a semester with 12 credits. Without credits, your GPA would be inaccurate.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">Step‑by‑Step: Calculate Cumulative GPA</h2>
                 <ol className="list-decimal list-inside space-y-3 text-gray-700">
-                  <li>Get your GPA for each semester</li>
-                  <li>Get the credit hours for each semester</li>
-                  <li>Multiply each semester's GPA by its credit hours</li>
-                  <li>Add all the weighted GPAs together</li>
-                  <li>Divide by the total number of credits</li>
+                  <li>List every semester you have completed so far.</li>
+                  <li>Write the GPA for each semester from your transcript.</li>
+                  <li>Add the total credit hours for each semester.</li>
+                  <li>Multiply each semester GPA by its credit hours.</li>
+                  <li>Add all results together.</li>
+                  <li>Divide by the total credits across all semesters.</li>
                 </ol>
+                <p className="text-gray-700 leading-relaxed">
+                  The calculator does these steps instantly, but understanding the method helps you
+                  check your results and set realistic goals.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">Practical Example (Real Numbers)</h2>
+                <p className="text-gray-700 leading-relaxed">
+                  Imagine you completed three semesters with the following results:
+                </p>
+                <ul className="list-disc list-inside space-y-2 text-gray-700">
+                  <li>Fall: GPA 3.20 with 15 credits</li>
+                  <li>Spring: GPA 3.70 with 16 credits</li>
+                  <li>Summer: GPA 3.40 with 6 credits</li>
+                </ul>
+                <p className="text-gray-700 leading-relaxed">
+                  Multiply each GPA by its credits: 3.20×15 = 48.0, 3.70×16 = 59.2, 3.40×6 = 20.4.
+                  Add the points: 48.0 + 59.2 + 20.4 = 127.6. Total credits are 15 + 16 + 6 = 37.
+                  Your cumulative GPA is 127.6 ÷ 37 = <strong>3.45</strong>.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  This example shows why the calculator is useful. Without weighting, the average would
+                  be different and less accurate.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">Cumulative GPA vs Semester GPA</h2>
+                <p className="text-gray-700 leading-relaxed">
+                  Students often mix these terms. A <strong>semester GPA</strong> reflects performance
+                  in one term only. A <strong>cumulative GPA</strong> combines every term. Colleges
+                  usually care more about cumulative GPA because it shows long‑term consistency.
+                </p>
+                <ul className="list-disc list-inside space-y-2 text-gray-700">
+                  <li><strong>Semester GPA:</strong> One term only. Changes quickly.</li>
+                  <li><strong>Cumulative GPA:</strong> All terms combined. Changes slowly over time.</li>
+                </ul>
+                <p className="text-gray-700 leading-relaxed">
+                  If you had a low first semester, your cumulative GPA may stay lower for a while even
+                  if later semesters improve. That is normal and expected.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">How to Use This Cumulative GPA Calculator</h2>
+                <p className="text-gray-700 leading-relaxed">
+                  Using the calculator is simple. Enter one row per semester, then press the calculate
+                  button. You can add as many semesters as you need and remove any you entered by mistake.
+                </p>
+                <h3 className="text-2xl font-bold text-gray-800 mb-3">Best Tips for Accurate Results</h3>
+                <ul className="list-disc list-inside space-y-2 text-gray-700">
+                  <li>Use the GPA shown on your transcript, not a rounded estimate.</li>
+                  <li>Enter the exact credit hours for each term.</li>
+                  <li>If your school uses a different scale (like 5.0), use those GPAs consistently.</li>
+                  <li>Include all completed terms to get a true cumulative GPA.</li>
+                </ul>
+              </section>
+
+              <section>
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">Common Mistakes Students Make</h2>
+                <p className="text-gray-700 leading-relaxed">
+                  Small errors can lead to a wrong cumulative GPA. Here are the most common mistakes
+                  and how to avoid them:
+                </p>
+                <ul className="list-disc list-inside space-y-2 text-gray-700">
+                  <li><strong>Forgetting credits:</strong> GPA is weighted, so credits must be included.</li>
+                  <li><strong>Mixing scales:</strong> Do not mix a 4.0 GPA with a 5.0 GPA in one calculation.</li>
+                  <li><strong>Rounding too early:</strong> Use full values, then round at the end.</li>
+                  <li><strong>Skipping terms:</strong> Leaving out a semester makes the result inaccurate.</li>
+                </ul>
+              </section>
+
+              <section>
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">How to Improve Your Cumulative GPA</h2>
+                <p className="text-gray-700 leading-relaxed">
+                  Improving your cumulative GPA takes time because it includes all past grades. The
+                  more credits you already have, the slower your cumulative GPA changes. That does
+                  not mean improvement is impossible. It just means you need a clear plan.
+                </p>
+                <h3 className="text-2xl font-bold text-gray-800 mb-3">Practical Strategies</h3>
+                <ul className="list-disc list-inside space-y-2 text-gray-700">
+                  <li>Focus on high‑credit classes first because they carry more weight.</li>
+                  <li>Retake a course only if your school replaces old grades.</li>
+                  <li>Meet professors early for feedback and clarification.</li>
+                  <li>Use consistent weekly study blocks instead of last‑minute cramming.</li>
+                  <li>Track your progress each term with this calculator.</li>
+                </ul>
+                <p className="text-gray-700 leading-relaxed">
+                  If you want a detailed plan, set a goal GPA and calculate how many strong semesters
+                  you need. Seeing the numbers can keep you motivated and realistic.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">Who Should Use a Cumulative GPA Calculator?</h2>
+                <p className="text-gray-700 leading-relaxed">
+                  This tool is useful for high school students, college students, transfer students,
+                  and even parents helping with academic planning. It is especially helpful when you
+                  need to check eligibility for scholarships, honors programs, or academic probation
+                  rules.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  Whether you are aiming for a scholarship or just tracking progress, your cumulative
+                  GPA gives a clear picture of where you stand right now.
+                </p>
               </section>
 
               {/* FAQ Section */}
@@ -235,16 +372,24 @@ export default function CumulativeGPACalculator() {
                 <h2 className="text-3xl font-bold text-gray-800 mb-6">Frequently Asked Questions</h2>
                 <div className="space-y-4">
                   <FAQItem
-                    question="What is a good cumulative GPA?"
-                    answer="A cumulative GPA of 3.5 or higher is considered very good. Most colleges look for a 2.0 minimum for standing, 3.0 for solid performance, and 3.5+ for competitive opportunities."
+                    question="What is a good cumulative GPA in college?"
+                    answer="A cumulative GPA of 3.0 is generally solid, 3.5 is very strong, and 3.8+ is excellent. Requirements vary by school, scholarship, and program."
                   />
                   <FAQItem
-                    question="How do colleges calculate cumulative GPA?"
-                    answer="Colleges calculate cumulative GPA by combining all your semester GPAs weighted by credit hours. This is the same calculation our calculator performs."
+                    question="Does cumulative GPA include failed or withdrawn classes?"
+                    answer="Failed classes usually count as a 0.0 and lower your GPA. Withdrawals are often excluded, but policies vary by school, so check your handbook."
                   />
                   <FAQItem
-                    question="Can cumulative GPA go down?"
-                    answer="Yes, if you have semesters with lower GPAs, they can bring down your overall cumulative GPA when combined with previous semesters."
+                    question="Can I raise my cumulative GPA quickly?"
+                    answer="Cumulative GPA changes slowly because it includes all past credits. The fastest way to improve is earning strong grades in higher‑credit courses."
+                  />
+                  <FAQItem
+                    question="Should I use semester GPA or cumulative GPA on applications?"
+                    answer="Most applications ask for cumulative GPA. Use semester GPA only if a form specifically requests it."
+                  />
+                  <FAQItem
+                    question="Is the calculator accurate for weighted GPAs?"
+                    answer="Yes, as long as you enter your semester GPAs on the same scale your school uses. Do not mix weighted and unweighted values."
                   />
                 </div>
               </section>

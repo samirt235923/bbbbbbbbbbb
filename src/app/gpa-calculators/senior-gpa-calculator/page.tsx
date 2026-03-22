@@ -192,7 +192,7 @@ export default function SeniorGPACalculator() {
 
         <div className="max-w-4xl mx-auto px-4 mb-6">
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <h3 className="font-semibold text-blue-800 mb-2">Table of Contents</h3>
+            <p className="font-semibold text-blue-800 mb-2">Table of Contents</p>
             <ul className="text-sm text-blue-700 space-y-1">
               <li><a href="#calculator" className="hover:underline">Senior GPA Calculator</a></li>
               <li><a href="#what-is" className="hover:underline">What Is a Senior GPA</a></li>
@@ -220,7 +220,7 @@ export default function SeniorGPACalculator() {
           <div className="max-w-6xl mx-auto px-4">
             <div className="bg-gradient-to-b from-blue-50 to-white rounded-lg shadow-lg p-6 md:p-8 border border-blue-200 mb-10">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-5">
-                <h2 className="text-3xl font-bold text-gray-800">Senior GPA Calculator</h2>
+                <p className="text-3xl font-bold text-gray-800">Senior GPA Calculator</p>
                 <div className="flex items-center gap-4">
                   <label className="flex items-center gap-2 text-gray-700">Weighted GPA</label>
                   <input

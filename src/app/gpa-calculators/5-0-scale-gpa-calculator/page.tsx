@@ -80,7 +80,7 @@ export default function FivePointZeroScaleGPACalculatorPage() {
         
         {/* Table of Contents */}
         <nav aria-label="Table of Contents" className="bg-white rounded-xl p-6 mb-8 shadow-soft border border-secondary-100">
-          <h2 className="text-lg font-bold text-secondary-900 mb-4">Table of Contents</h2>
+          <p className="text-lg font-bold text-secondary-900 mb-4">Table of Contents</p>
           <ul className="space-y-2 text-sm">
             <li><a href="#calculator" className="text-primary-600 hover:text-primary-800 focus:ring-2 focus:ring-primary-500 rounded outline-none transition-colors">5.0 Scale GPA Calculator</a></li>
             <li><a href="#what-is-5-0-gpa" className="text-primary-600 hover:text-primary-800 focus:ring-2 focus:ring-primary-500 rounded outline-none transition-colors">What is a 5.0 GPA Scale</a></li>
@@ -118,7 +118,7 @@ export default function FivePointZeroScaleGPACalculatorPage() {
 
         {/* Example Quick Glance */}
         <div className="bg-primary-50 rounded-xl p-6 mb-10 border border-primary-200 shadow-sm">
-          <h3 className="text-xl font-bold text-secondary-900 mb-4">Quick Example Calculation</h3>
+          <h2 className="text-xl font-bold text-secondary-900 mb-4">Quick Example Calculation</h2>
           <p className="text-secondary-700 mb-4">
             Let's calculate a short semester using our 5.0 scale:
           </p>

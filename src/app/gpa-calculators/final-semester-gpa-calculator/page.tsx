@@ -155,7 +155,7 @@ export default function FinalSemesterGPACalculator() {
         {/* Table of Contents */}
         <div className="max-w-6xl mx-auto px-4 mb-6">
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <h3 className="font-semibold text-blue-800 mb-2">Table of Contents</h3>
+            <p className="font-semibold text-blue-800 mb-2">Table of Contents</p>
             <ul className="text-sm text-blue-700 space-y-1">
               <li><a href="#calculator" className="hover:underline">Final Semester GPA Calculator</a></li>
               <li><a href="#what-is" className="hover:underline">What Is a Final Semester GPA</a></li>
@@ -387,19 +387,19 @@ export default function FinalSemesterGPACalculator() {
                 <div className="bg-gray-50 p-6 rounded-lg mb-4">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                     <div className="bg-white p-4 rounded border">
-                      <h4 className="font-semibold text-gray-800">Mathematics</h4>
+                      <h3 className="font-semibold text-gray-800">Mathematics</h3>
                       <p className="text-gray-600">Grade: A (4.0)</p>
                       <p className="text-gray-600">Credits: 3</p>
                       <p className="text-blue-600 font-semibold">Grade Points: 4.0 × 3 = 12</p>
                     </div>
                     <div className="bg-white p-4 rounded border">
-                      <h4 className="font-semibold text-gray-800">English</h4>
+                      <h3 className="font-semibold text-gray-800">English</h3>
                       <p className="text-gray-600">Grade: B+ (3.3)</p>
                       <p className="text-gray-600">Credits: 4</p>
                       <p className="text-blue-600 font-semibold">Grade Points: 3.3 × 4 = 13.2</p>
                     </div>
                     <div className="bg-white p-4 rounded border">
-                      <h4 className="font-semibold text-gray-800">Economics</h4>
+                      <h3 className="font-semibold text-gray-800">Economics</h3>
                       <p className="text-gray-600">Grade: A- (3.7)</p>
                       <p className="text-gray-600">Credits: 3</p>
                       <p className="text-blue-600 font-semibold">Grade Points: 3.7 × 3 = 11.1</p>

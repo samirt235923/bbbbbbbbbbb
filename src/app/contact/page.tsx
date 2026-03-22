@@ -134,7 +134,7 @@ export default function ContactPage() {
           {/* Contact Info */}
           <div>
             <div className="bg-blue-50 p-6 rounded-lg border-2 border-blue-200 mb-8">
-              <h3 className="text-lg font-bold text-blue-900 mb-4">Contact Information</h3>
+              <h2 className="text-lg font-bold text-blue-900 mb-4">Contact Information</h2>
               <ul className="space-y-4 text-gray-700">
                 <li>
                   <strong>Email:</strong>
@@ -152,7 +152,7 @@ export default function ContactPage() {
             </div>
 
             <div className="bg-gray-50 p-6 rounded-lg border-2 border-gray-200">
-              <h3 className="text-lg font-bold text-gray-800 mb-4">FAQ</h3>
+              <h2 className="text-lg font-bold text-gray-800 mb-4">FAQ</h2>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li>• Check our <a href="/blog" className="text-blue-600 hover:underline">blog</a> for common questions</li>
                 <li>• Visit our <a href="/gpa-calculators" className="text-blue-600 hover:underline">calculators page</a></li>

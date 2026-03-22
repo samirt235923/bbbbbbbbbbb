@@ -220,7 +220,7 @@ export default function GPAProjectionCalculator() {
 
               {/* Planned Courses */}
               <div className="mb-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Planned Courses</h3>
+                <h2 className="text-lg font-semibold text-gray-900 mb-4">Planned Courses</h2>
                 {plannedCourses.map((course, index) => (
                   <div key={course.id} className="flex items-center gap-4 mb-3 p-4 bg-gray-50 rounded-lg">
                     <span className="text-sm font-medium text-gray-700">Course {index + 1}:</span>

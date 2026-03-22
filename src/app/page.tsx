@@ -104,7 +104,7 @@ export default function Home() {
                 {/* Mock Calculator Interface */}
                 <div className="space-y-6">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-bold text-secondary-900">GPA Calculator</h3>
+                  <div className="text-xl font-bold text-secondary-900">GPA Calculator</div>
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                   </div>
 

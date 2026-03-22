@@ -36,7 +36,7 @@ export default function HighSchoolGPACalculatorPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Table of Contents */}
         <div className="bg-white rounded-xl p-6 mb-8 shadow-soft">
-          <h2 className="text-lg font-bold text-secondary-900 mb-4">Table of Contents</h2>
+          <p className="text-lg font-bold text-secondary-900 mb-4">Table of Contents</p>
           <ul className="space-y-2 text-sm">
             <li><a href="#calculator" className="text-primary-600 hover:text-primary-700">High School GPA Calculator</a></li>
             <li><a href="#what-is-gpa" className="text-primary-600 hover:text-primary-700">What is a High School GPA</a></li>
@@ -72,7 +72,7 @@ export default function HighSchoolGPACalculatorPage() {
 
           {/* Example Calculation */}
           <div className="bg-primary-50 rounded-xl p-6 mb-8 border border-primary-200">
-            <h3 className="text-xl font-bold text-secondary-900 mb-4">Example Calculation</h3>
+            <h2 className="text-xl font-bold text-secondary-900 mb-4">Example Calculation</h2>
             <p className="text-secondary-700 mb-4">
               Let's say you have these courses:
             </p>
@@ -491,7 +491,7 @@ export default function HighSchoolGPACalculatorPage() {
 
           {/* External Links */}
           <div className="bg-secondary-50 rounded-xl p-6 mb-8 border border-secondary-200">
-            <h3 className="text-lg font-bold text-secondary-900 mb-3">Learn More About GPA</h3>
+          <h2 className="text-lg font-bold text-secondary-900 mb-3">Learn More About GPA</h2>
             <p className="text-secondary-700 mb-4">
               For more information about GPA calculations and college admissions, visit these trusted educational resources:
             </p>

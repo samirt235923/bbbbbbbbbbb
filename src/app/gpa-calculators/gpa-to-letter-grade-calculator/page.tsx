@@ -181,7 +181,7 @@ export default function GPAToLetterGradeCalculator() {
               {/* Results */}
               {result.letterGrade && (
                 <div className="bg-green-50 border border-green-200 rounded-md p-4 mb-4">
-                  <h3 className="text-lg font-semibold text-green-800 mb-2">Conversion Result</h3>
+                  <h2 className="text-lg font-semibold text-green-800 mb-2">Conversion Result</h2>
                   <div className="space-y-2">
                     <p className="text-green-700">
                       GPA {gpaValue} = <strong className="text-xl">{result.letterGrade}</strong> letter grade

@@ -182,7 +182,7 @@ export default function TermGPACalculator() {
           {/* Calculator Interface */}
           <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
             <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Enter Your Courses</h3>
+              <h2 className="text-lg font-semibold text-gray-900 mb-4">Enter Your Courses</h2>
               {courses.map((course, index) => (
                 <div key={course.id} className="flex items-center gap-4 mb-3 p-4 bg-gray-50 rounded-lg">
                   <span className="text-sm font-medium text-gray-700">Course {index + 1}:</span>

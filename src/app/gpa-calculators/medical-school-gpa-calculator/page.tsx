@@ -150,7 +150,7 @@ export default function MedicalSchoolGPACalculatorPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Table of Contents */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Table of Contents</h2>
+            <p className="text-xl font-bold text-gray-900 mb-4">Table of Contents</p>
             <ul className="space-y-2 text-sm">
               <li><a href="#gpa-for-medical-school-calculator" className="text-blue-600 hover:text-blue-800">GPA for Medical School Calculator</a></li>
               <li><a href="#what-gpa-do-you-need-for-medical-school" className="text-blue-600 hover:text-blue-800">What GPA Do You Need for Medical School</a></li>
@@ -570,7 +570,7 @@ export default function MedicalSchoolGPACalculatorPage() {
 
             {/* External Links */}
             <section className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Additional Resources</h3>
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Additional Resources</h2>
               <p className="text-gray-700 mb-4">
                 Learn more about medical school admissions and GPA calculations from these trusted sources:
               </p>
