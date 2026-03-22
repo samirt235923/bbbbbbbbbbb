@@ -113,11 +113,18 @@ export default async function BlogPostPage({ params }: Props) {
                   {post.excerpt}
                 </p>
 
-                {post.content.split('\n\n').map((paragraph, index) => (
-                  <p key={index} className="text-gray-700 mb-6">
-                    {paragraph}
-                  </p>
-                ))}
+                {/<\/?[a-z][\s\S]*>/i.test(post.content) ? (
+                  <div
+                    className="text-gray-700"
+                    dangerouslySetInnerHTML={{ __html: post.content }}
+                  />
+                ) : (
+                  post.content.split('\n\n').map((paragraph, index) => (
+                    <p key={index} className="text-gray-700 mb-6">
+                      {paragraph}
+                    </p>
+                  ))
+                )}
 
                 <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-4">Actionable Recommendations</h2>
                 <ol className="list-decimal list-inside space-y-3 text-gray-700 mb-6">
