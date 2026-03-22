@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import GPACalculator from '@/components/GPACalculator';
-import FAQ from '@/components/FAQ';
 import { HomePageSchema } from '@/components/SchemaMarkup';
 import { calculatorData } from '@/data/calculators';
+import HomeCalculator from '@/components/HomeCalculator';
+import HomeFAQ from '@/components/HomeFAQ';
 
 export default function Home() {
   const featuredCalculators = calculatorData.slice(0, 6);
@@ -42,7 +42,7 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Hero Content */}
-            <div className="text-center lg:text-left animate-fade-in">
+            <div className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -99,7 +99,7 @@ export default function Home() {
             </div>
 
             {/* Hero Visual */}
-            <div className="relative animate-slide-up">
+            <div className="relative">
               <div className="relative bg-white rounded-3xl shadow-large p-8 border border-secondary-200">
                 {/* Mock Calculator Interface */}
                 <div className="space-y-6">
@@ -182,7 +182,7 @@ export default function Home() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <GPACalculator />
+            <HomeCalculator />
           </div>
         </div>
       </section>
@@ -496,7 +496,7 @@ export default function Home() {
 
       {/* FAQ Section */}
       <div id="faq" className="bg-white">
-        <FAQ items={faqData} />
+        <HomeFAQ items={faqData} />
       </div>
 
       {/* CTA Section */}
