@@ -2,11 +2,36 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import Script from 'next/script';
 import CommunityCollegeGPACalculator from '@/components/CommunityCollegeGPACalculator';
+import { FAQSchema } from '@/components/SchemaMarkup';
+import { jsonLdStringify } from '@/lib/jsonLd';
 
 export const metadata: Metadata = {
   title: 'Community College GPA Calculator – Calculate Your GPA Easily',
   description: 'Use our Community College GPA Calculator to calculate your GPA quickly. Enter your courses, grades, and credit hours to instantly calculate your community college GPA.',
 };
+
+const faqItems = [
+  {
+    question: 'How do you calculate community college GPA?',
+    answer: 'Multiply grade values by credits, sum grade points, divide by total credits using the standard 4.0 scale.',
+  },
+  {
+    question: 'What is a good GPA in community college?',
+    answer: 'Typically 3.0 or higher; 3.5+ greatly improves university transfer chances.',
+  },
+  {
+    question: 'Do community colleges use a 4.0 GPA scale?',
+    answer: 'Yes, most use a 4.0 scale with plus/minus grading.',
+  },
+  {
+    question: 'Can I transfer with a 3.0 GPA from community college?',
+    answer: 'Many universities accept transfers with a 3.0 GPA; competitive programs may require higher.',
+  },
+  {
+    question: 'Does community college GPA affect university admission?',
+    answer: 'Yes, it is often the primary academic metric for transfer admissions and scholarship consideration.',
+  },
+];
 
 export default function CommunityCollegeGpaPage() {
   const breadcrumbSchema = {
@@ -18,34 +43,18 @@ export default function CommunityCollegeGpaPage() {
       {"@type":"ListItem","position":3,"name":"Community College GPA Calculator","item":"https://topgpacalculator.com/gpa-calculators/community-college-gpa-calculator"}
     ]
   };
-
-  const faqSchema = {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"How do you calculate community college GPA?","acceptedAnswer":{"@type":"Answer","text":"Multiply each course grade value by credit hours, sum grade points, and divide by total credits using the 4.0 scale."}},
-      {"@type":"Question","name":"What is a good GPA in community college?","acceptedAnswer":{"@type":"Answer","text":"A GPA of 3.0 or higher is usually considered good; 3.5+ is strong and aids transfer prospects."}},
-      {"@type":"Question","name":"Do community colleges use a 4.0 GPA scale?","acceptedAnswer":{"@type":"Answer","text":"Yes, most community colleges use the standard 4.0 scale with plus/minus grades."}},
-      {"@type":"Question","name":"Can I transfer with a 3.0 GPA from community college?","acceptedAnswer":{"@type":"Answer","text":"Many universities accept transfer students with a 3.0 GPA, though competitive programs may require higher."}},
-      {"@type":"Question","name":"Does community college GPA affect university admission?","acceptedAnswer":{"@type":"Answer","text":"Yes, your community college GPA is a key factor in transfer admissions and scholarship eligibility."}}
-    ]
-  };
-
-  const articleSchema = {
-    "@context":"https://schema.org",
-    "@type":"Article",
-    "headline":"Community College GPA Calculator – Calculate Your GPA Easily",
-    "description":"Use our Community College GPA Calculator to calculate your GPA quickly. Enter your courses, grades, and credit hours to instantly calculate your community college GPA.",
-    "author":{"@type":"Organization","name":"GPA Calculator"},
-    "publisher":{"@type":"Organization","name":"GPA Calculator"},
-    "datePublished":"2024-01-01","dateModified":"2024-01-01"
-  };
+  const breadcrumbJsonLd = jsonLdStringify(breadcrumbSchema);
 
   return (
     <>
-      <Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(breadcrumbSchema)}}/>
-      <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqSchema)}}/>
-      <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(articleSchema)}}/>
+      {breadcrumbJsonLd && (
+        <Script
+          id="breadcrumb-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd }}
+        />
+      )}
+      <FAQSchema faqs={faqItems} />
 
       <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-blue-50">
         <nav className="bg-white border-b border-gray-200 py-3">
@@ -208,6 +217,10 @@ export default function CommunityCollegeGpaPage() {
     </>
   );
 }
+
+
+
+
 
 
 

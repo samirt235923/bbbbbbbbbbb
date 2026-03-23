@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Breadcrumb from '../../../components/Breadcrumb';
 import SEOHead from '../../../components/SEOHead';
 import FAQ from '../../../components/FAQ';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 const SatToGpaCalculator: React.FC = () => {
   const [satScore, setSatScore] = useState<number>(1200);
@@ -86,51 +87,10 @@ const SatToGpaCalculator: React.FC = () => {
     },
   ];
 
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'SAT to GPA Calculator – Convert SAT Score to GPA',
-    description: 'Use our SAT to GPA Calculator to estimate your GPA based on your SAT score. Enter your SAT score to instantly see the approximate GPA equivalent.',
-    author: {
-      '@type': 'Organization',
-      name: 'GPA Calculator Website',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'GPA Calculator Website',
-    },
-    datePublished: '2024-01-01',
-    dateModified: '2024-01-01',
-  };
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqData.map(item => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  };
-
   return (
     <>
-      <SEOHead
-        title="SAT to GPA Calculator – Convert SAT Score to GPA"
-        description="Use our SAT to GPA Calculator to estimate your GPA based on your SAT score. Enter your SAT score to instantly see the approximate GPA equivalent."
-        canonical="/gpa-calculators/sat-to-gpa-calculator"
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      
+      <FAQSchema faqs={faqData} />
       <div className="max-w-4xl mx-auto px-4 py-8">
         <Breadcrumb
           items={[
@@ -400,3 +360,6 @@ const SatToGpaCalculator: React.FC = () => {
 };
 
 export default SatToGpaCalculator;
+
+
+

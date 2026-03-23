@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import QuickGPACalculator from '@/components/QuickGPACalculator';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'Quick GPA Calculator – Fast & Easy GPA Calculation Tool',
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Use our Quick GPA Calculator to calculate your GPA instantly. Simple, fast, and accurate GPA calculation with minimal inputs.',
     type: 'website',
     url: 'https://topgpacalculator.com/gpa-calculators/quick-gpa-calculator',
-    images: [{ url: 'https://topgpacalculator.com/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://topgpacalculator.com/logo.svg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -47,48 +48,7 @@ const faqItems = [
 export default function QuickGPACalculatorPage() {
   return (
     <div className="bg-slate-100 min-h-screen text-gray-800">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://topgpacalculator.com' },
-              { '@type': 'ListItem', position: 2, name: 'GPA Calculators', item: 'https://topgpacalculator.com/gpa-calculators' },
-              { '@type': 'ListItem', position: 3, name: 'Quick GPA Calculator', item: 'https://topgpacalculator.com/gpa-calculators/quick-gpa-calculator' },
-            ],
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqItems.map((faq) => ({
-              '@type': 'Question',
-              name: faq.question,
-              acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-            })),
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: 'Quick GPA Calculator – Fast & Easy GPA Calculation Tool',
-            description: 'Use our Quick GPA Calculator to calculate your GPA instantly. Simple, fast, and accurate GPA calculation with minimal inputs.',
-            author: { '@type': 'Organization', name: 'GPA Calculator' },
-            publisher: { '@type': 'Organization', name: 'GPA Calculator' },
-            mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://topgpacalculator.com/gpa-calculators/quick-gpa-calculator' },
-          }),
-        }}
-      />
+      <FAQSchema faqs={faqItems} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <nav aria-label="Breadcrumb" className="text-sm mb-6">
@@ -222,3 +182,4 @@ GPA = 14 ÷ 4 = 3.5
     </div>
   );
 }
+

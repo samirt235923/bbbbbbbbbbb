@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     url: 'https://topgpacalculator.com/gpa-calculators',
     images: [
       {
-        url: 'https://topgpacalculator.com/og-image.png',
+        url: 'https://topgpacalculator.com/logo.svg',
         width: 1200,
         height: 630,
         alt: 'All GPA Calculators',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'All GPA Calculators - 50+ Free Tools | GPA Calculator',
     description: 'Browse all 50+ free GPA calculators. Find the perfect calculator for college GPA, high school GPA, weighted GPA, and more.',
-    images: ['https://topgpacalculator.com/og-image.png'],
+    images: ['https://topgpacalculator.com/logo.svg'],
   },
   alternates: {
     canonical: 'https://topgpacalculator.com/gpa-calculators',

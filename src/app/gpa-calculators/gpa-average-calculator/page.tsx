@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import GPAAverageCalculator from '@/components/GPAAverageCalculator';
 import FAQ from '@/components/FAQ';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'GPA Average Calculator – Calculate Your Average GPA',
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     url: 'https://topgpacalculator.com/gpa-calculators/gpa-average-calculator',
     images: [
       {
-        url: 'https://topgpacalculator.com/og-image.png',
+        url: 'https://topgpacalculator.com/logo.svg',
         width: 1200,
         height: 630,
         alt: 'GPA Average Calculator',
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     title: 'GPA Average Calculator – Calculate Your Average GPA',
     description:
       'Use our GPA Average Calculator to find the average GPA across multiple courses or semesters. Enter your GPA values to calculate the overall average instantly.',
-    images: ['https://topgpacalculator.com/og-image.png'],
+    images: ['https://topgpacalculator.com/logo.svg'],
   },
   alternates: {
     canonical: 'https://topgpacalculator.com/gpa-calculators/gpa-average-calculator',
@@ -83,88 +84,7 @@ export default function GPAAverageCalculatorPage() {
   return (
     <div className="min-h-screen bg-secondary-50">
       {/* Breadcrumb Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              {
-                '@type': 'ListItem',
-                position: 1,
-                name: 'Home',
-                item: 'https://topgpacalculator.com',
-              },
-              {
-                '@type': 'ListItem',
-                position: 2,
-                name: 'GPA Calculators',
-                item: 'https://topgpacalculator.com/gpa-calculators',
-              },
-              {
-                '@type': 'ListItem',
-                position: 3,
-                name: 'GPA Average Calculator',
-                item: 'https://topgpacalculator.com/gpa-calculators/gpa-average-calculator',
-              },
-            ],
-          }),
-        }}
-      />
-
-      {/* FAQ Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqItems.map((item) => ({
-              '@type': 'Question',
-              name: item.question,
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: item.answer,
-              },
-            })),
-          }),
-        }}
-      />
-
-      {/* Article Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: 'GPA Average Calculator – Calculate Your Average GPA',
-            description:
-              'Use our GPA Average Calculator to find the average GPA across multiple courses or semesters. Enter your GPA values to calculate the overall average instantly.',
-            image: 'https://topgpacalculator.com/og-image.png',
-            datePublished: '2024-01-01',
-            dateModified: '2024-01-01',
-            author: {
-              '@type': 'Organization',
-              name: 'GPA Calculator',
-              url: 'https://topgpacalculator.com',
-            },
-            publisher: {
-              '@type': 'Organization',
-              name: 'GPA Calculator',
-              logo: {
-                '@type': 'ImageObject',
-                url: 'https://topgpacalculator.com/logo.png',
-              },
-            },
-            mainEntityOfPage: {
-              '@type': 'WebPage',
-              '@id': 'https://topgpacalculator.com/gpa-calculators/gpa-average-calculator',
-            },
-          }),
-        }}
-      />
+      <FAQSchema faqs={faqItems} />
 
       <div className="bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -524,3 +444,4 @@ export default function GPAAverageCalculatorPage() {
     </div>
   );
 }
+

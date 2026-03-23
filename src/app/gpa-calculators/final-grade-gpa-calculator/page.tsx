@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Breadcrumb from '../../../components/Breadcrumb';
 import SEOHead from '../../../components/SEOHead';
 import FAQ from '../../../components/FAQ';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 const FinalGradeGPACalculator: React.FC = () => {
   const [currentGrade, setCurrentGrade] = useState<number>(85);
@@ -50,51 +51,10 @@ const FinalGradeGPACalculator: React.FC = () => {
     },
   ];
 
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'Final Grade GPA Calculator – What Grade Do You Need on Your Final?',
-    description: 'Use our Final Grade GPA Calculator to find the grade you need on your final exam to reach your target course grade. Enter your current grade and final exam weight to calculate instantly.',
-    author: {
-      '@type': 'Organization',
-      name: 'GPA Calculator Website',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'GPA Calculator Website',
-    },
-    datePublished: '2024-01-01',
-    dateModified: '2024-01-01',
-  };
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqData.map(item => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  };
-
   return (
     <>
-      <SEOHead
-        title="Final Grade GPA Calculator – What Grade Do You Need on Your Final?"
-        description="Use our Final Grade GPA Calculator to find the grade you need on your final exam to reach your target course grade. Enter your current grade and final exam weight to calculate instantly."
-        canonical="/gpa-calculators/final-grade-gpa-calculator"
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      
+      <FAQSchema faqs={faqData} />
       <div className="max-w-4xl mx-auto px-4 py-8">
         <Breadcrumb
           items={[
@@ -365,3 +325,6 @@ const FinalGradeGPACalculator: React.FC = () => {
 };
 
 export default FinalGradeGPACalculator;
+
+
+

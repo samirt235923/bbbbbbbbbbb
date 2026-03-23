@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import GpaGoalCalculator from '@/components/GpaGoalCalculator';
 import FAQ from '@/components/FAQ';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 const faqItems = [
   { question: 'How do I calculate GPA needed to reach my goal?', answer: 'Enter your current GPA, current credits, target GPA, and upcoming course credits. The calculator determines the required upcoming GPA and required grade level.' },
@@ -31,51 +32,7 @@ export default function GpaGoalCalculatorPage() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://topgpacalculator.com' },
-              { '@type': 'ListItem', position: 2, name: 'GPA Calculators', item: 'https://topgpacalculator.com/gpa-calculators' },
-              { '@type': 'ListItem', position: 3, name: 'GPA Goal Calculator', item: pageUrl },
-            ],
-          }),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqItems.map((faq) => ({
-              '@type': 'Question',
-              name: faq.question,
-              acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-            })),
-          }),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: 'GPA Goal Calculator – Plan & Achieve Your Target GPA',
-            description: 'Use our GPA Goal Calculator to calculate the grades you need to reach your desired GPA. Supports weighted courses, multiple semesters, and cumulative GPA.',
-            author: { '@type': 'Organization', name: 'Top GPA Calculator' },
-            publisher: { '@type': 'Organization', name: 'Top GPA Calculator' },
-            datePublished: '2026-03-18',
-            mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
-          }),
-        }}
-      />
+      <FAQSchema faqs={faqItems} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <nav aria-label="Breadcrumb" className="text-sm mb-6">
@@ -197,3 +154,4 @@ export default function GpaGoalCalculatorPage() {
     </div>
   );
 }
+

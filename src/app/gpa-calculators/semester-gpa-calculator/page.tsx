@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
+import { FAQSchema } from '@/components/SchemaMarkup';
+import { jsonLdStringify } from '@/lib/jsonLd';
 
 interface Course {
   id: string;
@@ -204,26 +206,18 @@ export default function SemesterGPACalculatorPage() {
         priceCurrency: 'USD',
       },
     },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqItems.map((item) => ({
-        '@type': 'Question',
-        name: item.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: item.answer,
-        },
-      })),
-    },
   ];
+  const schemasJsonLd = jsonLdStringify(schemas);
 
   return (
     <div className="bg-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
-      />
+      {schemasJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: schemasJsonLd }}
+        />
+      )}
+      <FAQSchema faqs={faqItems} />
 
       <div className="max-w-6xl mx-auto px-4 py-4">
         <nav className="flex flex-wrap items-center gap-2 text-sm text-slate-600">

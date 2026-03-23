@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 import FAQ from '@/components/FAQ';
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     description: 'Use our Percentage to GPA Calculator to convert your percentage grades to GPA instantly. Supports 4.0, 5.0, and custom GPA scales with accurate formulas.',
     type: 'website',
     url: 'https://topgpacalculator.com/gpa-calculators/percentage-to-gpa-calculator',
-    images: [{ url: 'https://topgpacalculator.com/og-image.png', width: 1200, height: 630, alt: 'Percentage to GPA Calculator' }],
+    images: [{ url: 'https://topgpacalculator.com/logo.svg', width: 1200, height: 630, alt: 'Percentage to GPA Calculator' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Percentage to GPA Calculator  Convert Your Grades Easily',
     description: 'Use our Percentage to GPA Calculator to convert your percentage grades to GPA instantly. Supports 4.0, 5.0, and custom GPA scales with accurate formulas.',
-    images: ['https://topgpacalculator.com/og-image.png'],
+    images: ['https://topgpacalculator.com/logo.svg'],
   },
   alternates: {
     canonical: 'https://topgpacalculator.com/gpa-calculators/percentage-to-gpa-calculator',

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import type { ReactNode } from 'react';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 interface Course {
   id: string;
@@ -43,6 +44,29 @@ const FAQItem = ({ question, answer }: { question: string; answer: ReactNode }) 
     </div>
   );
 };
+
+const faqItems = [
+  {
+    question: 'What is a good GPA in college?',
+    answer: 'A GPA of 3.5 or higher is generally considered very good in college. Roughly: 3.5+ excellent and competitive for scholarships/grad programs, 3.0-3.4 good, 2.5-2.9 satisfactory, 2.0-2.4 minimum for good standing, below 2.0 at risk of probation.',
+  },
+  {
+    question: 'How do I calculate my GPA in college?',
+    answer: 'Convert each letter grade to its numerical value, multiply by credit hours, sum grade points, sum total credits, then divide total grade points by total credits. You can use the calculator above to automate these steps.',
+  },
+  {
+    question: 'Is a 3.5 GPA good for college?',
+    answer: 'Yes, a 3.5 GPA is considered excellent in most colleges and universities. It typically places you in the top 10-15% of your class and is competitive for scholarships, honors programs, and many graduate schools.',
+  },
+  {
+    question: 'What GPA is required for Harvard?',
+    answer: 'Harvard typically admits students with near-perfect GPAs. Successful applicants often have unweighted GPAs around 3.9-4.0 and weighted GPAs around 4.5-5.0+, usually ranking in the top 5-10% of their class. Harvard evaluates GPA alongside test scores, extracurriculars, essays, recommendations, and personal qualities.',
+  },
+  {
+    question: 'How many credits affect GPA?',
+    answer: 'All credit-bearing courses with letter grades affect GPA, including regular courses, honors/AP, major/minor requirements, gen ed courses, and electives. Courses that typically do not affect GPA include pass/fail, audited, incomplete (until resolved), and withdrawn courses. Policies vary by institution.',
+  },
+];
 
 export default function CollegeGPACalculator() {
   const [courses, setCourses] = useState<Course[]>([
@@ -93,121 +117,7 @@ export default function CollegeGPACalculator() {
   return (
     <>
       {/* Breadcrumb Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              {
-                '@type': 'ListItem',
-                position: 1,
-                name: 'Home',
-                item: 'https://topgpacalculator.com',
-              },
-              {
-                '@type': 'ListItem',
-                position: 2,
-                name: 'GPA Calculators',
-                item: 'https://topgpacalculator.com/gpa-calculators',
-              },
-              {
-                '@type': 'ListItem',
-                position: 3,
-                name: 'College GPA Calculator',
-                item: 'https://topgpacalculator.com/gpa-calculators/college-gpa-calculator',
-              },
-            ],
-          }),
-        }}
-      />
-
-      {/* FAQ Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: [
-              {
-                '@type': 'Question',
-                name: 'What is a good GPA in college?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'A GPA of 3.5 or higher is generally considered very good in college. Most colleges look for a minimum GPA of 2.0 for standing, 3.0 for solid performance, and 3.5+ for competitive opportunities like scholarships and graduate programs.',
-                },
-              },
-              {
-                '@type': 'Question',
-                name: 'How do I calculate my GPA in college?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'To calculate college GPA: (1) Multiply each grade value by credit hours to get grade points, (2) Sum all grade points, (3) Add all credit hours, (4) Divide total grade points by total credit hours.',
-                },
-              },
-              {
-                '@type': 'Question',
-                name: 'Is a 3.5 GPA good for college?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'Yes, a 3.5 GPA is considered excellent in most colleges and is well above average. It demonstrates strong academic performance and is competitive for scholarships and graduate programs.',
-                },
-              },
-              {
-                '@type': 'Question',
-                name: 'What GPA is required for Harvard?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'Harvard typically looks for applicants with a GPA of 4.0 or near-perfect. However, GPA is just one factor in admissions. Harvard considers the whole application including test scores, extracurriculars, essays, and recommendations.',
-                },
-              },
-              {
-                '@type': 'Question',
-                name: 'How many credits affect GPA?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'All credits from graded courses affect your GPA. This includes regular courses, honors courses, and electives. Pass/fail courses, audits, and withdrawals typically do not count toward GPA calculation.',
-                },
-              },
-            ],
-          }),
-        }}
-      />
-
-      {/* Article Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: 'College GPA Calculator (Accurate & Free) – Calculate Your GPA Online',
-            description: 'Use our free College GPA Calculator to calculate your GPA instantly. Enter your courses, grades, and credit hours to get an accurate GPA for college.',
-            image: 'https://topgpacalculator.com/og-image.png',
-            datePublished: '2024-01-01',
-            dateModified: '2024-12-01',
-            author: {
-              '@type': 'Organization',
-              name: 'GPA Calculator',
-              url: 'https://topgpacalculator.com',
-            },
-            publisher: {
-              '@type': 'Organization',
-              name: 'GPA Calculator',
-              logo: {
-                '@type': 'ImageObject',
-                url: 'https://topgpacalculator.com/logo.png',
-              },
-            },
-            mainEntityOfPage: {
-              '@type': 'WebPage',
-              '@id': 'https://topgpacalculator.com/gpa-calculators/college-gpa-calculator',
-            },
-          }),
-        }}
-      />
+      <FAQSchema faqs={faqItems} />
 
       <div className="bg-white">
         {/* Breadcrumb Navigation */}
@@ -724,6 +634,8 @@ export default function CollegeGPACalculator() {
     </>
   );
 }
+
+
 
 
 

@@ -3,6 +3,7 @@
 import { useMemo } from 'react';
 import { usePathname } from 'next/navigation';
 import calculatorData from '@/data/calculators';
+import { jsonLdStringify } from '@/lib/jsonLd';
 
 const SITE_URL = 'https://topgpacalculator.com';
 const DEFAULT_FEATURES = ['Instant results', 'Free to use', 'Mobile friendly'];
@@ -21,6 +22,32 @@ const HOW_TO_STEPS = [
     text: 'Click calculate to get your GPA result instantly.',
   },
 ];
+
+const LAYOUT_BREADCRUMB_SLUGS = new Set([
+  '5-0-scale-gpa-calculator',
+  'act-to-gpa-calculator',
+  'academic-gpa-calculator',
+  'college-admission-gpa-calculator',
+  'course-gpa-calculator',
+  'cumulative-gpa-calculator',
+  'final-grade-gpa-calculator',
+  'final-semester-gpa-calculator',
+  'gpa-average-calculator',
+  'gpa-goal-calculator',
+  'gpa-improvement-calculator',
+  'gpa-percentage-calculator',
+  'gpa-projection-calculator',
+  'gpa-to-letter-grade-calculator',
+  'grade-point-calculator',
+  'high-school-gpa-calculator',
+  'online-gpa-calculator',
+  'quick-gpa-calculator',
+  'required-gpa-calculator',
+  'sat-to-gpa-calculator',
+  'sophomore-gpa-calculator',
+  'target-gpa-calculator',
+  'term-gpa-calculator',
+]);
 
 const buildFeatureList = (source: string) => {
   const features: string[] = [];
@@ -96,50 +123,60 @@ export default function CalculatorStructuredData() {
       })),
     };
 
-    const breadcrumb = {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: `${SITE_URL}/`,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'GPA Calculators',
-          item: `${SITE_URL}/gpa-calculators`,
-        },
-        {
-          '@type': 'ListItem',
-          position: 3,
-          name,
-          item: url,
-        },
-      ],
-    };
+    const breadcrumb = LAYOUT_BREADCRUMB_SLUGS.has(slug)
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Home',
+              item: `${SITE_URL}/`,
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'GPA Calculators',
+              item: `${SITE_URL}/gpa-calculators`,
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name,
+              item: url,
+            },
+          ],
+        }
+      : null;
 
     return { webApplication, howTo, breadcrumb };
   }, [pathname]);
 
   if (!schema) return null;
 
+  const webApplicationJsonLd = jsonLdStringify(schema.webApplication);
+  const howToJsonLd = jsonLdStringify(schema.howTo);
+  const breadcrumbJsonLd = schema.breadcrumb ? jsonLdStringify(schema.breadcrumb) : null;
+
+  if (!webApplicationJsonLd || !howToJsonLd) return null;
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.webApplication) }}
+        dangerouslySetInnerHTML={{ __html: webApplicationJsonLd }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.howTo) }}
+        dangerouslySetInnerHTML={{ __html: howToJsonLd }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.breadcrumb) }}
-      />
+      {breadcrumbJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd }}
+        />
+      )}
     </>
   );
 }

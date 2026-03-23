@@ -142,18 +142,6 @@ export default function StudentGPACalculator() {
     return neededPoints;
   }, [totals, targetGPA, useWeighted]);
 
-  const pageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'Student GPA Calculator – Accurate GPA Calculator for High School & College',
-    description: 'Free student GPA calculator with weighted and unweighted options. Calculate your high school or college GPA instantly. Track academic progress and plan for college admissions.',
-    author: { '@type': 'Person', name: 'GPA Calculator Team' },
-    publisher: { '@type': 'Organization', name: 'Top GPA Calculator' },
-    datePublished: '2026-03-18',
-    dateModified: new Date().toISOString().split('T')[0],
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://topgpacalculator.com/gpa-calculators/student-gpa-calculator' },
-  };
-
   return (
     <>
       <SEOHead
@@ -185,8 +173,6 @@ export default function StudentGPACalculator() {
       />
 
       <FAQSchema faqs={faq} />
-
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Breadcrumb Navigation */}
@@ -664,3 +650,5 @@ export default function StudentGPACalculator() {
     </>
   );
 }
+
+

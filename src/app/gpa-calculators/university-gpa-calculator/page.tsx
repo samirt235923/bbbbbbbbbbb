@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UniversityGPACalculator from '@/components/UniversityGPACalculator';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'University GPA Calculator – Calculate College GPA Easily',
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Use our University GPA Calculator to calculate your semester and cumulative GPA. Enter grades and credit hours for instant results.',
     type: 'website',
     url: 'https://topgpacalculator.com/gpa-calculators/university-gpa-calculator',
-    images: [{ url: 'https://topgpacalculator.com/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://topgpacalculator.com/logo.svg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -36,37 +37,8 @@ export default function UniversityGPACalculatorPage() {
 
   return (
     <div className="bg-slate-50 min-h-screen text-slate-900">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://topgpacalculator.com' },
-              { '@type': 'ListItem', position: 2, name: 'GPA Calculators', item: 'https://topgpacalculator.com/gpa-calculators' },
-              { '@type': 'ListItem', position: 3, name: 'University GPA Calculator', item: baseUrl },
-            ],
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqItems.map((faq) => ({
-              '@type': 'Question',
-              name: faq.question,
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: faq.answer,
-              },
-            })),
-          }),
-        }}
-      />
+      
+      <FAQSchema faqs={faqItems} />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <nav aria-label="Breadcrumb" className="text-sm mb-4">
@@ -206,3 +178,4 @@ export default function UniversityGPACalculatorPage() {
     </div>
   );
 }
+

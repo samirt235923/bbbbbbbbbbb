@@ -2,11 +2,35 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import Script from 'next/script';
 import EngineeringGPACalculator from '@/components/EngineeringGPACalculator';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'Engineering GPA Calculator – Calculate Your Engineering GPA Easily',
   description: 'Use our Engineering GPA Calculator to calculate your cumulative engineering GPA instantly. Enter engineering courses, credits, and grades to calculate GPA accurately.',
 };
+
+const faqItems = [
+  {
+    question: 'What GPA is good for engineering?',
+    answer: 'A GPA of 3.5 or higher is generally considered strong for engineering programs. Top schools often look for 3.7+. Lower-tier programs may accept around 3.0.',
+  },
+  {
+    question: 'How do you calculate engineering GPA?',
+    answer: "Calculate your engineering GPA by multiplying each course's grade value by its credit hours, summing grade points, then dividing by total credits. Use the standard 4.0 scale.",
+  },
+  {
+    question: 'Is engineering GPA harder to maintain?',
+    answer: 'Engineering GPA can be more challenging due to rigorous math and science coursework, but with proper study habits many students maintain high GPAs.',
+  },
+  {
+    question: 'Do engineering classes affect GPA differently?',
+    answer: 'Some engineering classes are weighted more heavily in GPA calculations, especially advanced design or lab courses, but generally all credits count equally.',
+  },
+  {
+    question: 'What GPA do engineering students usually have?',
+    answer: 'Average engineering student GPAs often range from 3.0 to 3.4, depending on the institution and program difficulty.',
+  },
+];
 
 export default function EngineeringGPACalculatorPage() {
   const breadcrumbSchema = {
@@ -19,34 +43,10 @@ export default function EngineeringGPACalculatorPage() {
     ]
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"What GPA is good for engineering?","acceptedAnswer":{"@type":"Answer","text":"A GPA of 3.5 or higher is generally considered strong for engineering programs. Top schools often look for 3.7+. Lower-tier programs may accept around 3.0."}},
-      {"@type":"Question","name":"How do you calculate engineering GPA?","acceptedAnswer":{"@type":"Answer","text":"Calculate your engineering GPA by multiplying each course's grade value by its credit hours, summing grade points, then dividing by total credits. Use the standard 4.0 scale."}},
-      {"@type":"Question","name":"Is engineering GPA harder to maintain?","acceptedAnswer":{"@type":"Answer","text":"Engineering GPA can be more challenging due to rigorous math and science coursework, but with proper study habits many students maintain high GPAs."}},
-      {"@type":"Question","name":"Do engineering classes affect GPA differently?","acceptedAnswer":{"@type":"Answer","text":"Some engineering classes are weighted more heavily in GPA calculations, especially advanced design or lab courses, but generally all credits count equally."}},
-      {"@type":"Question","name":"What GPA do engineering students usually have?","acceptedAnswer":{"@type":"Answer","text":"Average engineering student GPAs often range from 3.0 to 3.4, depending on the institution and program difficulty."}}
-    ]
-  };
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Engineering GPA Calculator – Calculate Your Engineering GPA Easily",
-    "description": "Use our Engineering GPA Calculator to calculate your cumulative engineering GPA instantly. Enter engineering courses, credits, and grades to calculate GPA accurately.",
-    "author": {"@type":"Organization","name":"GPA Calculator"},
-    "publisher": {"@type":"Organization","name":"GPA Calculator"},
-    "datePublished": "2024-01-01",
-    "dateModified": "2024-01-01"
-  };
-
   return (
     <>
-      <Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      
+      <FAQSchema faqs={faqItems} />
 
       <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
         <nav className="bg-white border-b border-gray-200 py-3">
@@ -235,6 +235,11 @@ export default function EngineeringGPACalculatorPage() {
     </>
   );
 }
+
+
+
+
+
 
 
 

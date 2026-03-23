@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { jsonLdStringify } from '@/lib/jsonLd';
 
 export const metadata: Metadata = {
   title: 'About Us - GPA Calculator',
@@ -10,8 +11,31 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const aboutSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About TopGPAcalculator',
+    description:
+      'TopGPAcalculator provides free GPA tools, educational guidance, and resources to help students plan and improve academic performance.',
+    url: 'https://topgpacalculator.com/about',
+    image: 'https://topgpacalculator.com/logo.svg',
+    mainEntity: {
+      '@type': 'Organization',
+      name: 'TopGPAcalculator',
+      url: 'https://topgpacalculator.com',
+      logo: 'https://topgpacalculator.com/logo.svg',
+    },
+  };
+  const aboutJsonLd = jsonLdStringify(aboutSchema);
+
   return (
     <div className="bg-white">
+      {aboutJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: aboutJsonLd }}
+        />
+      )}
       {/* Header */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12">
         <div className="max-w-6xl mx-auto px-4">

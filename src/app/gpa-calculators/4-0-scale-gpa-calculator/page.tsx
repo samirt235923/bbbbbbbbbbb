@@ -2,11 +2,36 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import Script from 'next/script';
 import FourPointZeroGPACalculator from '@/components/FourPointZeroGPACalculator';
+import { FAQSchema } from '@/components/SchemaMarkup';
+import { jsonLdStringify } from '@/lib/jsonLd';
 
 export const metadata: Metadata = {
   title: '4.0 GPA Calculator – Calculate GPA on a 4.0 Scale',
   description: 'Use our 4.0 GPA Calculator to calculate your GPA using the standard 4.0 grading scale. Enter courses, credits, and grades to instantly calculate your GPA.',
 };
+
+const faqItems = [
+  {
+    question: 'How do you calculate GPA on a 4.0 scale?',
+    answer: 'Multiply grade values by credits, add grade points, divide by total credits using the standard 4.0 scale (A=4.0, etc.).',
+  },
+  {
+    question: 'What is a 3.5 GPA on a 4.0 scale?',
+    answer: "A 3.5 GPA indicates mostly As and Bs; it's above average and often meets honors program requirements.",
+  },
+  {
+    question: 'Is 4.0 the highest GPA?',
+    answer: 'Yes, on an unweighted 4.0 scale. Weighted scales may allow higher values for advanced courses.',
+  },
+  {
+    question: 'What is a good GPA on a 4.0 scale?',
+    answer: 'Generally, 3.5+ is strong; 3.7+ is excellent. Good depends on your goals and institution standards.',
+  },
+  {
+    question: 'How do colleges calculate GPA?',
+    answer: 'Colleges convert letter grades to numbers, weight by credits, average all courses. Policies vary on repeats and grade forgiveness.',
+  },
+];
 
 export default function FourPointZeroGpaPage() {
   const breadcrumbSchema = {
@@ -18,34 +43,18 @@ export default function FourPointZeroGpaPage() {
       {"@type":"ListItem","position":3,"name":"4.0 Scale GPA Calculator","item":"https://topgpacalculator.com/gpa-calculators/4-0-scale-gpa-calculator"}
     ]
   };
-
-  const faqSchema = {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"How do you calculate GPA on a 4.0 scale?","acceptedAnswer":{"@type":"Answer","text":"Multiply each course grade value by credits, sum grade points and divide by total credits. The standard 4.0 scale assigns A=4.0, A-=3.7, etc."}},
-      {"@type":"Question","name":"What is a 3.5 GPA on a 4.0 scale?","acceptedAnswer":{"@type":"Answer","text":"A 3.5 GPA is above average, roughly corresponding to mostly Bs with some As. It is considered good for many programs."}},
-      {"@type":"Question","name":"Is 4.0 the highest GPA?","acceptedAnswer":{"@type":"Answer","text":"On an unweighted 4.0 scale, 4.0 is the maximum. Some schools use weighted scales where 4.3 or 5.0 is possible for honors/AP courses."}},
-      {"@type":"Question","name":"What is a good GPA on a 4.0 scale?","acceptedAnswer":{"@type":"Answer","text":"A GPA of 3.5 or higher is generally strong. Top institutions often look for 3.7+."}},
-      {"@type":"Question","name":"How do colleges calculate GPA?","acceptedAnswer":{"@type":"Answer","text":"Colleges convert letter grades to numerical values, weight them by credit hours, then average across all courses. Policies vary by institution regarding plus/minus grades and repeat courses."}}
-    ]
-  };
-
-  const articleSchema = {
-    "@context":"https://schema.org",
-    "@type":"Article",
-    "headline":"4.0 GPA Calculator – Calculate GPA on a 4.0 Scale",
-    "description":"Use our 4.0 GPA Calculator to calculate your GPA using the standard 4.0 grading scale. Enter courses, credits, and grades to instantly calculate your GPA.",
-    "author":{"@type":"Organization","name":"GPA Calculator"},
-    "publisher":{"@type":"Organization","name":"GPA Calculator"},
-    "datePublished":"2024-01-01","dateModified":"2024-01-01"
-  };
+  const breadcrumbJsonLd = jsonLdStringify(breadcrumbSchema);
 
   return (
     <>
-      <Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbSchema)}}/>
-      <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}}/>
-      <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(articleSchema)}}/>
+      {breadcrumbJsonLd && (
+        <Script
+          id="breadcrumb-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd }}
+        />
+      )}
+      <FAQSchema faqs={faqItems} />
 
       <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-white to-red-50">
         <nav className="bg-white border-b border-gray-200 py-3">
@@ -197,6 +206,14 @@ export default function FourPointZeroGpaPage() {
     </>
   );
 }
+
+
+
+
+
+
+
+
 
 
 

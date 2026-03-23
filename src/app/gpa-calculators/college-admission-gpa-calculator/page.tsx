@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Breadcrumb from '../../../components/Breadcrumb';
 import SEOHead from '../../../components/SEOHead';
 import FAQ from '../../../components/FAQ';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 interface Course {
   id: number;
@@ -126,51 +127,10 @@ const CollegeAdmissionGpaCalculator: React.FC = () => {
     },
   ];
 
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'College Admission GPA Calculator – Estimate Your Admission GPA',
-    description: 'Use our College Admission GPA Calculator to estimate your GPA and understand your chances of college admission. Enter your courses, credits, and grades to calculate your GPA instantly.',
-    author: {
-      '@type': 'Organization',
-      name: 'GPA Calculator Website',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'GPA Calculator Website',
-    },
-    datePublished: '2024-01-01',
-    dateModified: '2024-01-01',
-  };
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqData.map(item => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  };
-
   return (
     <>
-      <SEOHead
-        title="College Admission GPA Calculator – Estimate Your Admission GPA"
-        description="Use our College Admission GPA Calculator to estimate your GPA and understand your chances of college admission. Enter your courses, credits, and grades to calculate your GPA instantly."
-        canonical="/gpa-calculators/college-admission-gpa-calculator"
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      
+      <FAQSchema faqs={faqData} />
       <div className="max-w-4xl mx-auto px-4 py-8">
         <Breadcrumb
           items={[
@@ -564,3 +524,6 @@ const CollegeAdmissionGpaCalculator: React.FC = () => {
 };
 
 export default CollegeAdmissionGpaCalculator;
+
+
+

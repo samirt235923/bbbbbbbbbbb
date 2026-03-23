@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { blogPosts } from '@/data/blog';
+import { jsonLdStringify } from '@/lib/jsonLd';
 
 export const metadata: Metadata = {
   title: 'Blog - GPA Tips, Strategies & Articles | GPA Calculator',
@@ -11,20 +12,46 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
+  const recentPosts = [...blogPosts].sort(
+    (a, b) => new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
+  );
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'GPA Calculator Blog',
+    description: 'Expert articles on GPA and academics',
+    url: 'https://topgpacalculator.com/blog',
+    hasPart: {
+      '@type': 'ItemList',
+      itemListElement: recentPosts.map((post, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'BlogPosting',
+          headline: post.title,
+          datePublished: post.publishedDate,
+          author: {
+            '@type': 'Person',
+            name: post.author,
+          },
+          image: 'https://topgpacalculator.com/logo.svg',
+          url: `https://topgpacalculator.com/blog/${post.slug}`,
+        },
+      })),
+    },
+  };
+  const blogJsonLd = jsonLdStringify(blogSchema);
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Blog',
-            name: 'GPA Calculator Blog',
-            description: 'Expert articles on GPA and academics',
-            url: 'https://topgpacalculator.com/blog',
-          }),
-        }}
-      />
+      {blogJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: blogJsonLd,
+          }}
+        />
+      )}
 
       <div className="bg-white">
         {/* Header */}

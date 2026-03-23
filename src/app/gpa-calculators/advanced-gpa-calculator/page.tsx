@@ -1,4 +1,4 @@
-ï»¿'use client';
+'use client';
 
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
@@ -59,7 +59,7 @@ const classification = (gpa: number) => {
 };
 
 const advancedGpaFaq = [
-  { question: 'How do I calculate cumulative GPA?', answer: 'Cumulative GPA is (previous GPA Ã— previous credits + current grade points) Ã· total credits. Track each semester separately for precise cumulative results.' },
+  { question: 'How do I calculate cumulative GPA?', answer: 'Cumulative GPA is (previous GPA × previous credits + current grade points) ÷ total credits. Track each semester separately for precise cumulative results.' },
   { question: 'What is a weighted GPA?', answer: 'Weighted GPA adds extra value for harder classes: Honors +0.5 and AP +1.0. This rewards advanced coursework in your cumulative score.' },
   { question: 'How do multiple semesters affect GPA?', answer: 'Each semester is added to total credit hours and total grade points. The cumulative GPA is updated with every added semester.' },
   { question: 'Can I calculate GPA across years?', answer: 'Yes. Add semesters for each year and include previous GPA/credits to build year-over-year cumulative GPA.' },
@@ -138,22 +138,10 @@ export default function AdvancedGPACalculator() {
   const totalCreditsAll = previousCredits + totalCurrentCredits;
   const cumulativeGpa = totalCreditsAll > 0 ? (previousGpa * previousCredits + totalCurrentGradePoints) / totalCreditsAll : 0;
 
-  const pageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'Advanced GPA Calculator â€“ Weighted & Cumulative GPA Tool',
-    description: 'Use our Advanced GPA Calculator to calculate weighted and cumulative GPA across multiple semesters. Customize courses, credit hours, and grading scales.',
-    author: { '@type': 'Person', name: 'GPA Calculator' },
-    publisher: { '@type': 'Organization', name: 'GPA Calculator' },
-    datePublished: '2026-03-18',
-    dateModified: '2026-03-18',
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://topgpacalculator.com/gpa-calculators/advanced-gpa-calculator' },
-  };
-
   return (
     <>
       <SEOHead
-        title="Advanced GPA Calculator â€“ Weighted & Cumulative GPA Tool"
+        title="Advanced GPA Calculator – Weighted & Cumulative GPA Tool"
         description="Use our Advanced GPA Calculator to calculate weighted and cumulative GPA across multiple semesters. Customize courses, credit hours, and grading scales."
         canonical="/gpa-calculators/advanced-gpa-calculator"
       />
@@ -167,7 +155,7 @@ export default function AdvancedGPACalculator() {
       />
 
       <ArticleSchema
-        headline="Advanced GPA Calculator â€“ Weighted & Cumulative GPA Tool"
+        headline="Advanced GPA Calculator – Weighted & Cumulative GPA Tool"
         description="Use our Advanced GPA Calculator to calculate weighted and cumulative GPA across multiple semesters. Customize courses, credit hours, and grading scales."
         author="GPA Calculator"
         datePublished="2026-03-18"
@@ -181,8 +169,6 @@ export default function AdvancedGPACalculator() {
       />
 
       <FAQSchema faqs={advancedGpaFaq} />
-
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <nav className="text-sm mb-6" aria-label="Breadcrumb">
@@ -323,9 +309,9 @@ export default function AdvancedGPACalculator() {
         <section className="bg-white rounded-2xl border border-gray-200 shadow-md p-6 mb-8" id="formulas">
           <h2 className="text-2xl font-bold mb-3">Advanced GPA Formulas</h2>
           <ol className="list-decimal list-inside space-y-2 mb-4">
-            <li><strong>Semester GPA:</strong> Total Grade Points Ã· Total Credit Hours.</li>
+            <li><strong>Semester GPA:</strong> Total Grade Points ÷ Total Credit Hours.</li>
             <li><strong>Weighted GPA:</strong> Weighted Grade = Base Grade + Weight Bonus (Honors +0.5, AP +1.0).</li>
-            <li><strong>Cumulative GPA:</strong> (Previous GPA Ã— Previous Credits + Current Grade Points) Ã· Total Credits.</li>
+            <li><strong>Cumulative GPA:</strong> (Previous GPA × Previous Credits + Current Grade Points) ÷ Total Credits.</li>
           </ol>
           <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
             <p><strong>Total Credits (All Terms):</strong> {totalCreditsAll}</p>
@@ -364,12 +350,12 @@ export default function AdvancedGPACalculator() {
           <p className="mb-2">Previous GPA: 3.5, Previous Credits: 30.</p>
           <p className="mb-2">Current semester courses:</p>
           <ul className="list-disc list-inside mb-3">
-            <li>Math (AP): 5.0 Ã— 3 = 15</li>
-            <li>English (Regular): 4.0 Ã— 3 = 12</li>
-            <li>Science (Honors): 3.3 Ã— 4 = 13.2</li>
+            <li>Math (AP): 5.0 × 3 = 15</li>
+            <li>English (Regular): 4.0 × 3 = 12</li>
+            <li>Science (Honors): 3.3 × 4 = 13.2</li>
           </ul>
           <p className="mb-2">Total grade points = 40.2, Credits = 10</p>
-          <p className="mb-2">Cumulative GPA = (3.5 Ã— 30 + 40.2) Ã· 40 = 3.63</p>
+          <p className="mb-2">Cumulative GPA = (3.5 × 30 + 40.2) ÷ 40 = 3.63</p>
           <p className="text-sm text-gray-600">Use this calculator to replicate and exceed your target GPA each term.</p>
         </section>
 
@@ -405,7 +391,7 @@ export default function AdvancedGPACalculator() {
 
           <h2>How to Calculate Cumulative GPA</h2>
           <p>Use this formula (implemented in the calculator):</p>
-          <pre><code>Cumulative GPA = (Previous GPA Ã— Previous Credits + Current Grade Points) Ã· Total Credits</code></pre>
+          <pre><code>Cumulative GPA = (Previous GPA × Previous Credits + Current Grade Points) ÷ Total Credits</code></pre>
           <p>Step-by-step example:</p>
           <ol>
             <li>Set previous GPA and previous credits from your transcript.</li>
@@ -436,7 +422,7 @@ export default function AdvancedGPACalculator() {
           </ul>
 
           <h2>What to Do When Your GPA Falls</h2>
-          <p>If your GPA dips, donâ€™t panic. Use these steps in the calculator:</p>
+          <p>If your GPA dips, don’t panic. Use these steps in the calculator:</p>
           <ol>
             <li>Enter all term grades and credits to find current cumulative score.</li>
             <li>Create a plan for the next semester with higher weighted courses.</li>
@@ -449,7 +435,7 @@ export default function AdvancedGPACalculator() {
 
           <h2>Advanced Tips for High GPA Scorers</h2>
           <ul>
-            <li>Set conservative targets (e.g., +0.05â€”+0.10 checkpoints each semester).</li>
+            <li>Set conservative targets (e.g., +0.05—+0.10 checkpoints each semester).</li>
             <li>Emphasize AP/Honors in your core major while keeping workload sustainable.</li>
             <li>Use calculators like this for midterm check-ins, not just final grades.</li>
             <li>Leverage the cumulative feature for early graduate school projections.</li>

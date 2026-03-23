@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import SophomoreGPACalculator from '@/components/SophomoreGPACalculator';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'Sophomore GPA Calculator – Calculate Your Second Year GPA',
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Use our Sophomore GPA Calculator to calculate your GPA for your second year in college. Enter grades and credit hours to get instant results.',
     type: 'website',
     url: 'https://topgpacalculator.com/gpa-calculators/sophomore-gpa-calculator',
-    images: [{ url: 'https://topgpacalculator.com/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://topgpacalculator.com/logo.svg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -47,48 +48,7 @@ const faqItems = [
 export default function SophomoreGPACalculatorPage() {
   return (
     <div className="bg-slate-50 min-h-screen text-gray-800">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://topgpacalculator.com' },
-              { '@type': 'ListItem', position: 2, name: 'GPA Calculators', item: 'https://topgpacalculator.com/gpa-calculators' },
-              { '@type': 'ListItem', position: 3, name: 'Sophomore GPA Calculator', item: 'https://topgpacalculator.com/gpa-calculators/sophomore-gpa-calculator' },
-            ],
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqItems.map((faq) => ({
-              '@type': 'Question',
-              name: faq.question,
-              acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-            })),
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: 'Sophomore GPA Calculator – Calculate Your Second Year GPA',
-            description: 'Use our Sophomore GPA Calculator to calculate your GPA for your second year in college. Enter grades and credit hours to get instant results.',
-            author: { '@type': 'Organization', name: 'GPA Calculator' },
-            publisher: { '@type': 'Organization', name: 'GPA Calculator' },
-            mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://topgpacalculator.com/gpa-calculators/sophomore-gpa-calculator' },
-          }),
-        }}
-      />
+      <FAQSchema faqs={faqItems} />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <nav aria-label="Breadcrumb" className="mb-4 text-sm text-gray-600">
@@ -222,3 +182,4 @@ export default function SophomoreGPACalculatorPage() {
     </div>
   );
 }
+

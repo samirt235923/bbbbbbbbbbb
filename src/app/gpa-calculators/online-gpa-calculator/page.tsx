@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import GPACalculator from '@/components/GPACalculator';
 import FAQ from '@/components/FAQ';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 const faqItems = [
   { question: 'How do I calculate GPA online?', answer: 'Add courses with credit hours and grades, then the calculator divides total grade points by total credits to produce your GPA.' },
@@ -57,51 +58,7 @@ export default function OnlineGPACalculatorPage() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://topgpacalculator.com' },
-              { '@type': 'ListItem', position: 2, name: 'GPA Calculators', item: 'https://topgpacalculator.com/gpa-calculators' },
-              { '@type': 'ListItem', position: 3, name: 'Online GPA Calculator', item: pageUrl },
-            ],
-          }),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqItems.map((faq) => ({
-              '@type': 'Question',
-              name: faq.question,
-              acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-            })),
-          }),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: 'Online GPA Calculator – Calculate Your GPA Instantly',
-            description: 'Use our Online GPA Calculator to calculate your GPA instantly. Enter your grades and credit hours to get accurate GPA results with our interactive tool.',
-            author: { '@type': 'Organization', name: 'Top GPA Calculator' },
-            publisher: { '@type': 'Organization', name: 'Top GPA Calculator' },
-            datePublished: '2026-03-18',
-            mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
-          }),
-        }}
-      />
+      <FAQSchema faqs={faqItems} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <nav aria-label="breadcrumb" className="text-sm mb-6">
@@ -248,3 +205,4 @@ export default function OnlineGPACalculatorPage() {
     </div>
   );
 }
+

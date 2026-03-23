@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import { calculatorData } from '@/data/calculators';
+import { jsonLdStringify } from '@/lib/jsonLd';
 
 export default function GPACalculatorsPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -77,6 +78,8 @@ export default function GPACalculatorsPage() {
       }
     ]
   };
+  const collectionJsonLd = jsonLdStringify(collectionSchema);
+  const breadcrumbJsonLd = jsonLdStringify(breadcrumbSchema);
 
   return (
     <div className="bg-white">
@@ -156,18 +159,22 @@ export default function GPACalculatorsPage() {
       </section>
 
       {/* Schema Markup */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(collectionSchema)
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema)
-        }}
-      />
+      {collectionJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: collectionJsonLd
+          }}
+        />
+      )}
+      {breadcrumbJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: breadcrumbJsonLd
+          }}
+        />
+      )}
     </div>
   );
 }

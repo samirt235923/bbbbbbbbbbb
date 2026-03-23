@@ -2,12 +2,36 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import Script from 'next/script';
 import MedicalSchoolGPACalculator from '@/components/MedicalSchoolGPACalculator';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'GPA for Medical School Calculator – Estimate Your Med School GPA',
   description:
     'Use our GPA for Medical School Calculator to calculate your GPA for medical school applications. Enter your course grades and credits to estimate your GPA instantly.',
 };
+
+const faqItems = [
+  {
+    question: 'What GPA do you need for medical school?',
+    answer: 'Most medical schools require a minimum GPA of 3.0, but competitive schools typically require 3.5 or higher for overall GPA and 3.4+ for science GPA. Top-tier medical schools like Harvard, Johns Hopkins, and Stanford typically require 3.7+ overall and 3.6+ science GPA.',
+  },
+  {
+    question: 'How is GPA calculated for med school applications?',
+    answer: 'Med school GPA is calculated by multiplying each course\'s grade points by credit hours, summing all grade points, then dividing by total credit hours. Use the standard 4.0 scale where A=4.0, A-=3.7, B+=3.3, etc. AMCAS recalculates GPA using their own standards.',
+  },
+  {
+    question: 'What is a good GPA for medical school?',
+    answer: 'A good GPA for medical school depends on the school tier. For top schools, aim for 3.7+ overall and 3.6+ science GPA. For mid-tier schools, 3.5+ overall and 3.4+ science GPA is competitive. Below-average GPAs can still be competitive with strong MCAT scores and other application components.',
+  },
+  {
+    question: 'Do medical schools look at science GPA?',
+    answer: 'Yes, medical schools heavily weigh science GPA (BCPM GPA). BCPM includes Biology, Chemistry, Physics, and Math courses. Many schools have separate GPA cutoffs for science courses. A strong science GPA is crucial because medical school curricula are science-heavy.',
+  },
+  {
+    question: 'Is a 3.7 GPA good for medical school?',
+    answer: 'A 3.7 GPA is excellent for medical school admission. It places you in the top quartile of applicants and makes you competitive for most medical schools, including many top programs. Combined with a strong MCAT score, a 3.7 GPA significantly boosts your chances.',
+  },
+];
 
 export default function MedicalSchoolGPACalculatorPage() {
   const breadcrumbSchema = {
@@ -35,87 +59,10 @@ export default function MedicalSchoolGPACalculatorPage() {
     ]
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What GPA do you need for medical school?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most medical schools require a minimum GPA of 3.0, but competitive schools typically require 3.5 or higher for overall GPA and 3.4+ for science GPA. Top-tier medical schools like Harvard, Johns Hopkins, and Stanford typically require 3.7+ overall and 3.6+ science GPA."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How is GPA calculated for med school applications?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Med school GPA is calculated by multiplying each course's grade points by credit hours, summing all grade points, and dividing by total credit hours. Use the standard 4.0 scale where A=4.0, A-=3.7, B+=3.3, etc. AMCAS recalculates GPA using their own standards."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is a good GPA for medical school?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A good GPA for medical school depends on the school tier. For top schools, aim for 3.7+ overall and 3.6+ science GPA. For mid-tier schools, 3.5+ overall and 3.4+ science GPA is competitive. Below-average GPAs can still be competitive with strong MCAT scores and other application components."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do medical schools look at science GPA?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, medical schools heavily weigh science GPA (BCPM GPA). BCPM includes Biology, Chemistry, Physics, and Math courses. Many schools have separate GPA cutoffs for science courses. A strong science GPA is crucial because medical school curricula are science-heavy."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is a 3.7 GPA good for medical school?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A 3.7 GPA is excellent for medical school admission. It places you in the top quartile of applicants and makes you competitive for most medical schools, including many top programs. Combined with a strong MCAT score, a 3.7 GPA significantly boosts your chances."
-        }
-      }
-    ]
-  };
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Medical School GPA Calculator – Calculate Your Pre-Med GPA",
-    "description": "Use our Medical School GPA Calculator to calculate your overall GPA and science GPA for medical school applications. Enter courses, grades, and credits to get your GPA instantly.",
-    "author": {
-      "@type": "Organization",
-      "name": "GPA Calculator"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "GPA Calculator"
-    },
-    "datePublished": "2024-01-01",
-    "dateModified": "2024-01-01"
-  };
-
   return (
     <>
-      <Script
-        id="breadcrumb-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <Script
-        id="article-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      
+      <FAQSchema faqs={faqItems} />
 
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
         {/* Breadcrumb Navigation */}
@@ -586,6 +533,11 @@ export default function MedicalSchoolGPACalculatorPage() {
     </>
   );
 }
+
+
+
+
+
 
 
 

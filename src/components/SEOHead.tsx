@@ -12,7 +12,7 @@ export default function SEOHead({
   title,
   description,
   canonical,
-  ogImage = '/og-image.png',
+  ogImage = 'https://topgpacalculator.com/logo.svg',
   ogType = 'website',
   twitterHandle = '@gpaCalculator',
 }: SEOProps) {

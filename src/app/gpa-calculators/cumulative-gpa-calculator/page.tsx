@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import type { ReactNode } from 'react';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 interface Semester {
   id: string;
@@ -30,6 +31,29 @@ const FAQItem = ({ question, answer }: { question: string; answer: ReactNode }) 
     </div>
   );
 };
+
+const faqItems = [
+  {
+    question: 'What is a good cumulative GPA in college?',
+    answer: 'A cumulative GPA of 3.0 is generally solid, 3.5 is very strong, and 3.8+ is excellent. Requirements vary by school, scholarship, and program.',
+  },
+  {
+    question: 'Does cumulative GPA include failed or withdrawn classes?',
+    answer: 'Failed classes usually count as a 0.0 and lower your GPA. Withdrawals are often excluded, but policies vary by school, so check your handbook.',
+  },
+  {
+    question: 'Can I raise my cumulative GPA quickly?',
+    answer: 'Cumulative GPA changes slowly because it includes all past credits. The fastest way to improve is earning strong grades in higher-credit courses.',
+  },
+  {
+    question: 'Should I use semester GPA or cumulative GPA on applications?',
+    answer: 'Most applications ask for cumulative GPA. Use semester GPA only if a form specifically requests it.',
+  },
+  {
+    question: 'Is the calculator accurate for weighted GPAs?',
+    answer: 'Yes, as long as you enter your semester GPAs on the same scale your school uses. Do not mix weighted and unweighted values.',
+  },
+];
 
 export default function CumulativeGPACalculator() {
   const [semesters, setSemesters] = useState<Semester[]>([
@@ -76,6 +100,7 @@ export default function CumulativeGPACalculator() {
 
   return (
     <>
+      <FAQSchema faqs={faqItems} />
       <div className="bg-white">
         {/* Breadcrumb */}
         <div className="max-w-6xl mx-auto px-4 py-4">
@@ -400,6 +425,7 @@ export default function CumulativeGPACalculator() {
     </>
   );
 }
+
 
 
 

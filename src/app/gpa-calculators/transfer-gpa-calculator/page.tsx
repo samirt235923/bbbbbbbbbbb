@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import Script from 'next/script';
 import TransferGPACalculator from '@/components/TransferGPACalculator';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'Transfer GPA Calculator – Calculate GPA for College Transfer',
@@ -10,6 +11,29 @@ export const metadata: Metadata = {
     canonical: 'https://topgpacalculator.com/gpa-calculators/transfer-gpa-calculator',
   },
 };
+
+const faqItems = [
+  {
+    question: 'How do you calculate transfer GPA?',
+    answer: 'Calculate transfer GPA by combining grade points from all colleges attended, divided by total credit hours earned. Use our calculator above for instant results.',
+  },
+  {
+    question: 'Does GPA transfer between colleges?',
+    answer: "GPA itself doesn't transfer; colleges recalculate your GPA based on all courses taken at any institution using their own grading policies.",
+  },
+  {
+    question: 'Do universities recalculate transfer GPA?',
+    answer: 'Yes, most universities recalculate GPA using their own grading scale and policies for transfer students to ensure fair evaluation.',
+  },
+  {
+    question: 'What GPA do you need to transfer colleges?',
+    answer: 'Most colleges require a minimum 2.0 GPA for transfer, but competitive programs often require 3.0 or higher. Check specific requirements for your target schools.',
+  },
+  {
+    question: 'Is a 3.0 GPA good for transfer students?',
+    answer: 'A 3.0 GPA is generally considered good for transfer students and meets requirements for many four-year colleges, though some competitive programs require higher.',
+  },
+];
 
 export default function TransferGpaPage() {
   const breadcrumbSchema = {
@@ -22,33 +46,10 @@ export default function TransferGpaPage() {
     ]
   };
 
-  const faqSchema = {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"How do you calculate transfer GPA?","acceptedAnswer":{"@type":"Answer","text":"Calculate transfer GPA by combining grade points from all colleges attended, divided by total credit hours earned."}},
-      {"@type":"Question","name":"Does GPA transfer between colleges?","acceptedAnswer":{"@type":"Answer","text":"GPA itself doesn't transfer; colleges recalculate your GPA based on all courses taken at any institution."}},
-      {"@type":"Question","name":"Do universities recalculate transfer GPA?","acceptedAnswer":{"@type":"Answer","text":"Yes, most universities recalculate GPA using their own grading scale and policies for transfer students."}},
-      {"@type":"Question","name":"What GPA do you need to transfer colleges?","acceptedAnswer":{"@type":"Answer","text":"Most colleges require a minimum 2.0 GPA for transfer, but competitive programs often require 3.0 or higher."}},
-      {"@type":"Question","name":"Is a 3.0 GPA good for transfer students?","acceptedAnswer":{"@type":"Answer","text":"A 3.0 GPA is generally considered good for transfer students and meets requirements for many four-year colleges."}}
-    ]
-  };
-
-  const articleSchema = {
-    "@context":"https://schema.org",
-    "@type":"Article",
-    "headline":"Transfer GPA Calculator – Calculate GPA for College Transfer",
-    "description":"Use our Transfer GPA Calculator to calculate your GPA when transferring colleges. Enter previous credits and grades to instantly calculate your transfer GPA.",
-    "author":{"@type":"Organization","name":"GPA Calculator"},
-    "publisher":{"@type":"Organization","name":"GPA Calculator"},
-    "datePublished":"2024-01-01","dateModified":"2024-01-01"
-  };
-
   return (
     <>
-      <Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(breadcrumbSchema)}}/>
-      <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqSchema)}}/>
-      <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(articleSchema)}}/>
+      
+      <FAQSchema faqs={faqItems} />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
         <nav className="bg-white border-b border-gray-200 py-3">
@@ -251,3 +252,8 @@ export default function TransferGpaPage() {
     </>
   );
 }
+
+
+
+
+

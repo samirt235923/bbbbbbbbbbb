@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import FivePointZeroGPACalculator from '@/components/FivePointZeroGPACalculator';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: '5.0 Scale GPA Calculator (Weighted GPA) – Free & Accurate Tool',
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     url: 'https://topgpacalculator.com/gpa-calculators/5-0-scale-gpa-calculator',
     images: [
       {
-        url: 'https://topgpacalculator.com/og-image.png',
+        url: 'https://topgpacalculator.com/logo.svg',
         width: 1200,
         height: 630,
         alt: '5.0 Scale GPA Calculator Preview',
@@ -62,7 +63,8 @@ const faqData = [
 
 export default function FivePointZeroScaleGPACalculatorPage() {
   return (
-    <div className="min-h-screen bg-secondary-50">
+    
+      <FAQSchema faqs={faqData} />
       {/* Breadcrumb Navigation */}
       <nav aria-label="Breadcrumb" className="bg-white border-b border-secondary-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
@@ -379,45 +381,11 @@ export default function FivePointZeroScaleGPACalculatorPage() {
       </main>
 
       {/* Schema Markup */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "FAQPage",
-                "mainEntity": faqData.map(faq => ({
-                  "@type": "Question",
-                  "name": faq.question,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": faq.answer
-                  }
-                }))
-              },
-              {
-                "@type": "Article",
-                "headline": "5.0 Scale GPA Calculator (Weighted GPA) – Free & Accurate Tool",
-                "description": "Use our free 5.0 Scale GPA Calculator to calculate your weighted GPA instantly. Enter your courses, grades, and credit hours to get your GPA on a 5.0 scale.",
-                "author": {
-                  "@type": "Organization",
-                  "name": "GPA Calculator"
-                },
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "GPA Calculator"
-                },
-                "datePublished": "2024-01-01",
-                "dateModified": "2024-01-01"
-              }
-            ]
-          })
-        }}
-      />
     </div>
   );
 }
+
+
 
 
 

@@ -2,11 +2,35 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import Script from 'next/script';
 import WeightedGPACalculator from '@/components/WeightedGPACalculator';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'Weighted GPA Calculator – Free & Accurate GPA Tool',
   description: 'Use our Weighted GPA Calculator to calculate your GPA with Honors and AP classes. Enter courses, grades, and credit hours to get your weighted GPA instantly.',
 };
+
+const faqItems = [
+  {
+    question: 'What is a weighted GPA?',
+    answer: 'A weighted GPA is a grading system that gives extra points for challenging courses like Honors, AP, or IB classes. Regular classes use a 4.0 scale, while weighted courses can go above 4.0, rewarding students for taking advanced coursework.',
+  },
+  {
+    question: 'How do you calculate weighted GPA?',
+    answer: "To calculate weighted GPA, multiply each course's grade points (plus weight bonus) by credit hours, sum them up, then divide by total credit hours. The formula is: Weighted GPA = Total Weighted Grade Points ÷ Total Credit Hours.",
+  },
+  {
+    question: 'Is weighted GPA higher than 4.0?',
+    answer: 'Yes, weighted GPA can exceed 4.0. Honors classes typically add 0.5 points (A = 4.5), while AP/IB classes add 1.0 point (A = 5.0). This allows students taking advanced courses to achieve GPAs above the standard 4.0 maximum.',
+  },
+  {
+    question: 'Do AP classes increase GPA?',
+    answer: 'Yes, AP classes increase GPA by adding 1.0 extra point to each grade. For example, an A in an AP class is worth 5.0 instead of 4.0. This rewards students for taking college-level coursework in high school.',
+  },
+  {
+    question: 'What is a good weighted GPA?',
+    answer: 'A good weighted GPA depends on your goals. For college admissions, aim for 4.0 or higher. Top students often achieve 4.5+ by taking multiple AP courses. Remember, colleges consider the rigor of your coursework alongside your GPA.',
+  },
+];
 
 export default function WeightedGPACalculatorPage() {
   const breadcrumbSchema = {
@@ -34,87 +58,10 @@ export default function WeightedGPACalculatorPage() {
     ]
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is a weighted GPA?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A weighted GPA is a grading system that gives extra points for challenging courses like Honors, AP, or IB classes. Regular classes use a 4.0 scale, while weighted courses can go above 4.0, rewarding students for taking advanced coursework."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do you calculate weighted GPA?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "To calculate weighted GPA, multiply each course's grade points (plus weight bonus) by credit hours, sum them up, then divide by total credit hours. The formula is: Weighted GPA = Total Weighted Grade Points ÷ Total Credit Hours."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is weighted GPA higher than 4.0?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, weighted GPA can exceed 4.0. Honors classes typically add 0.5 points (A = 4.5), while AP/IB classes add 1.0 point (A = 5.0). This allows students taking advanced courses to achieve GPAs above the standard 4.0 maximum."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do AP classes increase GPA?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, AP classes increase GPA by adding 1.0 extra point to each grade. For example, an A in an AP class is worth 5.0 instead of 4.0. This rewards students for taking college-level coursework in high school."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is a good weighted GPA?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A good weighted GPA depends on your goals. For college admissions, aim for 4.0 or higher. Top students often achieve 4.5+ by taking multiple AP courses. Remember, colleges consider the rigor of your coursework alongside your GPA."
-        }
-      }
-    ]
-  };
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Weighted GPA Calculator – Free & Accurate GPA Tool",
-    "description": "Use our Weighted GPA Calculator to calculate your GPA with Honors and AP classes. Enter courses, grades, and credit hours to get your weighted GPA instantly.",
-    "author": {
-      "@type": "Organization",
-      "name": "GPA Calculator"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "GPA Calculator"
-    },
-    "datePublished": "2024-01-01",
-    "dateModified": "2024-01-01"
-  };
-
   return (
     <>
-      <Script
-        id="breadcrumb-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <Script
-        id="article-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      
+      <FAQSchema faqs={faqItems} />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
         {/* Breadcrumb Navigation */}
@@ -555,6 +502,11 @@ export default function WeightedGPACalculatorPage() {
     </>
   );
 }
+
+
+
+
+
 
 
 

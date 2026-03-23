@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import GradePointCalculator from '@/components/GradePointCalculator';
 import FAQ from '@/components/FAQ';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 const faqItems = [
   { question: 'How do I calculate grade points?', answer: 'Grade points are calculated as grade value multiplied by credit hours for each course. Our calculator performs this in real time and provides totals.' },
@@ -20,13 +21,13 @@ export const metadata: Metadata = {
     description: 'Use our Grade Point Calculator to calculate grade points and GPA quickly. Supports weighted courses, credit hours, and multiple grading scales.',
     type: 'website',
     url: 'https://topgpacalculator.com/gpa-calculators/grade-point-calculator',
-    images: [{ url: 'https://topgpacalculator.com/og-image.png', width: 1200, height: 630, alt: 'Grade Point Calculator' }],
+    images: [{ url: 'https://topgpacalculator.com/logo.svg', width: 1200, height: 630, alt: 'Grade Point Calculator' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Grade Point Calculator – Calculate Your Grades Easily',
     description: 'Use our Grade Point Calculator to calculate grade points and GPA quickly. Supports weighted courses, credit hours, and multiple grading scales.',
-    images: ['https://topgpacalculator.com/og-image.png'],
+    images: ['https://topgpacalculator.com/logo.svg'],
   },
   alternates: {
     canonical: 'https://topgpacalculator.com/gpa-calculators/grade-point-calculator',
@@ -38,51 +39,7 @@ export default function GradePointCalculatorPage() {
 
   return (
     <div className="bg-slate-50 min-h-screen text-slate-900">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://topgpacalculator.com' },
-              { '@type': 'ListItem', position: 2, name: 'GPA Calculators', item: 'https://topgpacalculator.com/gpa-calculators' },
-              { '@type': 'ListItem', position: 3, name: 'Grade Point Calculator', item: pageUrl },
-            ],
-          }),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqItems.map((faq) => ({
-              '@type': 'Question',
-              name: faq.question,
-              acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-            })),
-          }),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: 'Grade Point Calculator – Calculate Your Grades Easily',
-            description: 'Use our Grade Point Calculator to calculate grade points and GPA quickly. Supports weighted courses, credit hours, and multiple grading scales.',
-            author: { '@type': 'Organization', name: 'Top GPA Calculator' },
-            publisher: { '@type': 'Organization', name: 'Top GPA Calculator' },
-            datePublished: '2026-03-19',
-            mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
-          }),
-        }}
-      />
+      <FAQSchema faqs={faqItems} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <nav className="text-sm mb-6" aria-label="Breadcrumb">
@@ -187,3 +144,4 @@ export default function GradePointCalculatorPage() {
     </div>
   );
 }
+

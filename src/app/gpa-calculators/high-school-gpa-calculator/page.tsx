@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import HighSchoolGPACalculator from '@/components/HighSchoolGPACalculator';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'High School GPA Calculator (Free & Accurate) – Calculate Your GPA',
@@ -21,9 +22,33 @@ export const metadata: Metadata = {
   },
 };
 
+const faqItems = [
+  {
+    question: 'What is a good GPA in high school?',
+    answer: 'A good high school GPA depends on your goals. For college admissions, a GPA of 3.0 or higher is generally considered good, while top colleges often look for GPAs of 3.5 or higher. A GPA of 4.0 or above (weighted) is excellent and demonstrates outstanding academic achievement.',
+  },
+  {
+    question: 'How do I calculate my high school GPA?',
+    answer: "To calculate your high school GPA, multiply each course's grade points by its credit hours, sum these values, then divide by the total credit hours. Our free high school GPA calculator does this automatically for you. Simply enter your courses, grades, and credits to get instant results.",
+  },
+  {
+    question: 'Is a 3.8 GPA good in high school?',
+    answer: 'Yes, a 3.8 GPA is excellent in high school. It places you in the top 10-15% of your class and makes you a strong candidate for most colleges and universities. Many selective schools consider a 3.8 GPA competitive for admission.',
+  },
+  {
+    question: 'What GPA is needed for college admission?',
+    answer: 'GPA requirements vary by college. Community colleges typically accept students with a 2.0 GPA or higher, while four-year universities often require a 2.5-3.0 GPA. Selective colleges like Ivy League schools typically look for GPAs of 3.5 or higher. Always check specific requirements for your target schools.',
+  },
+  {
+    question: 'What is the difference between weighted and unweighted GPA?',
+    answer: 'An unweighted GPA uses a standard 4.0 scale where all courses are treated equally. A weighted GPA adds extra points for honors and AP courses (typically +1 point), allowing students to earn above a 4.0. Weighted GPAs reward academic rigor and help colleges distinguish between regular and advanced coursework.',
+  },
+];
+
 export default function HighSchoolGPACalculatorPage() {
   return (
     <div className="min-h-screen bg-secondary-50">
+      <FAQSchema faqs={faqItems} />
       {/* Breadcrumb Navigation */}
       <nav className="bg-white border-b border-secondary-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
@@ -509,92 +534,11 @@ export default function HighSchoolGPACalculatorPage() {
       </div>
 
       {/* Schema Markup */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            {
-              "@context": "https://schema.org",
-              "@type": "WebApplication",
-              "name": "High School GPA Calculator",
-              "description": "Free high school GPA calculator to calculate your GPA instantly with accurate formulas.",
-              "url": "https://topgpacalculator.com/gpa-calculators/high-school-gpa-calculator",
-              "applicationCategory": "EducationalApplication",
-              "operatingSystem": "Web Browser",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD"
-              }
-            },
-            {
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What is a good GPA in high school?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A good high school GPA depends on your goals. For college admissions, a GPA of 3.0 or higher is generally considered good, while top colleges often look for GPAs of 3.5 or higher."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How do I calculate my high school GPA?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "To calculate your high school GPA, multiply each course's grade points by its credit hours, sum these values, then divide by the total credit hours."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Is a 3.8 GPA good in high school?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, a 3.8 GPA is excellent in high school. It places you in the top 10-15% of your class and makes you a strong candidate for most colleges."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What GPA is needed for college admission?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "GPA requirements vary by college. Community colleges typically accept students with a 2.0 GPA or higher, while four-year universities often require a 2.5-3.0 GPA."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is the difference between weighted and unweighted GPA?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "An unweighted GPA uses a standard 4.0 scale where all courses are treated equally. A weighted GPA adds extra points for honors and AP courses."
-                  }
-                }
-              ]
-            },
-            {
-              "@context": "https://schema.org",
-              "@type": "Article",
-              "headline": "High School GPA Calculator (Free & Accurate) – Calculate Your GPA",
-              "description": "Use our free High School GPA Calculator to calculate your GPA instantly. Enter your classes, grades, and credits to get your accurate high school GPA.",
-              "author": {
-                "@type": "Organization",
-                "name": "GPA Calculator"
-              },
-              "publisher": {
-                "@type": "Organization",
-                "name": "GPA Calculator"
-              },
-              "datePublished": "2024-01-01",
-              "dateModified": "2024-01-01"
-            }
-          ])
-        }}
-      />
     </div>
   );
 }
+
+
 
 
 

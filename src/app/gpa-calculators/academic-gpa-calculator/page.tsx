@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import AcademicGPACalculator from '@/components/AcademicGPACalculator';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'Academic GPA Calculator – Calculate Semester & Cumulative GPA | Top GPACalculator',
@@ -97,74 +98,11 @@ const relatedCalculators = [
 
 export default function AcademicGPACalculatorPage() {
   const baseUrl = 'https://topgpacalculator.com/gpa-calculators/academic-gpa-calculator';
-  const currentDate = new Date().toISOString().split('T')[0];
 
   return (
     <div className="bg-gradient-to-b from-slate-50 to-white min-h-screen text-slate-900">
       {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://topgpacalculator.com' },
-              { '@type': 'ListItem', position: 2, name: 'GPA Calculators', item: 'https://topgpacalculator.com/gpa-calculators' },
-              { '@type': 'ListItem', position: 3, name: 'Academic GPA Calculator', item: baseUrl },
-            ],
-          }),
-        }}
-      />
-      
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqItems.map((faq) => ({
-              '@type': 'Question',
-              name: faq.question,
-              acceptedAnswer: { 
-                '@type': 'Answer', 
-                text: faq.answer 
-              },
-            })),
-          }),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: 'Academic GPA Calculator – Comprehensive Guide for Students',
-            description: 'Learn how to calculate academic GPA, understand semester vs cumulative GPA, weighted courses, and strategies for improvement.',
-            author: {
-              '@type': 'Organization',
-              name: 'Top GPA Calculator',
-              url: 'https://topgpacalculator.com'
-            },
-            publisher: {
-              '@type': 'Organization',
-              name: 'Top GPA Calculator',
-              logo: {
-                '@type': 'ImageObject',
-                url: 'https://topgpacalculator.com/logo.png'
-              }
-            },
-            datePublished: '2026-01-15',
-            dateModified: currentDate,
-            mainEntityOfPage: {
-              '@type': 'WebPage',
-              '@id': baseUrl
-            }
-          }),
-        }}
-      />
+      <FAQSchema faqs={faqItems} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Breadcrumb Navigation */}

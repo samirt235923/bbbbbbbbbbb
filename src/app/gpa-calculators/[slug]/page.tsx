@@ -6,6 +6,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import FAQ from '@/components/FAQ';
 import { FAQSchema } from '@/components/SchemaMarkup';
 import { calculatorData } from '@/data/calculators';
+import { jsonLdStringify } from '@/lib/jsonLd';
 
 interface Props {
   params: Promise<{
@@ -39,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'website',
       images: [
         {
-          url: 'https://topgpacalculator.com/og-image.png',
+          url: 'https://topgpacalculator.com/logo.svg',
           width: 1200,
           height: 630,
         },
@@ -98,43 +99,49 @@ export default async function CalculatorPage({ params }: Props) {
     { name: 'Calculators', url: 'https://gpacalculator.com/gpa-calculators' },
     { name: calculator.name, url: `https://gpacalculator.com/gpa-calculators/${calculator.id}` },
   ];
+  const breadcrumbJsonLd = jsonLdStringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbSchema.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  });
+  const calculatorJsonLd = jsonLdStringify({
+    '@context': 'https://schema.org',
+    '@type': 'EducationalApplication',
+    name: calculator.title,
+    description: calculator.metaDescription,
+    url: `https://gpacalculator.com/gpa-calculators/${calculator.id}`,
+    applicationCategory: 'EducationalApplication',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+  });
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: breadcrumbSchema.map((item, index) => ({
-              '@type': 'ListItem',
-              position: index + 1,
-              name: item.name,
-              item: item.url,
-            })),
-          }),
-        }}
-      />
+      {breadcrumbJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: breadcrumbJsonLd,
+          }}
+        />
+      )}
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'EducationalApplication',
-            name: calculator.title,
-            description: calculator.metaDescription,
-            url: `https://gpacalculator.com/gpa-calculators/${calculator.id}`,
-            applicationCategory: 'EducationalApplication',
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'USD',
-            },
-          }),
-        }}
-      />
+      {calculatorJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: calculatorJsonLd,
+          }}
+        />
+      )}
 
       <FAQSchema faqs={sampleFAQs} />
 

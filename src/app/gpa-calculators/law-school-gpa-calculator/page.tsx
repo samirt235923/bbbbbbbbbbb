@@ -2,11 +2,35 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import Script from 'next/script';
 import LawSchoolGPACalculator from '@/components/LawSchoolGPACalculator';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'Law School GPA Calculator – Calculate Your LSAC GPA',
   description: 'Use our Law School GPA Calculator to estimate your GPA for law school applications. Enter your courses, grades, and credits to calculate your LSAC-style GPA.',
 };
+
+const faqItems = [
+  {
+    question: 'What GPA do you need for law school?',
+    answer: 'Most law schools require a minimum GPA of 3.0, but competitive schools typically require 3.4 or higher. For T14 (top 14) law schools, a GPA of 3.6+ is competitive. The average GPA for law school admission ranges from 3.2 for regional schools to 3.8+ for elite law schools.',
+  },
+  {
+    question: 'How do you calculate LSAC GPA?',
+    answer: 'LSAC GPA is calculated by multiplying each course\'s grade points by credit hours, summing all grade points, then dividing by total credit hours. LSAC uses a specific grade scale where A+ = 4.33, A = 4.0, A- = 3.67, B+ = 3.33, B = 3.0, etc.',
+  },
+  {
+    question: 'Is a 3.7 GPA good for law school?',
+    answer: 'A 3.7 GPA is excellent for law school admission. It exceeds the median GPA for most law schools and makes you competitive for top-tier schools including many T14 programs, though LSAT score is equally important.',
+  },
+  {
+    question: 'Do law schools recalculate GPA?',
+    answer: 'Yes, law schools recalculate GPA using LSAC standards. LSAC (Law School Admission Council) has specific rules for which grades to include, such as excluding certain pass/fail courses and study abroad grades. Schools will report your LSAC GPA on their materials.',
+  },
+  {
+    question: 'Does LSAC include all college grades?',
+    answer: 'LSAC includes most undergraduate grades but has specific rules: grades from accredited four-year institutions count, pass/fail courses are excluded, graduate courses are excluded, and some transfer credits may be treated differently depending on the school\'s policies.',
+  },
+];
 
 export default function LawSchoolGPACalculatorPage() {
   const breadcrumbSchema = {
@@ -34,87 +58,10 @@ export default function LawSchoolGPACalculatorPage() {
     ]
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What GPA do you need for law school?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most law schools require a minimum GPA of 3.0, but competitive schools typically require 3.4 or higher. For T14 (top 14) law schools, a GPA of 3.6+ is competitive. The average GPA for law school admission ranges from 3.2 for regional schools to 3.8+ for elite law schools."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do you calculate LSAC GPA?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "LSAC GPA is calculated by multiplying each course's grade points by credit hours, summing all grade points, then dividing by total credit hours. LSAC uses a specific grade scale where A+ = 4.33, A = 4.0, A- = 3.67, B+ = 3.33, B = 3.0, etc."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is a 3.7 GPA good for law school?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A 3.7 GPA is excellent for law school admission. It exceeds the median GPA for most law schools and makes you competitive for top-tier schools including many T14 programs, though LSAT score is equally important."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do law schools recalculate GPA?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, law schools recalculate GPA using LSAC standards. LSAC (Law School Admission Council) has specific rules for which grades to include, such as excluding certain pass/fail courses and study abroad grades. Schools will report your LSAC GPA on their materials."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does LSAC include all college grades?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "LSAC includes most undergraduate grades but has specific rules: grades from accredited four-year institutions count, pass/fail courses are excluded, graduate courses are excluded, and some transfer credits may be treated differently depending on the school's policies."
-        }
-      }
-    ]
-  };
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Law School GPA Calculator – Calculate Your LSAC GPA",
-    "description": "Use our Law School GPA Calculator to estimate your GPA for law school applications. Enter your courses, grades, and credits to calculate your LSAC-style GPA.",
-    "author": {
-      "@type": "Organization",
-      "name": "GPA Calculator"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "GPA Calculator"
-    },
-    "datePublished": "2024-01-01",
-    "dateModified": "2024-01-01"
-  };
-
   return (
     <>
-      <Script
-        id="breadcrumb-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <Script
-        id="article-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      
+      <FAQSchema faqs={faqItems} />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
         {/* Breadcrumb Navigation */}
@@ -574,6 +521,11 @@ export default function LawSchoolGPACalculatorPage() {
     </>
   );
 }
+
+
+
+
+
 
 
 

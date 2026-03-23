@@ -2,11 +2,35 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import Script from 'next/script';
 import NursingGPACalculator from '@/components/NursingGPACalculator';
+import { FAQSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'Nursing GPA Calculator – Free Tool for Nursing School Applicants',
   description: 'Use our Nursing GPA Calculator to calculate your GPA for nursing school applications. Enter courses, grades, and credit hours to get your accurate nursing GPA instantly.',
 };
+
+const faqItems = [
+  {
+    question: 'What GPA do you need for nursing school?',
+    answer: 'Most nursing programs require a minimum GPA of 3.0, though competitive programs often require 3.5 or higher. The average GPA for nursing school admission is around 3.5-3.7, with top programs requiring 3.8+.',
+  },
+  {
+    question: 'How do I calculate my nursing GPA?',
+    answer: "To calculate nursing GPA, multiply each course's grade points by credit hours, sum all the grade points, then divide by total credit hours. Use our nursing GPA calculator for accurate, instant results.",
+  },
+  {
+    question: 'Is a 3.5 GPA good for nursing school?',
+    answer: "A 3.5 GPA is generally considered good for nursing school admission. It's above the minimum requirement for most programs and competitive for many schools, though top-tier programs may prefer higher GPAs.",
+  },
+  {
+    question: 'Do science classes affect nursing GPA?',
+    answer: 'Yes, science classes significantly affect nursing GPA. Many programs calculate a separate science GPA for prerequisite courses like Biology, Chemistry, Anatomy, and Physiology. A strong science GPA is crucial for nursing school admission.',
+  },
+  {
+    question: 'What is the average GPA for nursing school admission?',
+    answer: "The average GPA for nursing school admission varies by program type and competitiveness. For ADN programs, it's around 3.2-3.5; for BSN programs, 3.4-3.7; and for competitive programs like Nurse Practitioner, 3.7+.",
+  },
+];
 
 export default function NursingGPACalculatorPage() {
   const breadcrumbSchema = {
@@ -34,87 +58,10 @@ export default function NursingGPACalculatorPage() {
     ]
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What GPA do you need for nursing school?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most nursing programs require a minimum GPA of 3.0, though competitive programs often require 3.5 or higher. The average GPA for nursing school admission is around 3.5-3.7, with top programs requiring 3.8+."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I calculate my nursing GPA?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "To calculate nursing GPA, multiply each course's grade points by credit hours, sum all the grade points, then divide by total credit hours. Use our nursing GPA calculator for accurate, instant results."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is a 3.5 GPA good for nursing school?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A 3.5 GPA is generally considered good for nursing school admission. It's above the minimum requirement for most programs and competitive for many schools, though top-tier programs may prefer higher GPAs."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do science classes affect nursing GPA?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, science classes significantly affect nursing GPA. Many programs calculate a separate science GPA for prerequisite courses like Biology, Chemistry, Anatomy, and Physiology. A strong science GPA is crucial for nursing school admission."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the average GPA for nursing school admission?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The average GPA for nursing school admission varies by program type and competitiveness. For ADN programs, it's around 3.2-3.5; for BSN programs, 3.4-3.7; and for competitive programs like Nurse Practitioner, 3.7+."
-        }
-      }
-    ]
-  };
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Nursing GPA Calculator – Free Tool for Nursing School Applicants",
-    "description": "Use our Nursing GPA Calculator to calculate your GPA for nursing school applications. Enter courses, grades, and credit hours to get your accurate nursing GPA instantly.",
-    "author": {
-      "@type": "Organization",
-      "name": "GPA Calculator"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "GPA Calculator"
-    },
-    "datePublished": "2024-01-01",
-    "dateModified": "2024-01-01"
-  };
-
   return (
     <>
-      <Script
-        id="breadcrumb-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <Script
-        id="article-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      
+      <FAQSchema faqs={faqItems} />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
         {/* Breadcrumb Navigation */}
@@ -658,6 +605,11 @@ export default function NursingGPACalculatorPage() {
     </>
   );
 }
+
+
+
+
+
 
 
 

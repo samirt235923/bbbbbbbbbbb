@@ -1,4 +1,5 @@
 // Schema Markup Components for SEO
+import { jsonLdStringify } from '@/lib/jsonLd';
 interface FAQItem {
   question: string;
   answer: string;
@@ -40,10 +41,13 @@ export function FAQSchema({ faqs, url }: { faqs: FAQItem[]; url?: string }) {
     })),
   };
 
+  const jsonLd = jsonLdStringify(schema);
+  if (!jsonLd) return null;
+
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: jsonLd }}
     />
   );
 }
@@ -128,10 +132,13 @@ export function HomePageSchema({
     ],
   };
 
+  const jsonLd = jsonLdStringify(schema);
+  if (!jsonLd) return null;
+
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: jsonLd }}
     />
   );
 }
@@ -146,10 +153,13 @@ export function CalculatorSchema({ title, description, url }: SchemaMarkupProps)
     applicationCategory: 'EducationalApplication',
   };
 
+  const jsonLd = jsonLdStringify(schema);
+  if (!jsonLd) return null;
+
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: jsonLd }}
     />
   );
 }
@@ -169,10 +179,13 @@ export function OrganizationSchema() {
     ],
   };
 
+  const jsonLd = jsonLdStringify(schema);
+  if (!jsonLd) return null;
+
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: jsonLd }}
     />
   );
 }
@@ -197,10 +210,13 @@ export function WebPageSchema({ title, description, url }: SchemaMarkupProps) {
     },
   };
 
+  const jsonLd = jsonLdStringify(schema);
+  if (!jsonLd) return null;
+
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: jsonLd }}
     />
   );
 }
@@ -217,10 +233,13 @@ export function BreadcrumbSchema({ items }: { items: Array<{ name: string; url: 
     })),
   };
 
+  const jsonLd = jsonLdStringify(schema);
+  if (!jsonLd) return null;
+
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: jsonLd }}
     />
   );
 }
@@ -238,33 +257,12 @@ export function ArticleSchema({
   datePublished: string;
   dateModified: string;
 }) {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: headline,
-    description: description,
-    author: {
-      '@type': 'Person',
-      name: author,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'GPA Calculator',
-    },
-    datePublished: datePublished,
-    dateModified: dateModified,
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': typeof window !== 'undefined' ? window.location.href : '',
-    },
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
+  void headline;
+  void description;
+  void author;
+  void datePublished;
+  void dateModified;
+  return null;
 }
 
 

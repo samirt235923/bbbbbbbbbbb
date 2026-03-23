@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { blogPosts } from '@/data/blog';
 import Breadcrumb from '@/components/Breadcrumb';
+import { jsonLdStringify } from '@/lib/jsonLd';
 
 interface Props {
   params: Promise<{
@@ -58,30 +59,34 @@ export default async function BlogPostPage({ params }: Props) {
   ];
 
   const relatedPosts = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
+  const blogPostingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    image: 'https://topgpacalculator.com/logo.svg',
+    datePublished: post.publishedDate,
+    author: {
+      '@type': 'Person',
+      name: post.author,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'GPA Calculator',
+    },
+  };
+  const blogPostingJsonLd = jsonLdStringify(blogPostingSchema);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
-            headline: post.title,
-            description: post.excerpt,
-            image: 'https://topgpacalculator.com/og-image.png',
-            datePublished: post.publishedDate,
-            author: {
-              '@type': 'Person',
-              name: post.author,
-            },
-            publisher: {
-              '@type': 'Organization',
-              name: 'GPA Calculator',
-            },
-          }),
-        }}
-      />
+      {blogPostingJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: blogPostingJsonLd,
+          }}
+        />
+      )}
 
       <div className="bg-white">
         {/* Breadcrumb */}
