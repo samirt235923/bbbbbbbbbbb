@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
-import Script from 'next/script';
 import WeightedGPACalculator from '@/components/WeightedGPACalculator';
 import { FAQSchema } from '@/components/SchemaMarkup';
 

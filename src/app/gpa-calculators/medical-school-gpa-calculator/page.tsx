@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
-import Script from 'next/script';
 import MedicalSchoolGPACalculator from '@/components/MedicalSchoolGPACalculator';
 import { FAQSchema } from '@/components/SchemaMarkup';
 
