@@ -63,8 +63,9 @@ const faqData = [
 
 export default function FivePointZeroScaleGPACalculatorPage() {
   return (
-    
+    <>
       <FAQSchema faqs={faqData} />
+      <div className="bg-white">
       {/* Breadcrumb Navigation */}
       <nav aria-label="Breadcrumb" className="bg-white border-b border-secondary-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
@@ -379,9 +380,8 @@ export default function FivePointZeroScaleGPACalculatorPage() {
         </aside>
 
       </main>
-
-      {/* Schema Markup */}
-    </div>
+      </div>
+    </>
   );
 }
 
