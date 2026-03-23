@@ -35,8 +35,6 @@ export const metadata: Metadata = {
 };
 
 export default function GradePointCalculatorPage() {
-  const pageUrl = 'https://topgpacalculator.com/gpa-calculators/grade-point-calculator';
-
   return (
     <div className="bg-slate-50 min-h-screen text-slate-900">
       <FAQSchema faqs={faqItems} />

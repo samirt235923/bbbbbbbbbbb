@@ -54,8 +54,6 @@ const gradeScale = [
 ];
 
 export default function OnlineGPACalculatorPage() {
-  const pageUrl = 'https://topgpacalculator.com/gpa-calculators/online-gpa-calculator';
-
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
       <FAQSchema faqs={faqItems} />
