@@ -57,6 +57,7 @@ export function HomePageSchema({
   description: string;
   url: string;
 }) {
+  const normalizedUrl = url.endsWith('/') ? url.slice(0, -1) : url;
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -66,34 +67,62 @@ export function HomePageSchema({
         name: ORG_NAME,
         url: `${SITE_URL}/`,
         logo: LOGO_URL,
+        sameAs: [
+          'https://www.pinterest.com/topgpacalculator/',
+          'https://www.youtube.com/@TopGpaCalculator',
+          'https://x.com/topgpacalculato',
+        ],
       },
       {
-        '@type': 'WebPage',
-        '@id': `${url}#webpage`,
-        url: `${url}/`,
-        name: title,
-        description: description,
-        inLanguage: 'en-US',
+        '@type': 'WebSite',
+        '@id': WEBSITE_ID,
+        name: ORG_NAME,
+        url: `${SITE_URL}/`,
         publisher: {
           '@id': ORG_ID,
         },
       },
       {
-        '@type': 'SoftwareApplication',
-        '@id': `${url}#app`,
+        '@type': 'WebPage',
+        '@id': `${normalizedUrl}/#webpage`,
+        url: `${normalizedUrl}/`,
+        name: title,
+        description: description,
+        inLanguage: 'en-US',
+        mainEntity: {
+          '@id': `${normalizedUrl}/#app`,
+        },
+        isPartOf: {
+          '@id': WEBSITE_ID,
+        },
+        publisher: {
+          '@id': ORG_ID,
+        },
+      },
+      {
+        '@type': 'WebApplication',
+        '@id': `${normalizedUrl}/#app`,
         name: ORG_NAME,
         applicationCategory: 'EducationalApplication',
         operatingSystem: 'All',
-        url: `${url}/`,
+        url: `${normalizedUrl}/`,
         description: 'Free online GPA calculator for students to calculate grade point average.',
+        screenshot: `${SITE_URL}/logo.svg`,
+        featureList: [
+          'GPA calculation',
+          'Weighted GPA support',
+          'Semester and cumulative GPA',
+          'Target GPA planning',
+          'GPA improvement scenarios',
+          'Multiple grading scales',
+        ],
+        isPartOf: {
+          '@id': WEBSITE_ID,
+        },
         offers: {
           '@type': 'Offer',
           price: '0',
           priceCurrency: 'USD',
-        },
-        potentialAction: {
-          '@type': 'CalculateAction',
-          target: `${url}/`,
         },
       },
     ],

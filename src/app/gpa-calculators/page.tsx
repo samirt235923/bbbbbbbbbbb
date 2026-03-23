@@ -8,16 +8,75 @@ export default function GPACalculatorsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const normalizedQuery = searchQuery.trim().toLowerCase();
 
-  const filteredCalculators = useMemo(() => {
-    if (!normalizedQuery) return calculatorData;
+  const uniqueCalculators = useMemo(() => {
+    const seen = new Set<string>();
     return calculatorData.filter((calc) => {
+      if (seen.has(calc.id)) return false;
+      seen.add(calc.id);
+      return true;
+    });
+  }, []);
+
+  const filteredCalculators = useMemo(() => {
+    if (!normalizedQuery) return uniqueCalculators;
+    return uniqueCalculators.filter((calc) => {
       const name = calc.name.toLowerCase();
       const description = (calc.description ?? '').toLowerCase();
       return name.includes(normalizedQuery) || description.includes(normalizedQuery);
     });
-  }, [normalizedQuery]);
+  }, [normalizedQuery, uniqueCalculators]);
 
   const featuredCalculators = useMemo(() => filteredCalculators.slice(0, 6), [filteredCalculators]);
+
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://topgpacalculator.com/gpa-calculators#collectionpage",
+    "name": "All GPA Calculators",
+    "description": "Browse all 50+ free GPA calculators. Find the perfect calculator for college GPA, high school GPA, weighted GPA, and more.",
+    "url": "https://topgpacalculator.com/gpa-calculators",
+    "mainEntity": {
+      "@type": "ItemList",
+      "@id": "https://topgpacalculator.com/gpa-calculators#itemlist",
+      "numberOfItems": uniqueCalculators.length,
+      "itemListElement": uniqueCalculators.map((calc, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "WebApplication",
+          "name": calc.name,
+          "url": `https://topgpacalculator.com/gpa-calculators/${calc.id}`,
+          "description": calc.description ?? calc.metaDescription ?? `${calc.name} calculator.`,
+          "applicationCategory": "Education",
+          "operatingSystem": "All",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        }
+      }))
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://topgpacalculator.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "GPA Calculators",
+        "item": "https://topgpacalculator.com/gpa-calculators"
+      }
+    ]
+  };
 
   return (
     <div className="bg-white">
@@ -100,23 +159,13 @@ export default function GPACalculatorsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CollectionPage",
-            "name": "All GPA Calculators",
-            "description": "Browse all 50+ free GPA calculators. Find the perfect calculator for college GPA, high school GPA, weighted GPA, and more.",
-            "url": "https://topgpacalculator.com/gpa-calculators",
-            "mainEntity": {
-              "@type": "ItemList",
-              "numberOfItems": calculatorData.length,
-              "itemListElement": calculatorData.map((calc, index) => ({
-                "@type": "ListItem",
-                "position": index + 1,
-                "name": calc.name,
-                "url": `https://topgpacalculator.com/gpa-calculators/${calc.id}`
-              }))
-            }
-          })
+          __html: JSON.stringify(collectionSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema)
         }}
       />
     </div>

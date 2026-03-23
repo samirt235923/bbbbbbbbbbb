@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import CalculatorStructuredData from '@/components/CalculatorStructuredData';
 
 export const metadata: Metadata = {
   title: 'All GPA Calculators - 50+ Free Tools | GPA Calculator',
@@ -35,7 +36,10 @@ export default function GPACalculatorsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main>{children}</main>
+    <main>
+      <CalculatorStructuredData />
+      {children}
+    </main>
   );
 }
 
