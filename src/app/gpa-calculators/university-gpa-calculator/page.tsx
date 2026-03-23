@@ -33,7 +33,6 @@ const faqItems = [
 ];
 
 export default function UniversityGPACalculatorPage() {
-  const baseUrl = 'https://topgpacalculator.com/gpa-calculators/university-gpa-calculator';
 
   return (
     <div className="bg-slate-50 min-h-screen text-slate-900">
