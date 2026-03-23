@@ -97,8 +97,6 @@ const relatedCalculators = [
 ];
 
 export default function AcademicGPACalculatorPage() {
-  const baseUrl = 'https://topgpacalculator.com/gpa-calculators/academic-gpa-calculator';
-
   return (
     <div className="bg-gradient-to-b from-slate-50 to-white min-h-screen text-slate-900">
       {/* Structured Data */}
