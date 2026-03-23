@@ -28,8 +28,6 @@ export const metadata: Metadata = {
 };
 
 export default function GpaGoalCalculatorPage() {
-  const pageUrl = 'https://topgpacalculator.com/gpa-calculators/gpa-goal-calculator';
-
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
       <FAQSchema faqs={faqItems} />
