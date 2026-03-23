@@ -33,31 +33,6 @@ const faqItems = [
 ];
 
 export default function MedicalSchoolGPACalculatorPage() {
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://topgpacalculator.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "GPA Calculators",
-        "item": "https://topgpacalculator.com/gpa-calculators"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Medical School GPA Calculator",
-        "item": "https://topgpacalculator.com/gpa-calculators/medical-school-gpa-calculator"
-      }
-    ]
-  };
-
   return (
     <>
       

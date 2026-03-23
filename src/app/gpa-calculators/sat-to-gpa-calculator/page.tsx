@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Breadcrumb from '../../../components/Breadcrumb';
-import SEOHead from '../../../components/SEOHead';
 import FAQ from '../../../components/FAQ';
 import { FAQSchema } from '@/components/SchemaMarkup';
 
